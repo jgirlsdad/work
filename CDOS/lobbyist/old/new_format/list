@@ -1,0 +1,12 @@
+#!
+cp prof_bills.txt prof_bills.tsv                           
+cp prof_clients.txt prof_clients.tsv
+cp prof_disclosure_report_summary.txt prof_disclosure_report_summary.tsv
+cp prof_expenditures.txt prof_expenditures.tsv
+cp prof_income.txt prof_income.tsv
+cp prof_lobbyist_directory.txt prof_lobbyist_directory.tsv
+cp prof_subcontractors.txt prof_subcontractors.tsv
+cp state_lobbyist_bills.txt  tate_lobbyist_bills.tsv
+cp state_lobbyist_directory.txt  state_lobbyist_directory.tsv
+cp state_lobbyist_funds_hours.txt tate_lobbyist_funds_hours.tsv
+cp state_lobbyist_officials.txt state_lobbyist_officials.tsv

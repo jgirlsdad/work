@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xentity GIS Chatbot - Internal</title>
+    <style>
+        body {
+            background-color: black;
+            color: cyan;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        #logo {
+            height: 50px; /* Adjust size as needed */
+        }
+        input[type="text"] {
+            background-color: black;
+            color: cyan;
+            border: 1px solid cyan;
+            padding: 10px;
+            font-size: 16px;
+            width: auto;
+            min-width: 200px;
+            max-width: 80%;
+        }
+        button {
+            background-color: cyan;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #00ffff;
+        }
+        #response, #gis-data {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid cyan;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: black;
+            color: cyan;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <img id="logo" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRjRWWhjqWGw2jaHGQjUi9WQy03xo2TALpV26EyhnpNqr95Ze9Di1sLKVK_GqddpNnu_5HywtdmmYQ6WCfyXPnCL42pNcBtMotfOqvg3uGno2A2cyJ8C44ICHGHEcYiRVfv6YuuQVETbo1HPJ2pWW3PF-ZsDKdOPolRPD9MfvGDyIYFJ8tRkOHlxz-JTbt/s320/Xentity-Logo.png" alt="Xentity Logo">
+        <h1>Xentity GIS Chatbot - Internal</h1>
+    </div>
+
+    <input type="text" id="query" placeholder="Ask a GIS question..." oninput="adjustWidth(this)">
+    <button onclick="sendQuery()">Submit</button>
+
+    <div id="response"></div>
+    <div id="gis-data"></div>
+
+    <script>
+        function adjustWidth(input) {
+            input.style.width = (input.value.length + 5) + "ch";
+        }
+
+        async function sendQuery() {
+            const query = document.getElementById("query").value;
+            const responseElement = document.getElementById("response");
+            const gisDataElement = document.getElementById("gis-data");
+
+            if (!query.trim()) {
+                responseElement.innerText = "Please enter a question.";
+                return;
+            }
+
+            const res = await fetch("http://192.168.1.2:5000/chat", {  // Use your Flask API URL here
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ query })
+            });
+
+            const data = await res.json();
+            responseElement.innerText = data.response || "No response received.";
+
+            // Display GIS Data if present
+            if (Array.isArray(data.response)) {
+                gisDataElement.innerHTML = "<h3>GIS Data:</h3>";
+                data.response.forEach(item => {
+                    gisDataElement.innerHTML += `<p><b>State:</b> ${item.State}, <b>County:</b> ${item.County}, <b>FIPS:</b> ${item.FIPS}</p>`;
+                });
+            } else {
+                gisDataElement.innerHTML = "";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+digraph SearchProcess {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=lightgray, fontname="Arial"];
+
+    // Nodes
+    Initial [label="Initial State (S0)"];
+    AddFrontier [label="Add S0 to Frontier"];
+    LoopStart [label="Loop Start:\nIs Frontier NOT empty?"];
+    RemoveNode [label="Remove Node N from Frontier\n(Select via strategy: FIFO, LIFO, etc.)"];
+    GoalTest [label="Is N a Goal State?"];
+
+    ExpandNode [label="Expand Node N:\n\
+For each valid action A:\n\
+• Compute Result(N, A) → N'\n\
+• Check: Is N' in Frontier?\n\
+• Check: Is N' in Explored Set?\n\
+• If not, add N' to Frontier", shape=box, fontname="Arial", fillcolor="#ffebcc"];
+
+    LoopBack [label="Return to Loop Start"];
+    Solution [label="Goal Found!\nReturn Solution Path", shape=oval, fillcolor=lightblue];
+
+    // Edges
+    Initial -> AddFrontier;
+    AddFrontier -> LoopStart;
+    LoopStart -> RemoveNode;
+    RemoveNode -> GoalTest;
+    GoalTest -> Solution [label="Yes", fontcolor=green];
+    GoalTest -> ExpandNode [label="No", fontcolor=red];
+    ExpandNode -> LoopBack;
+    LoopBack -> LoopStart [label="Continue Search", color=gray, fontcolor=gray, style=dashed, arrowhead=normal];
+}

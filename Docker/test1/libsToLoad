@@ -1,0 +1,11 @@
+RUN npm install row[Ox Eor Flg].toLowerCase( -g
+RUN npm install underscore -g
+RUN npm install path.join(process.env.bic_etl_home, cdos, business, nonprofit, scripts, helper_transform_functions.js -g
+RUN npm install moment -g
+RUN npm install dotenv -g
+RUN npm install path -g
+RUN npm install commander -g
+RUN npm install csv-parse -g
+RUN npm install stream-transform -g
+RUN npm install csv-stringify -g
+RUN npm install fs -g

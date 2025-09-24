@@ -1,0 +1,16 @@
+Filesystem           1K-blocks     Used Available Use% Mounted on
+/dev/mapper/vg_oitrisecim01-lv_root
+                      20642428  8733188  10860664  45% /
+tmpfs                  1961960        0   1961960   0% /dev/shm
+/dev/sda1               487652   165781    296271  36% /boot
+/dev/mapper/vg_oitrisecim01-lv_home
+                       8256952  6456984   1380540  83% /home
+/dev/mapper/vg_oitrisecim01-lv_tmp
+                       8256952   272656   7564868   4% /tmp
+/dev/sdb2            205395696 60116904 134845208  31% /usr/local/cim
+/dev/mapper/vg_oitrisecim01-lv_var
+                      10321208   951308   8845612  10% /var
+/dev/mapper/vg_oitrisecim01-lv_var_log
+                       4128448   173988   3744748   5% /var/log
+/dev/mapper/vg_oitrisecim01-lv_var_log_audit
+                       4128448   166392   3752344   5% /var/log/audit

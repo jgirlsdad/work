@@ -1,0 +1,39 @@
+#!/bin/sh
+DIR="$(dirname "$(dirname "$0")")"
+agent="$(basename "$DIR")"
+f="$HOME/Library/LaunchAgents/socrata.sia.$agent.plist"
+
+cat > "$f" <<ADDTEXT
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>com.socrata.$agent</string>
+        <key>Program</key>
+        <string>/usr/bin/java</string>
+        <key>ProgramArguments</key>
+        <array>
+          <string>/usr/bin/java</string>
+          <string>-jar</string>
+          <string>socrata-ingress-agent.jar</string>
+        </array>
+        <key>WorkingDirectory</key>
+        <string>$DIR</string>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>KeepAlive</key>
+        <dict>
+          <key>SuccessfulExit</key>
+          <false/>
+        </dict>
+        <key>StandardOutPath</key>
+        <string>macOS/stdout.log</string>
+        <key>StandardErrorPath</key>
+        <string>macOS/stderr.log</string>
+    </dict>
+</plist>
+ADDTEXT
+
+launchctl unload "$f" >>/dev/null 2>&1
+launchctl load -w "$f"

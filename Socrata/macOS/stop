@@ -1,0 +1,9 @@
+#!/bin/sh
+DIR="$(dirname "$(dirname "$0")")"
+agent="$(basename "$DIR")"
+f="$HOME/Library/LaunchAgents/socrata.sia.$agent.plist"
+
+launchctl unload "$f"
+rm "$f"
+
+exit

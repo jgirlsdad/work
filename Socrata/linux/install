@@ -1,0 +1,407 @@
+#!/bin/bash
+
+if ! command -v python >/dev/null; then
+    if ! command -v python3 >/dev/null; then
+        echo "Python is required to run the install script" >&2
+        exit 1
+    else
+        PYTHON=python3
+    fi
+else
+    PYTHON=python
+fi
+
+if ! command -v systemctl >/dev/null; then
+    echo systemctl is not on your PATH.  This script requires systemd >&2
+    echo for installation. >&2
+    exit 1
+fi
+
+systemctl_version=$(systemctl --version | head -1 | awk '{print $2}')
+if [ "$systemctl_version" -lt 231 ]; then
+    echo systemctl version 231 or higher is required for the install script. >&2
+    exit 1
+fi
+
+REALPATH="$(env script="$0" "$PYTHON" -c "import os; print(os.path.realpath(os.getenv('script')))")"
+BASEDIR="$(dirname "$(dirname "$REALPATH")")"
+
+cd "$BASEDIR" || exit
+
+dry_run=false
+if [ "$1" == "--dry-run" ]; then
+    shift
+    dry_run=true
+fi
+
+realpath() {
+    env script="$1" "$PYTHON" -c "import os; print(os.path.realpath(os.getenv('script')))"
+}
+
+doit() {
+    echo sudo "$@"
+    if ! $dry_run; then
+        sudo "$@"
+    fi
+}
+
+build_unit() {
+    local user
+    local group
+    local workingdir
+    local datadir
+    local service
+    local java
+    local java_home
+    local proxy_args
+
+    user="$1"
+    group="$2"
+    workingdir="$3"
+    datadir="$4"
+    service="$5"
+    java="$6"
+    java_home="$7"
+    proxy_args="$8"
+
+    cat <<EOF
+[Unit]
+Description=The Socrata Ingress Agent
+StartLimitIntervalSec=1
+StartLimitBurst=5
+
+[Service]
+User=$user
+Group=$group
+WorkingDirectory=$workingdir
+EOF
+
+    if ! [ -z "$JAVA_HOME" ]; then
+        cat <<EOF
+Environment="JAVA_HOME=$java_home"
+EOF
+    fi
+
+    cat <<EOF
+ExecStart="$java" $proxy_args -jar "$workingdir/$service.jar" --data-dir "$datadir"
+Restart=on-failure
+RestartSec=1
+PrivateTmp=true
+PrivateDevices=true
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+}
+
+shellquote() {
+    printf "'%s'" "${1//\'/\'\\\'\'}"
+}
+
+good_service_name=false
+until $good_service_name; do
+    good_service_name=true
+    read -e -r -i "socrata-ingress-agent" -p 'systemd service name: ' service
+
+    if [ -z "$service" ]; then
+        good_service_name=false
+        echo "No service name specified"
+    elif [ "x$(sed 's/[A-Za-z0-9-]//g' <<<"$service")" != "x" ]; then
+        good_service_name=false
+        echo "The service name must consist of only letters, numbers, and dashes"
+    else
+        systemctl status -- "$service.service" >/dev/null 2>/dev/null
+        if [ $? -ne 4 ]; then
+            good_service_name=false
+            echo "That service already exists" >/dev/stderr
+        fi
+    fi
+done
+
+good_user=false
+until $good_user; do
+    good_user=true
+    read -e -r -i "$(whoami)" -p 'User to run as: ' user
+
+    passwd="$(getent -- passwd "$user")"
+    if [ -z "$passwd" ]; then
+        good_user=false
+        echo "No such user"
+    elif [ "x$(printf "%s" "$passwd" | cut -f3 -d:)" = "x0" ]; then
+        good_user=false
+        echo "Will not run the agent as root"
+    fi
+done
+
+homedir="$(printf "%s" "$passwd" | cut -f6 -d:)"
+
+group_id="$(printf "%s" "$passwd" | cut -f4 -d:)"
+groupent="$(getent -- group "$group_id")"
+if [ -z "$groupent" ]; then
+    group="$group_id" # Anonymous group?  Ok fine, we'll just use the number...
+else
+    group="$(printf "%s" "$groupent" | cut -f1 -d:)"
+fi
+
+if [ "x$user" = "x$(whoami)" ]; then
+    default_workingdir="$BASEDIR"
+    if [ -z "$XDG_DATA_HOME" ]; then
+        default_datadir="$homedir/.local/share/socrata-ingress-agent"
+    else
+        default_datadir="$XDG_DATA_HOME/socrata-ingress-agent"
+    fi
+else
+    default_workingdir="$homedir"
+    default_datadir="$homedir/data"
+fi
+
+good_workingdir=false
+until $good_workingdir; do
+    good_workingdir=true
+    read -e -r -i "$default_workingdir" -p 'Directory to run in: ' workingdir
+
+    if [ "x${workingdir:0:1}" != "x/" ]; then
+        good_workingdir=false
+        echo "Directory must be an absolute path"
+    fi
+done
+
+good_datadir=false
+until $good_datadir; do
+    good_datadir=true
+    read -e -r -i "$default_datadir" -p 'Data directory: ' datadir
+
+    if [ "x${datadir:0:1}" != "x/" ]; then
+        good_datadir=false
+        echo "Data directory must be an absolute path"
+    fi
+done
+
+java="$(command -v java || true)"
+good_java=false
+until $good_java; do
+    good_java=true
+
+    read -e -r -i "$java" -p 'Java: ' java
+
+    if [ ! -x "$java" ] || [ -d "$java" ]; then
+        good_java=false
+        echo "That does not appear to name an executable"
+    elif [ "x${java:0:1}" != "x/" ]; then
+        good_java=false
+        echo "An absolute path is required"
+    fi
+done
+
+good_java_home=false
+until $good_java_home; do
+    good_java_home=true
+
+    read -e -r -i "$JAVA_HOME" -p 'JAVA_HOME (leave blank if unnecessary): ' JAVA_HOME
+
+    if [ ! -z "$JAVA_HOME" ]; then
+        if ! [ -d "$JAVA_HOME" ]; then
+            good_java_home=false
+            echo "That does not appear to name a directory"
+        elif [ "x${JAVA_HOME:0:1}" != "x/" ]; then
+            good_java_home=false
+            echo "An absolute path is required"
+        else
+            export JAVA_HOME
+        fi
+    fi
+done
+
+good_proxy_args=false
+until $good_proxy_args; do
+    good_proxy_args=true
+    read -e -r -i "$http_proxy" -p 'HTTP proxy (leave blank if unnecessary): ' http_proxy
+    read -e -r -i "$https_proxy" -p 'HTTPS proxy (leave blank if unnecessary): ' https_proxy
+
+    if [ ! -z "$http_proxy" ] || [ ! -z "$https_proxy" ]; then
+        read -e -r -i "$no_proxy" -p 'Hosts that should bypass the proxy (leave blank for none): ' no_proxy
+    else
+        unset no_proxy
+    fi
+
+    if [ -z "$http_proxy" ]; then unset http_proxy; else export http_proxy; fi
+    if [ -z "$https_proxy" ]; then unset https_proxy; else export https_proxy; fi
+    if [ -z "$no_proxy" ]; then unset no_proxy; else export no_proxy; fi
+
+    set +e
+    proxy_args_sh="$("$java" -jar "$(dirname "$REALPATH")"/linux-installer-helper.jar)"
+    if [ $? -ne 0 ]; then
+        good_proxy_args=false
+    fi
+    set -e
+done
+
+eval "$proxy_args_sh"
+
+echo Here is the unit file we will generate:
+echo
+build_unit "$user" "$group" "$workingdir" "$datadir" "$service" "$java" "$JAVA_HOME" "$proxy_args"
+echo
+
+good_ok=false
+until $good_ok; do
+      read -e -r -p "Is this correct? [Y/n] " yep
+      if [ -z "$yep" ]; then
+          yep=y
+      else
+          yep="$(printf "%s" "$yep" | tr '[:upper:]' '[:lower:]')"
+      fi
+      case "$yep" in
+          y|yes|n|no)
+              good_ok=true
+              yep="${yep:0:1}"
+              ;;
+          *)
+              good_ok=false
+              echo "Unknown response"
+              ;;
+      esac
+done
+
+if [ "x$yep" = "xy" ]; then
+    set -e
+
+    build_unit "$user" "$group" "$workingdir" "$datadir" "$service" > "$service.service" "$java" "$JAVA_HOME" "$proxy_args"
+    echo "created $BASEDIR/$service.service"
+
+    cat >"$service-control" <<EOF
+#!/bin/bash
+set -e
+
+if [ \$# -lt 1 ]; then
+   echo "Usage: \$0 stop|start|status|logs|run|uninstall"
+   echo
+   echo "stop          - stop the service"
+   echo "start         - start the service"
+   echo "status        - display information about the service"
+   echo "logs          - show the service's logs"
+   echo "  -f, --follow     output appended data as more is generated"
+   echo "run ARGUMENTS - run a command on the service jar"
+   echo "  Use \\"\$0 run --help\\" for more information"
+   echo "uninstall     - stop the service and delete all its data files"
+   exit 1
+fi
+
+runasuser() {
+EOF
+
+    if [ "x$user" = "x$(whoami)" ]; then
+        echo "  \"\$@\"" >>"$service-control"
+    else
+        echo "  sudo -u $(shellquote "$user") \"\$@\"" >> "$service-control"
+    fi
+
+    cat >>"$service-control" <<EOF
+}
+
+command="\$1"
+shift
+
+case "\$command" in
+     stop)
+       options=\$(getopt -o "" --long "" -n "\$0" -- "\$@")
+       eval set -- "\$options"
+       unset options
+
+       sudo systemctl stop $(shellquote "$service").service
+       ;;
+     start)
+       options=\$(getopt -o "" --long "" -n "\$0" -- "\$@")
+       eval set -- "\$options"
+       unset options
+
+       sudo systemctl start $(shellquote "$service").service
+       ;;
+     status)
+       options=\$(getopt -o "" --long "" -n "\$0" -- "\$@")
+       eval set -- "\$options"
+       unset options
+
+       sudo systemctl status $(shellquote "$service").service
+       ;;
+     logs)
+       options=\$(getopt -o "f" --long "follow" -n "\$0" -- "\$@")
+       eval set -- "\$options"
+       unset options
+
+       args=()
+
+       while true; do
+         case "\$1" in
+           -f|--follow)
+             args+=(--follow)
+             shift
+             ;;
+           --)
+             shift
+             break
+             ;;
+           *)
+             echo Internal error >/dev/stderr
+             exit 1
+             ;;
+         esac
+       done
+       sudo journalctl -u$(shellquote "$service").service "\${args[@]}"
+       ;;
+     run)
+       runasuser "$java" -jar $(shellquote "$workingdir/$service.jar") --data-dir $(shellquote "$datadir") "\$@"
+       ;;
+     uninstall)
+       options=\$(getopt -o "" --long "" -n "\$0" -- "\$@")
+       eval set -- "\$options"
+       unset options
+
+       sudo systemctl stop -- $(shellquote "$service").service
+       sudo systemctl disable -- $(shellquote "$service").service
+       sudo systemctl reset-failed -- $(shellquote "$service").service
+       sudo rm -- /etc/systemd/system/$(shellquote "$service").service
+       runasuser /usr/bin/java -jar $(shellquote "$workingdir/$service.jar") --data-dir $(shellquote "$datadir") --uninstall
+       sudo rm -- $(shellquote "$workingdir/$service.jar")
+
+       # Don't care if these next two commands fail.  Indeed, if
+       # there are multiple agents installed to the same working
+       # and/or data directory, that failure is expected.
+       set +e
+
+       sudo rmdir -- $(shellquote "$datadir") 2>/dev/null
+       sudo rmdir -- $(shellquote "$workingdir") 2>/dev/null
+       ;;
+     *)
+       echo "Unknown command: \$command"
+       ;;
+esac
+EOF
+    chmod +x -- "$service-control"
+    echo "created $BASEDIR/$service-control"
+    echo
+
+    echo "Setting up the service.  The commands being run will be displayed."
+    echo "You may be asked for the root password, depending on your local"
+    echo "sudo configuration."
+    echo
+
+    doit mkdir -m0755 -p -- "$workingdir"
+    if [ "$(realpath "$BASEDIR/socrata-ingress-agent.jar")" != "$(realpath "$workingdir/$service.jar")" ]; then
+        doit cp -- "$BASEDIR/socrata-ingress-agent.jar" "$workingdir/$service.jar"
+    fi
+    doit chmod 644 -- "$workingdir/$service.jar"
+    doit mkdir -m0700 -p -- "$datadir"
+    doit chown -- "$user:$group" "$datadir"
+    doit cp -- "$BASEDIR/$service.service" "/etc/systemd/system/$service.service"
+    doit systemctl enable -- "$service.service"
+    doit systemctl start -- "$service.service"
+
+    echo
+    echo "Setup complete.  You may use the $BASEDIR/$service-control"
+    echo "script to control, configure, or uninstall the service."
+else
+    echo "Unit creation aborted"
+fi
+

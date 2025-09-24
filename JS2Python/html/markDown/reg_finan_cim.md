@@ -1,0 +1,40 @@
+|    | Field                          | Change Type   |   # Records Affected |   Total Records |   % Records Affected |
+|---:|:-------------------------------|:--------------|---------------------:|----------------:|---------------------:|
+|  0 | fein                           | E (-)         |               231589 |          234570 |                 98.7 |
+|  1 | actualFinancialsProvided       | C             |               228731 |          234570 |                 97.5 |
+|  2 | principalCity                  | A             |               227960 |          234570 |                 97.2 |
+|  3 | principalZipcode               | B             |                 2512 |          234570 |                  1.1 |
+|  4 | mailingZipcode                 | B             |                 2499 |          234570 |                  1.1 |
+|  5 | phone                          | D             |               196434 |          234570 |                 83.7 |
+|  6 | fax                            | D             |               124440 |          234570 |                 53.1 |
+|  7 | website                        | F             |               189092 |          234570 |                 80.6 |
+|  8 | authorizedOfficerName          | A             |               234108 |          234570 |                 99.8 |
+|  9 | cfoName                        | A             |                 3246 |          234570 |                  1.4 |
+| 10 | taxExemptStatus                | C             |               234570 |          234570 |                100   |
+| 11 | donationsTaxDeductible         | C             |               234570 |          234570 |                100   |
+| 12 | extensionFiled                 | C             |               234570 |          234570 |                100   |
+| 13 | relatedToOtherOrganization     | C             |               226100 |          234570 |                 96.4 |
+| 14 | relatedOrganizationTaxExempt   | C             |               226100 |          234570 |                 96.4 |
+| 15 | solicitedNonTaxDeductibleGifts | C             |               226100 |          234570 |                 96.4 |
+| 16 | statedGiftNotTaxDeductible     | C             |               226100 |          234570 |                 96.4 |
+| 17 | publicBenefitCorporation       | C             |               233969 |          234570 |                 99.7 |
+| 18 | conflictOfInterest             | C             |                  846 |          234570 |                  0.4 |
+| 19 | conflictOfInterestAffirmation  | C             |                  741 |          234570 |                  0.3 |
+| 20 | authorizedOfficerSignedDate    | G2            |                92064 |          234570 |                 39.2 |
+| 21 | authorizedOfficerSignedDate    | G3            |               142069 |          234570 |                 60.6 |
+| 22 | cfoSignedDate                  | G2            |                 1234 |          234570 |                  0.5 |
+| 23 | cfoSignedDate                  | G3            |                 2017 |          234570 |                  0.9 |
+| 24 | registrationApprovedDate       | G2            |                87919 |          234570 |                 37.5 |
+| 25 | registrationApprovedDate       | G3            |               146641 |          234570 |                 62.5 |
+| 26 | paymentProcessedDate           | G2            |                89688 |          234570 |                 38.2 |
+| 27 | paymentProcessedDate           | G3            |               139347 |          234570 |                 59.4 |
+| 28 | nextRenewalRegistrationDate    | G2            |                 1183 |          234570 |                  0.5 |
+| 29 | nextRenewalRegistrationDate    | G3            |               231436 |          234570 |                 98.7 |
+| 30 | statusDate                     | G2            |                79782 |          234570 |                 34   |
+| 31 | statusDate                     | G3            |               154788 |          234570 |                 66   |
+| 32 | dateFormed                     | G1            |               227963 |          234570 |                 97.2 |
+| 33 | expirationDate                 | G1            |               234570 |          234570 |                100   |
+| 34 | fiscalYearStartDate            | G2            |               224560 |          234570 |                 95.7 |
+| 35 | fiscalYearStartDate            | G3            |                 1532 |          234570 |                  0.7 |
+| 36 | fiscalYearEndDate              | G2            |               224560 |          234570 |                 95.7 |
+| 37 | fiscalYearEndDate              | G3            |                 1532 |          234570 |                  0.7 |

@@ -1,0 +1,14 @@
+#!/bin/sh
+DIR="$(dirname "$(dirname "$0")")"
+
+agent="$DIR/socrata-ingress-agent.jar"
+echo "Possible plugins:"
+java -jar "$agent" --list-available-plugins
+
+echo "Please enter the plugin and press enter [ENTER]:"
+read plugin
+
+echo "Please name your plugin and press enter [ENTER]:"
+read pluginName
+
+java -jar "$agent" --configure-plugin "$plugin":"$pluginName"

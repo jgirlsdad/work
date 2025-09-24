@@ -1,0 +1,21 @@
+offices_3qtu-edua_SRC.txt:│  0 │ Ce Fein     │       100   │       223 │        0 │         0 │     223 │         0 │
+persons_entity_mr4v-jz8u_SRC.txt:│  1 │ Cd Dba           │       100   │   2840524 │       18 │         0 │ 2840524 │         0 │
+persons_entity_mr4v-jz8u_SRC.txt:│  5 │ Cp Convc Date    │       100   │   2840542 │        0 │         0 │ 2840542 │         0 │
+persons_entity_mr4v-jz8u_SRC.txt:│  7 │ Cp Injc Court    │       100   │   2840542 │        0 │         0 │ 2840542 │         0 │
+persons_entity_mr4v-jz8u_SRC.txt:│  8 │ Cp Injc Date     │       100   │   2840540 │        2 │         0 │ 2840540 │         0 │
+persons_entity_mr4v-jz8u_SRC.txt:│ 11 │ Cp Offn Court    │       100   │   2840542 │        0 │         0 │ 2840542 │         0 │
+persons_entity_mr4v-jz8u_SRC.txt:│ 12 │ Cp Offn Date     │       100   │   2840542 │        0 │         0 │ 2840542 │         0 │
+persons_entity_mr4v-jz8u_SRC.txt:│ 13 │ Cp Offn Disp     │       100   │   2840542 │        0 │         0 │ 2840542 │         0 │
+persons_entity_mr4v-jz8u_SRC.txt:│ 14 │ Cp Offn Dscrp    │       100   │   2840542 │        0 │         0 │ 2840542 │         0 │
+persons_sol_ntcs_hyr8-d3v9_SRC.txt:│  5 │ Cp Convc Date    │       100   │     16193 │        0 │         0 │   16193 │         0 │
+persons_sol_ntcs_hyr8-d3v9_SRC.txt:│  7 │ Cp Injc Court    │       100   │     16193 │        0 │         0 │   16193 │         0 │
+persons_sol_ntcs_hyr8-d3v9_SRC.txt:│  8 │ Cp Injc Date     │       100   │     16193 │        0 │         0 │   16193 │         0 │
+persons_sol_ntcs_hyr8-d3v9_SRC.txt:│ 11 │ Cp Offn Court    │       100   │     16193 │        0 │         0 │   16193 │         0 │
+persons_sol_ntcs_hyr8-d3v9_SRC.txt:│ 12 │ Cp Offn Date     │       100   │     16193 │        0 │         0 │   16193 │         0 │
+persons_sol_ntcs_hyr8-d3v9_SRC.txt:│ 13 │ Cp Offn Disp     │       100   │     16193 │        0 │         0 │   16193 │         0 │
+persons_sol_ntcs_hyr8-d3v9_SRC.txt:│ 14 │ Cp Offn Dscrp    │       100   │     16193 │        0 │         0 │   16193 │         0 │
+reg_finan_37wu-kn3g_SRC.txt:│ 18 │ Ce Mprovince           │       100   │    223446 │       59 │         0 │  223448 │         0 │
+reg_finan_37wu-kn3g_SRC.txt:│ 60 │ Of Pbc Rpt Sent        │       100   │    223491 │       16 │         0 │  223491 │         0 │
+sol_ntcs_ew9y-6tv9_SRC.txt:│ 10 │ Nc Fname4        │        87.6 │      7086 │     1003 │         0 │    7086 │         0 │
+sol_ntcs_ew9y-6tv9_SRC.txt:│ 17 │ Nc Lname4        │        87.6 │      7086 │     1003 │         0 │    7086 │         0 │
+sol_ntcs_ew9y-6tv9_SRC.txt:│ 31 │ Nc Title4        │        87.6 │      7086 │     1003 │         0 │    7086 │         0 │

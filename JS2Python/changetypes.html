@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="font-size: 24px">
+
+Most of the changes made in removing the transformations can be categorized as below. 
+<p></p>
+
+<b>Capitalization (A)</b><br>
+For most of the datasets, all text was capitalized.  During transformation, this was changed to lower case, with proper nouns being capitalized.  This has been removed and text data will ALL be capitalized.  
+<p></p>
+
+<b>Zip Codes (B) </b><br> 
+For zip codes that have 4 digit extensions, the 4 digit extensions were removed and stored in a separate field.  This is no longer being done, the extensions are now part of the zip code, when they exist, and the field that contained the extension has been deleted. 
+<p></p>
+
+
+<b>Character Removal (E) </b><br>
+For some fields, characters were removed in order to convert the field from a string to a number.  Some examples would be hyphens and commas.  These are no longer removed. 
+<p></p>
+
+<b>True/False (C)</b><br>
+Fields that contained values such as Y/N and Yes/No were change to True/False.  The original Y/N,Yes/No values will now be found for these fields. 
+<p></p>
+
+<b>Phone Numbers (D)</b><br>
+All non-digit characters were removed from phone numbers in order to make these only digits.  This included removing ()-. and white spaces.  These characters are no longer being removed. 
+<p></p>
+
+<b>Web Addresses (F)</b><br>
+ For web addresses, http:// and https:// were removed, but no longer will be.  As these are text fields, they were changed to lower case, but will not be all capitalized.
+ <p></p>
+
+<b>Date/Time (G#) </b><br>
+There are multiple ways that differences will be found between the older, transformed dates and what is now being transmitted. Note that in all cases, what is being transmitted is correct!
+  <ul>
+    <li> Simple Format Difference (G1) - In these, the Dates are the same, but they are simply 
+        formatted differently.  This would also include removing extraneous time stamps that are often added by system software when a time was not recorded in the data.
+    </li>
+    <li>Date was indadvertantly changed to an incorrect date (G2)</li>
+    <li>Date incorrectly changed to missing (G3)</li>
+  </ul>
+<p></p>
+<b>City (H) </b><br>
+City names have been corrected/changed in several ways.  The first is simply changes in capitalization (Type A).  The second is when city names were mis-spelled and they are corrected.  These will no longer be corrected, so there will be cases where the city names are mis-spelled, sometimes drastically. 
+<p></p>
+
+<b>Empty Fixes (I) </b><br>
+The were cases where, because of changes to data and/or software, the intended Transformations resulted in empty strings being archived to CIM.  These have now been fixed and the empty strings are now replaced with the correct value(s). Note that Date chantes, G3 is a subset of these issues specific to dates.  Also, in some cases, no all values for a field were affected and in other cases, all values for the field were affected. 
+
+
+
+<hr>
+<p></p>
+
+<p>As noted, each affected dataset has a section below this one that describes in detail what was changed for that dataset.  The codes below are used to 
+describe field specific changes. </p>
+<h3>Summary Table of Changes</h3>
+<table border="1">
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Old Transformed</th>
+        <th>How it is NOW</th>
+    </tr>
+    <tr>
+        <td>A</td>
+        <td>Capitalization</td>
+        <td>Colorado Springs<br>
+            Evergreen</td>
+        <td>COLORADO SPRINGS<br>
+            EVERGREEN</td>
+    </tr>
+    <tr>
+        <td>B</td>
+        <td>Zip Codes</td>
+        <td>29072<br>
+            80222</td>
+        <td>29072-7414<br>
+            802224316</td>
+    </tr>
+    <tr>
+        <td>C</td>
+        <td>True/False</td>
+        <td>true<br>
+            false</td>
+        <td>Y<br>
+            N</td>
+    </tr>
+    <tr>
+        <td>D</td>
+        <td>Phone Numbers</td>
+        <td>8478839951<br>
+            6149234700</td>
+        <td>847-883-9951<br>
+            614-923-4700</td>
+    </tr>
+    <tr>
+        <td>E (what was replaced) </td>
+        <td>Character Removal</td>
+        <td>261195248<br>
+            822589532</td>
+        <td>26-1195248<br>
+            82-2589532</td>
+    </tr>
+    <tr>
+        <td>F</td>
+        <td>Web Addresses</td>
+        <td>charleyskids.org/<br>
+             rwjbh.org</td>
+        <td>HTTP://CHARLEYSKIDS.ORG/<br>
+            HTTPS://RWJBH.ORG
+        </td>
+    </tr>
+    <tr>
+        <td>G1</td>
+        <td>Date Format</td>
+        <td>10/19/2008 12:00:00 AM<br>
+            10/20/2005 12:00:00 AM</td>
+        <td>10/19/2008<br>
+            10/20/2005</td>
+    </tr>
+    <tr>
+        <td>G2</td>
+        <td>Date Incorrect</td>
+        <td>2011-04-20<br>2005-01-20</td>
+        <td>2009-11-04<br>2012-05-01</td>
+    </tr>
+    <tr>
+        <td>G3</td>
+        <td>Date Missing</td>
+        <td></td>
+        <td>04/13/2005<br>05/13/2024</td>
+    </tr>
+    <tr>
+        <td>H</td>
+        <td>City Name Corrections</td>
+        <td>Colorado Springs<br>Saint Petersburg</td>
+        <td>COLORADO SPGS<br>ST PETERSBURG</td>
+
+    </tr>
+</table>
+</body>

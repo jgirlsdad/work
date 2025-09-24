@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas = "<1.2"
+python-dotenv = "*"
+xlrd = "<2.0"
+openpyxl = "*"
+gspread = "*"
+oauth2client = "*"
+pyspark = "*"
+pydeequ = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"

@@ -1,0 +1,13 @@
+
+Dataset: Federal Tax-Exempt Subsection Codes in Colorado
+File: /home/joe/bic_etl/cdos/business/nonprofit/data_source/tax_exempt_cds.tsv
+
+Shape: (3, 7)
+
+╒════╤══════════════╤═════════════╤═══════════╤══════════╤═══════════╤═════════╤═══════════╕
+│    │ Column       │   % Missing │   Missing │   string │   integer │   float │   boolean │
+╞════╪══════════════╪═════════════╪═══════════╪══════════╪═══════════╪═════════╪═══════════╡
+│  0 │ Activities   │         5.9 │         2 │       32 │         0 │       2 │         0 │
+│  1 │ Irs Sectn    │         2.9 │         1 │       33 │         0 │       1 │         0 │
+│  2 │ Return Filed │         5.9 │         2 │       32 │         0 │       2 │         0 │
+╘════╧══════════════╧═════════════╧═══════════╧══════════╧═══════════╧═════════╧═══════════╛

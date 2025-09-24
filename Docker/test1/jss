@@ -1,0 +1,1200 @@
+bic_etl/cdhe/scripts/degrees_awarded.js:require('dotenv').config({path: __dirname + '/../../.env'});
+bic_etl/cdhe/scripts/degrees_awarded.js:const fs = require('fs');
+bic_etl/cdhe/scripts/degrees_awarded.js:const path = require('path');
+bic_etl/cdhe/scripts/degrees_awarded.js:const program = require('commander');
+bic_etl/cdhe/scripts/degrees_awarded.js:const parse = require('csv-parse');
+bic_etl/cdhe/scripts/degrees_awarded.js:const transform = require('stream-transform');
+bic_etl/cdhe/scripts/degrees_awarded.js:const stringify = require('csv-stringify');
+bic_etl/cdhe/scripts/degrees_awarded.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdhe/scripts/enrollment.js:require('dotenv').config({path: __dirname + '/../../.env'});
+bic_etl/cdhe/scripts/enrollment.js:const fs = require('fs');
+bic_etl/cdhe/scripts/enrollment.js:const path = require('path');
+bic_etl/cdhe/scripts/enrollment.js:const program = require('commander');
+bic_etl/cdhe/scripts/enrollment.js:const parse = require('csv-parse');
+bic_etl/cdhe/scripts/enrollment.js:const transform = require('stream-transform');
+bic_etl/cdhe/scripts/enrollment.js:const stringify = require('csv-stringify');
+bic_etl/cdhe/scripts/enrollment.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdhe/scripts/financial_aid.js:require('dotenv').config({path: __dirname + '/../../.env'});
+bic_etl/cdhe/scripts/financial_aid.js:const fs = require('fs');
+bic_etl/cdhe/scripts/financial_aid.js:const path = require('path');
+bic_etl/cdhe/scripts/financial_aid.js:const program = require('commander');
+bic_etl/cdhe/scripts/financial_aid.js:const parse = require('csv-parse');
+bic_etl/cdhe/scripts/financial_aid.js:const transform = require('stream-transform');
+bic_etl/cdhe/scripts/financial_aid.js:const stringify = require('csv-stringify');
+bic_etl/cdhe/scripts/financial_aid.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/ceo/scripts/ceo-electricity.js:require('dotenv').config({path: __dirname + '/../../.env'});
+bic_etl/ceo/scripts/ceo-electricity.js:var XLSX = require('xlsx');
+bic_etl/ceo/scripts/ceo-electricity.js:var fs = require('fs');
+bic_etl/ceo/scripts/ceo-electricity.js:var walk = require('walk');
+bic_etl/ceo/scripts/ceo-electricity.js:var program = require('commander');
+bic_etl/ceo/scripts/ceo-electricity.js:var path = require('path');
+bic_etl/ceo/scripts/ceo-electricity.js:var async = require('async');
+bic_etl/ceo/scripts/ceo-electricity.js:var bunyan = require('bunyan');
+bic_etl/general/scripts/bic_etl.js:require('dotenv').config({path: __dirname + '/../../.env'});
+bic_etl/general/scripts/bic_etl.js:const fs = require('fs');
+bic_etl/general/scripts/bic_etl.js:const child = require('child_process');
+bic_etl/general/scripts/bic_etl.js:const moment = require('moment');
+bic_etl/general/scripts/bic_etl.js:const bunyan = require('bunyan');
+bic_etl/general/scripts/bic_etl.js:const path = require('path');
+bic_etl/general/scripts/bic_etl.js:const program = require('commander');
+bic_etl/general/scripts/bic_etl.js:const find = require('find');
+bic_etl/general/scripts/bic_etl.js:const error_classes = require(path.join(process.env.bic_etl_home, 'general/scripts/error_classes.js'));
+bic_etl/general/scripts/bic_etl.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/general/scripts/bic_etl.js:const https = require('https');
+bic_etl/general/scripts/cleanup.js:require('dotenv').config({path: __dirname + '/../../.env'});
+bic_etl/general/scripts/cleanup.js:const fs = require('fs');
+bic_etl/general/scripts/cleanup.js:const path = require('path');
+bic_etl/general/scripts/cleanup.js:const moment = require('moment');
+bic_etl/general/scripts/cleanup.js:const find = require('find');
+bic_etl/general/scripts/cleanup.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/general/scripts/cleanup.js:const sg_mail  = require('@sendgrid/mail');
+bic_etl/general/scripts/cleanup.js:const zip = new require('node-zip')();
+bic_etl/general/scripts/cleanup.js:const bunyan = require('bunyan');
+bic_etl/general/scripts/compare_script.js:require('dotenv').config({path: __dirname + '/../../.env'});
+bic_etl/general/scripts/compare_script.js:const fs = require('fs');
+bic_etl/general/scripts/compare_script.js:const path = require('path');
+bic_etl/general/scripts/compare_script.js:const bunyan = require('bunyan');
+bic_etl/general/scripts/compare_script.js:const program = require('commander');
+bic_etl/general/scripts/compare_script.js:const find = require('find');
+bic_etl/general/scripts/compare_script.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/general/scripts/custom_log.js:require('dotenv').config({path: __dirname + '/../../.env'});
+bic_etl/general/scripts/custom_log.js:const bunyan = require('bunyan');
+bic_etl/general/scripts/custom_log.js:const path = require('path');
+bic_etl/general/scripts/custom_log.js:const process = require('process');
+bic_etl/general/scripts/custom_log_jlc.js:require('dotenv').config({path: __dirname + '/../../.env'});
+bic_etl/general/scripts/custom_log_jlc.js:const bunyan = require('bunyan');
+bic_etl/general/scripts/custom_log_jlc.js:const path = require('path');
+bic_etl/general/scripts/custom_log_jlc.js:const process = require('process');
+bic_etl/general/scripts/jlclib.js:const fs = require('fs');
+bic_etl/general/scripts/jlclib.js:const NReadlines = require('n-readlines');
+bic_etl/general/scripts/pull_and_setup.js:require('dotenv').config({path: __dirname + '/../../.env'});
+bic_etl/general/scripts/pull_and_setup.js:const fs = require('fs');
+bic_etl/general/scripts/pull_and_setup.js:const child = require('child_process');
+bic_etl/general/scripts/pull_and_setup.js:const path = require('path');
+bic_etl/general/scripts/pull_and_setup.js:const find = require('find');
+bic_etl/general/scripts/pull_and_setup.js:const shell = require('node-powershell');
+bic_etl/general/scripts/pull_and_setup.js:const program = require('commander');
+bic_etl/general/scripts/pull_and_setup.js:const bunyan = require('bunyan');
+bic_etl/general/scripts/pull_and_setup.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/general/scripts/pull_and_setup.js:  let missing_reqs = find.fileSync('requirements.txt', process.env.bic_etl_home);
+bic_etl/general/scripts/pull_and_setup.js:        log.info('All required packages installed');
+bic_etl/general/scripts/request_url.js:require('dotenv').config({path: __dirname + '/../../.env'});
+bic_etl/general/scripts/request_url.js:const request = require('request');
+bic_etl/general/scripts/request_url.js:const bunyan = require('bunyan');
+bic_etl/general/scripts/request_url.js:const fs = require('fs');
+bic_etl/general/scripts/request_url.js:const program = require('commander');
+bic_etl/general/scripts/request_url.js:const path = require('path');
+bic_etl/general/scripts/request_url.js:// const log_this = require(path.join(process.env.bic_etl_home, 'general/scripts/log_this.js'));
+bic_etl/general/scripts/request_url.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/general/scripts/sftp_extract.js:require('dotenv').config({path: __dirname + '/../../.env'});
+bic_etl/general/scripts/sftp_extract.js:const program = require('commander');
+bic_etl/general/scripts/sftp_extract.js:const fs = require("fs");
+bic_etl/general/scripts/sftp_extract.js:const path = require("path");
+bic_etl/general/scripts/sftp_extract.js:const Client = require('ssh2-sftp-client');
+bic_etl/general/scripts/sftp_extract.js:const moment = require('moment');
+bic_etl/general/scripts/sftp_extract.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/tchd/scripts/restaurant_inspections.js:require('dotenv').config({path: __dirname + '/../../.env'});
+bic_etl/tchd/scripts/restaurant_inspections.js:const XLSX = require('xlsx');
+bic_etl/tchd/scripts/restaurant_inspections.js:const fs = require('fs');
+bic_etl/tchd/scripts/restaurant_inspections.js:const program = require('commander');
+bic_etl/tchd/scripts/restaurant_inspections.js:const path = require('path');
+bic_etl/tchd/scripts/restaurant_inspections.js:const parse = require('csv-parse');
+bic_etl/tchd/scripts/restaurant_inspections.js:const transform = require('stream-transform');
+bic_etl/tchd/scripts/restaurant_inspections.js:const stringify = require('csv-stringify');
+bic_etl/tchd/scripts/restaurant_inspections.js:const bunyan = require('bunyan');
+bic_etl/tchd/scripts/restaurant_inspections.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/government/scripts/current_notaries.js:require('dotenv').config({path: __dirname + '/../../../.env'});
+bic_etl/cdos/government/scripts/current_notaries.js:const fs = require('fs');
+bic_etl/cdos/government/scripts/current_notaries.js:const path = require('path');
+bic_etl/cdos/government/scripts/current_notaries.js:const program = require('commander');
+bic_etl/cdos/government/scripts/current_notaries.js:const parse = require('csv-parse');
+bic_etl/cdos/government/scripts/current_notaries.js:const transform = require('stream-transform');
+bic_etl/cdos/government/scripts/current_notaries.js:const stringify = require('csv-stringify');
+bic_etl/cdos/government/scripts/current_notaries.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/health/scripts/dme_suppliers.js:require('dotenv').config({path: __dirname + '/../../../.env'});
+bic_etl/cdos/health/scripts/dme_suppliers.js:const fs = require('fs');
+bic_etl/cdos/health/scripts/dme_suppliers.js:const path = require('path');
+bic_etl/cdos/health/scripts/dme_suppliers.js:const program = require('commander');
+bic_etl/cdos/health/scripts/dme_suppliers.js:const parse = require('csv-parse');
+bic_etl/cdos/health/scripts/dme_suppliers.js:const transform = require('stream-transform');
+bic_etl/cdos/health/scripts/dme_suppliers.js:const stringify = require('csv-stringify');
+bic_etl/cdos/health/scripts/dme_suppliers.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/lobbyist/scripts/summary_info.js:require('dotenv').config({path: __dirname + '/../../../.env'});
+bic_etl/cdos/lobbyist/scripts/summary_info.js:const fs = require('fs');
+bic_etl/cdos/lobbyist/scripts/summary_info.js:const path = require('path');
+bic_etl/cdos/lobbyist/scripts/summary_info.js:const program = require('commander');
+bic_etl/cdos/lobbyist/scripts/summary_info.js:const parse = require('csv-parse');
+bic_etl/cdos/lobbyist/scripts/summary_info.js:const transform = require('stream-transform');
+bic_etl/cdos/lobbyist/scripts/summary_info.js:const stringify = require('csv-stringify');
+bic_etl/cdos/lobbyist/scripts/summary_info.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdot/general/scripts/geospatial_zip_fix.js:require('dotenv').config({path: __dirname + '/../../../.env'});
+bic_etl/cdot/general/scripts/geospatial_zip_fix.js:const adm_zip = require('adm-zip');
+bic_etl/cdot/general/scripts/geospatial_zip_fix.js:const fs = require('fs');
+bic_etl/cdot/general/scripts/geospatial_zip_fix.js:const bunyan = require('bunyan');
+bic_etl/cdot/general/scripts/geospatial_zip_fix.js:const program = require('commander');
+bic_etl/cdot/general/scripts/geospatial_zip_fix.js:const path = require('path');
+bic_etl/cdot/general/scripts/geospatial_zip_fix.js:const find = require('find');
+bic_etl/cdot/general/scripts/geospatial_zip_fix.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/dola/census/scripts/QA.js:var GoogleSpreadsheet = require('google-spreadsheet');
+bic_etl/dola/census/scripts/QA.js:// const https = require('https');
+bic_etl/dola/census/scripts/census_acs_etl.js:require('dotenv').config({path: __dirname + '/../../../.env'});
+bic_etl/dola/census/scripts/census_acs_etl.js:const fs = require('fs-extra');
+bic_etl/dola/census/scripts/census_acs_etl.js:const program = require('commander');
+bic_etl/dola/census/scripts/census_acs_etl.js:const exec = require('child_process').exec;
+bic_etl/dola/census/scripts/census_acs_etl.js:const parse = require('csv-parse');
+bic_etl/dola/census/scripts/census_acs_etl.js:const stringify = require('csv-stringify');
+bic_etl/dola/census/scripts/census_acs_etl.js:const request = require('request');
+bic_etl/dola/census/scripts/census_acs_etl.js:// const census = require('citysdk');
+bic_etl/dola/census/scripts/census_acs_etl.js:var path = require('path');
+bic_etl/dola/census/scripts/census_acs_etl.js:var bunyan = require('bunyan');
+bic_etl/dola/census/scripts/census_acs_etl.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/dola/census/scripts/census_acs_etl.js:	const GoogleSpreadsheet = require('google-spreadsheet');
+bic_etl/dola/census/scripts/dola_acs_etl.js:require('dotenv').config({path: __dirname + '/../../../.env'});
+bic_etl/dola/census/scripts/dola_acs_etl.js:const fs = require('fs-extra');
+bic_etl/dola/census/scripts/dola_acs_etl.js:const program = require('commander');
+bic_etl/dola/census/scripts/dola_acs_etl.js:const exec = require('child_process').exec;
+bic_etl/dola/census/scripts/dola_acs_etl.js:const parse = require('csv-parse');
+bic_etl/dola/census/scripts/dola_acs_etl.js:var path = require('path');
+bic_etl/dola/census/scripts/dola_acs_etl.js:var bunyan = require('bunyan');
+bic_etl/dola/census/scripts/dola_acs_etl.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/dola/census/scripts/dola_acs_etl.js:	var AdmZip= require('adm-zip');
+bic_etl/dola/census/scripts/dola_acs_etl.js:	const GoogleSpreadsheet = require('google-spreadsheet');
+bic_etl/cdhe/scripts/node_modules/commander/index.js:var EventEmitter = require('events').EventEmitter;
+bic_etl/cdhe/scripts/node_modules/commander/index.js:var spawn = require('child_process').spawn;
+bic_etl/cdhe/scripts/node_modules/commander/index.js:var path = require('path');
+bic_etl/cdhe/scripts/node_modules/commander/index.js:var fs = require('fs');
+bic_etl/cdhe/scripts/node_modules/commander/index.js:require('util').inherits(Command, EventEmitter);
+bic_etl/cdhe/scripts/node_modules/commander/index.js:  this.required = flags.indexOf('<') >= 0;
+bic_etl/cdhe/scripts/node_modules/commander/index.js: * @param {string} nameAndArgs - command name and arguments, args are `<required>` or `[optional]` and last may also be `variadic...`
+bic_etl/cdhe/scripts/node_modules/commander/index.js: * For example `["[type]"]` becomes `[{ required: false, name: 'type' }]`.
+bic_etl/cdhe/scripts/node_modules/commander/index.js:      required: false,
+bic_etl/cdhe/scripts/node_modules/commander/index.js:        argDetails.required = true;
+bic_etl/cdhe/scripts/node_modules/commander/index.js:      if (arg.required && args[i] == null) {
+bic_etl/cdhe/scripts/node_modules/commander/index.js: *     // required argument
+bic_etl/cdhe/scripts/node_modules/commander/index.js:  // preassign default value for --no-*, [optional], <required>, or plain flag if boolean value
+bic_etl/cdhe/scripts/node_modules/commander/index.js:  if (option.negate || option.optional || option.required || typeof defaultValue === 'boolean') {
+bic_etl/cdhe/scripts/node_modules/commander/index.js:    } else if (lastOpt && lastOpt.required) {
+bic_etl/cdhe/scripts/node_modules/commander/index.js:      if (opt && (opt.required || opt.optional)) {
+bic_etl/cdhe/scripts/node_modules/commander/index.js:        this._args.filter(function(a) { return a.required; }).length === 0) {
+bic_etl/cdhe/scripts/node_modules/commander/index.js:      // requires arg
+bic_etl/cdhe/scripts/node_modules/commander/index.js:      if (option.required) {
+bic_etl/cdhe/scripts/node_modules/commander/index.js:  console.error("error: missing required argument '%s'", name);
+bic_etl/cdhe/scripts/node_modules/commander/index.js: * Variadic argument with `name` is not the last argument as required.
+bic_etl/cdhe/scripts/node_modules/commander/index.js:  return arg.required
+bic_etl/cdhe/scripts/node_modules/defaults/index.js:var clone = require('clone');
+bic_etl/cdhe/scripts/node_modules/defaults/test.js:var defaults = require('./'),
+bic_etl/cdhe/scripts/node_modules/defaults/test.js:    test = require('tap').test;
+bic_etl/cdhe/scripts/node_modules/dotenv/config.js:  require('./lib/main').config(
+bic_etl/cdhe/scripts/node_modules/dotenv/config.js:      require('./lib/env-options'),
+bic_etl/cdhe/scripts/node_modules/dotenv/config.js:      require('./lib/cli-options')(process.argv)
+bic_etl/cdhe/scripts/node_modules/wcwidth/index.js:var defaults = require('defaults')
+bic_etl/cdhe/scripts/node_modules/wcwidth/index.js:var combining = require('./combining')
+bic_etl/cdos/business/business/scripts/business_entities.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/business/scripts/business_entities.js:const fs = require('fs');
+bic_etl/cdos/business/business/scripts/business_entities.js:const path = require('path');
+bic_etl/cdos/business/business/scripts/business_entities.js:const program = require('commander');
+bic_etl/cdos/business/business/scripts/business_entities.js:const parse = require('csv-parse');
+bic_etl/cdos/business/business/scripts/business_entities.js:const transform = require('stream-transform');
+bic_etl/cdos/business/business/scripts/business_entities.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/business/scripts/business_entities.js:const moment = require('moment');
+bic_etl/cdos/business/business/scripts/business_entities.js:const orr = require(path.resolve(path.join(process.env.bic_etl_home, 'cdos/business/nonprofit/scripts/orr.js')));
+bic_etl/cdos/business/business/scripts/business_entities.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/business/scripts/corporate_history.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/business/scripts/corporate_history.js:const fs = require('fs');
+bic_etl/cdos/business/business/scripts/corporate_history.js:const path = require('path');
+bic_etl/cdos/business/business/scripts/corporate_history.js:const program = require('commander');
+bic_etl/cdos/business/business/scripts/corporate_history.js:const parse = require('csv-parse');
+bic_etl/cdos/business/business/scripts/corporate_history.js:const transform = require('stream-transform');
+bic_etl/cdos/business/business/scripts/corporate_history.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/business/scripts/corporate_history.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/business/scripts/masterlist.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/business/scripts/masterlist.js:const fs = require('fs');
+bic_etl/cdos/business/business/scripts/masterlist.js:const path = require('path');
+bic_etl/cdos/business/business/scripts/masterlist.js:const program = require('commander');
+bic_etl/cdos/business/business/scripts/masterlist.js:const parse = require('csv-parse');
+bic_etl/cdos/business/business/scripts/masterlist.js:const transform = require('stream-transform');
+bic_etl/cdos/business/business/scripts/masterlist.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/business/scripts/masterlist.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/business/scripts/trademarks.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/business/scripts/trademarks.js:const fs = require('fs');
+bic_etl/cdos/business/business/scripts/trademarks.js:const path = require('path');
+bic_etl/cdos/business/business/scripts/trademarks.js:const program = require('commander');
+bic_etl/cdos/business/business/scripts/trademarks.js:const parse = require('csv-parse');
+bic_etl/cdos/business/business/scripts/trademarks.js:const transform = require('stream-transform');
+bic_etl/cdos/business/business/scripts/trademarks.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/business/scripts/trademarks.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/business/scripts/tradenames.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/business/scripts/tradenames.js:const fs = require('fs');
+bic_etl/cdos/business/business/scripts/tradenames.js:const path = require('path');
+bic_etl/cdos/business/business/scripts/tradenames.js:const program = require('commander');
+bic_etl/cdos/business/business/scripts/tradenames.js:const parse = require('csv-parse');
+bic_etl/cdos/business/business/scripts/tradenames.js:const transform = require('stream-transform');
+bic_etl/cdos/business/business/scripts/tradenames.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/business/scripts/tradenames.js:const moment = require('moment');
+bic_etl/cdos/business/business/scripts/tradenames.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/business/scripts/tradenames.js:const orr = require(path.join(process.env.bic_etl_home, 'cdos/business/nonprofit/scripts/orr.js'));
+bic_etl/cdos/business/business/scripts/tradenames.js:const custom_helper = require(path.join(process.env.bic_etl_home, 'cdos', 'business', 'nonprofit', 'scripts', 'helper_transform_functions.js'));
+bic_etl/cdos/business/nonprofit/scripts/campaign_reports.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/campaign_reports.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/campaign_reports.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/campaign_reports.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/campaign_reports.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/campaign_reports.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/campaign_reports.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/campaign_reports.js:const moment = require('moment');
+bic_etl/cdos/business/nonprofit/scripts/campaign_reports.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/nonprofit/scripts/campaign_reports.js:const custom_helper = require(path.join(process.env.bic_etl_home, 'cdos', 'business', 'nonprofit', 'scripts', 'helper_transform_functions.js'));
+bic_etl/cdos/business/nonprofit/scripts/char_orgs.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/char_orgs.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/char_orgs.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/char_orgs.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/char_orgs.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/char_orgs.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/char_orgs.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/char_orgs.js:const moment = require('moment');
+bic_etl/cdos/business/nonprofit/scripts/char_orgs.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log_jlc.js'));
+bic_etl/cdos/business/nonprofit/scripts/char_orgs.js:const jlclib = require(path.join(process.env.bic_etl_home, 'general/scripts/jlclib.js'));
+bic_etl/cdos/business/nonprofit/scripts/char_orgs_sol.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/char_orgs_sol.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/char_orgs_sol.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/char_orgs_sol.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/char_orgs_sol.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/char_orgs_sol.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/char_orgs_sol.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/char_orgs_sol.js:const moment = require('moment');
+bic_etl/cdos/business/nonprofit/scripts/char_orgs_sol.js:const orr = require(path.resolve(path.join(process.env.bic_etl_home, 'cdos/business/nonprofit/scripts/orr.js')));
+bic_etl/cdos/business/nonprofit/scripts/char_orgs_sol.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/nonprofit/scripts/char_orgs_sol.js:const custom_helper = require(path.join(process.env.bic_etl_home, 'cdos', 'business', 'nonprofit', 'scripts', 'helper_transform_functions.js'));
+bic_etl/cdos/business/nonprofit/scripts/charity_offices.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/charity_offices.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/charity_offices.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/charity_offices.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/charity_offices.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/charity_offices.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/charity_offices.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/charity_offices.js:const orr = require(path.resolve(path.join(process.env.bic_etl_home, 'cdos/business/nonprofit/scripts/orr.js')));
+bic_etl/cdos/business/nonprofit/scripts/charity_offices.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/nonprofit/scripts/charity_offices.js:const custom_helper = require(path.join(process.env.bic_etl_home, 'cdos', 'business', 'nonprofit', 'scripts', 'helper_transform_functions.js'));
+bic_etl/cdos/business/nonprofit/scripts/doing_bus_as.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/doing_bus_as.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/doing_bus_as.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/doing_bus_as.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/doing_bus_as.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/doing_bus_as.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/doing_bus_as.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/doing_bus_as.js:const moment = require('moment');
+bic_etl/cdos/business/nonprofit/scripts/doing_bus_as.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/nonprofit/scripts/old_sol_typ_entity.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/old_sol_typ_entity.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/old_sol_typ_entity.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/old_sol_typ_entity.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/old_sol_typ_entity.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/old_sol_typ_entity.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/old_sol_typ_entity.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/old_sol_typ_entity.js:const moment = require('moment');
+bic_etl/cdos/business/nonprofit/scripts/old_sol_typ_entity.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/nonprofit/scripts/orr.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/orr.js:const _ = require('underscore');
+bic_etl/cdos/business/nonprofit/scripts/other_state_solicitations.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/other_state_solicitations.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/other_state_solicitations.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/other_state_solicitations.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/other_state_solicitations.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/other_state_solicitations.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/other_state_solicitations.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/other_state_solicitations.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/nonprofit/scripts/persons_entity.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/persons_entity.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/persons_entity.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/persons_entity.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/persons_entity.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/persons_entity.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/persons_entity.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/persons_entity.js:const moment = require('moment');
+bic_etl/cdos/business/nonprofit/scripts/persons_entity.js:const orr = require(path.resolve(path.join(process.env.bic_etl_home, 'cdos/business/nonprofit/scripts/orr.js')));
+bic_etl/cdos/business/nonprofit/scripts/persons_entity.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/nonprofit/scripts/persons_entity.js:const custom_helper = require(path.join(process.env.bic_etl_home, 'cdos', 'business', 'nonprofit', 'scripts', 'helper_transform_functions.js'));
+bic_etl/cdos/business/nonprofit/scripts/purpose.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/purpose.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/purpose.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/purpose.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/purpose.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/purpose.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/purpose.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/purpose.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/nonprofit/scripts/purpose.js:const moment = require('moment');
+bic_etl/cdos/business/nonprofit/scripts/reg_finan.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/reg_finan.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/reg_finan.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/reg_finan.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/reg_finan.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/reg_finan.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/reg_finan.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/reg_finan.js:const moment = require('moment');
+bic_etl/cdos/business/nonprofit/scripts/reg_finan.js:const orr = require(path.resolve(path.join(process.env.bic_etl_home, 'cdos/business/nonprofit/scripts/orr.js')));
+bic_etl/cdos/business/nonprofit/scripts/reg_finan.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/nonprofit/scripts/reg_finan.js:const custom_helper = require(path.join(process.env.bic_etl_home, 'cdos', 'business', 'nonprofit', 'scripts', 'helper_transform_functions.js'));
+bic_etl/cdos/business/nonprofit/scripts/sol_campaign_supervisors.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/sol_campaign_supervisors.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/sol_campaign_supervisors.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/sol_campaign_supervisors.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/sol_campaign_supervisors.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/sol_campaign_supervisors.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/sol_campaign_supervisors.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/sol_campaign_supervisors.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/nonprofit/scripts/sol_campaign_supervisors.js:const moment = require('moment');
+bic_etl/cdos/business/nonprofit/scripts/sol_campaign_supervisors.js:const orr = require(path.resolve(path.join(process.env.bic_etl_home, 'cdos/business/nonprofit/scripts/orr.js')));
+bic_etl/cdos/business/nonprofit/scripts/sol_campaign_supervisors.js:const custom_helper = require(path.join(process.env.bic_etl_home, 'cdos', 'business', 'nonprofit', 'scripts', 'helper_transform_functions.js'));
+bic_etl/cdos/business/nonprofit/scripts/sol_notices.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/sol_notices.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/sol_notices.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/sol_notices.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/sol_notices.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/sol_notices.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/sol_notices.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/sol_notices.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/nonprofit/scripts/sol_notices.js:const custom_helper = require(path.join(process.env.bic_etl_home, 'cdos', 'business', 'nonprofit', 'scripts', 'helper_transform_functions.js'));
+bic_etl/cdos/business/nonprofit/scripts/sol_notices.js:const moment = require('moment');
+bic_etl/cdos/business/nonprofit/scripts/sol_ntcs_loc.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/sol_ntcs_loc.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/sol_ntcs_loc.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/sol_ntcs_loc.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/sol_ntcs_loc.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/sol_ntcs_loc.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/sol_ntcs_loc.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/sol_ntcs_loc.js:const moment = require('moment');
+bic_etl/cdos/business/nonprofit/scripts/sol_ntcs_loc.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/nonprofit/scripts/sol_ntcs_loc.js:const custom_helper = require(path.join(process.env.bic_etl_home, 'cdos', 'business', 'nonprofit', 'scripts', 'helper_transform_functions.js'));
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_entity.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_entity.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_entity.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_entity.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_entity.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_entity.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_entity.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_entity.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_entity.js:const moment = require('moment');
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_sol_ntcs.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_sol_ntcs.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_sol_ntcs.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_sol_ntcs.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_sol_ntcs.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_sol_ntcs.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_sol_ntcs.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_sol_ntcs.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/nonprofit/scripts/sol_typ_sol_ntcs.js:const moment = require('moment');
+bic_etl/cdos/business/nonprofit/scripts/tax_exempt_cds.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/nonprofit/scripts/tax_exempt_cds.js:const fs = require('fs');
+bic_etl/cdos/business/nonprofit/scripts/tax_exempt_cds.js:const path = require('path');
+bic_etl/cdos/business/nonprofit/scripts/tax_exempt_cds.js:const program = require('commander');
+bic_etl/cdos/business/nonprofit/scripts/tax_exempt_cds.js:const parse = require('csv-parse');
+bic_etl/cdos/business/nonprofit/scripts/tax_exempt_cds.js:const transform = require('stream-transform');
+bic_etl/cdos/business/nonprofit/scripts/tax_exempt_cds.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/nonprofit/scripts/tax_exempt_cds.js:const moment = require('moment');
+bic_etl/cdos/business/nonprofit/scripts/tax_exempt_cds.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/ucc/scripts/ucccoll.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/ucc/scripts/ucccoll.js:const fs = require('fs');
+bic_etl/cdos/business/ucc/scripts/ucccoll.js:const path = require('path');
+bic_etl/cdos/business/ucc/scripts/ucccoll.js:const program = require('commander');
+bic_etl/cdos/business/ucc/scripts/ucccoll.js:const parse = require('csv-parse');
+bic_etl/cdos/business/ucc/scripts/ucccoll.js:const transform = require('stream-transform');
+bic_etl/cdos/business/ucc/scripts/ucccoll.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/ucc/scripts/ucccoll.js:const find = require('find');
+bic_etl/cdos/business/ucc/scripts/ucccoll.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/ucc/scripts/uccdbtr.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/ucc/scripts/uccdbtr.js:const fs = require('fs');
+bic_etl/cdos/business/ucc/scripts/uccdbtr.js:const path = require('path');
+bic_etl/cdos/business/ucc/scripts/uccdbtr.js:const program = require('commander');
+bic_etl/cdos/business/ucc/scripts/uccdbtr.js:const parse = require('csv-parse');
+bic_etl/cdos/business/ucc/scripts/uccdbtr.js:const transform = require('stream-transform');
+bic_etl/cdos/business/ucc/scripts/uccdbtr.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/ucc/scripts/uccdbtr.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/ucc/scripts/uccsecr.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/ucc/scripts/uccsecr.js:const fs = require('fs');
+bic_etl/cdos/business/ucc/scripts/uccsecr.js:const path = require('path');
+bic_etl/cdos/business/ucc/scripts/uccsecr.js:const program = require('commander');
+bic_etl/cdos/business/ucc/scripts/uccsecr.js:const parse = require('csv-parse');
+bic_etl/cdos/business/ucc/scripts/uccsecr.js:const transform = require('stream-transform');
+bic_etl/cdos/business/ucc/scripts/uccsecr.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/ucc/scripts/uccsecr.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/cdos/business/ucc/scripts/uccstmt.js:require('dotenv').config({path: __dirname + '/../../../../.env'});
+bic_etl/cdos/business/ucc/scripts/uccstmt.js:const fs = require('fs');
+bic_etl/cdos/business/ucc/scripts/uccstmt.js:const path = require('path');
+bic_etl/cdos/business/ucc/scripts/uccstmt.js:const program = require('commander');
+bic_etl/cdos/business/ucc/scripts/uccstmt.js:const parse = require('csv-parse');
+bic_etl/cdos/business/ucc/scripts/uccstmt.js:const transform = require('stream-transform');
+bic_etl/cdos/business/ucc/scripts/uccstmt.js:const stringify = require('csv-stringify');
+bic_etl/cdos/business/ucc/scripts/uccstmt.js:const moment = require('moment');
+bic_etl/cdos/business/ucc/scripts/uccstmt.js:const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log.js'));
+bic_etl/dola/demographics/node_modules/dotenv/config.js:  require('./lib/main').config(
+bic_etl/dola/demographics/node_modules/dotenv/config.js:      require('./lib/env-options'),
+bic_etl/dola/demographics/node_modules/dotenv/config.js:      require('./lib/cli-options')(process.argv)
+bic_etl/general/scripts/node_modules/ansi-styles/index.js:const colorConvert = require('color-convert');
+bic_etl/general/scripts/node_modules/assert-plus/assert.js:var assert = require('assert');
+bic_etl/general/scripts/node_modules/assert-plus/assert.js:var Stream = require('stream').Stream;
+bic_etl/general/scripts/node_modules/assert-plus/assert.js:var util = require('util');
+bic_etl/general/scripts/node_modules/assert-plus/assert.js:        message: util.format('%s (%s) is required', name, expected),
+bic_etl/general/scripts/node_modules/async/all.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/all.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/all.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/allLimit.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/allLimit.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/allLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/allSeries.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/allSeries.js:var _eachOfSeries = require('./eachOfSeries');
+bic_etl/general/scripts/node_modules/async/allSeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/any.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/any.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/any.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/anyLimit.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/anyLimit.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/anyLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/anySeries.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/anySeries.js:var _eachOfSeries = require('./eachOfSeries');
+bic_etl/general/scripts/node_modules/async/anySeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/applyEach.js:var _applyEach = require('./internal/applyEach');
+bic_etl/general/scripts/node_modules/async/applyEach.js:var _map = require('./map');
+bic_etl/general/scripts/node_modules/async/applyEach.js: * provided, `callback` is required while `args` is still optional. The results
+bic_etl/general/scripts/node_modules/async/applyEachSeries.js:var _applyEach = require('./internal/applyEach');
+bic_etl/general/scripts/node_modules/async/applyEachSeries.js:var _mapSeries = require('./mapSeries');
+bic_etl/general/scripts/node_modules/async/asyncify.js:var _initialParams = require('./internal/initialParams');
+bic_etl/general/scripts/node_modules/async/asyncify.js:var _setImmediate = require('./internal/setImmediate');
+bic_etl/general/scripts/node_modules/async/asyncify.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/auto.js:var _once = require('./internal/once');
+bic_etl/general/scripts/node_modules/async/auto.js:var _onlyOnce = require('./internal/onlyOnce');
+bic_etl/general/scripts/node_modules/async/auto.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/auto.js:var _promiseCallback = require('./internal/promiseCallback');
+bic_etl/general/scripts/node_modules/async/auto.js: * their requirements. Each function can optionally depend on other functions
+bic_etl/general/scripts/node_modules/async/auto.js: * being completed first, and each function is run as soon as its requirements
+bic_etl/general/scripts/node_modules/async/auto.js: * function or an array of requirements, with the {@link AsyncFunction} itself the last item
+bic_etl/general/scripts/node_modules/async/auto.js: * defined by that property, i.e. can be used when specifying requirements for
+bic_etl/general/scripts/node_modules/async/autoInject.js:var _auto = require('./auto');
+bic_etl/general/scripts/node_modules/async/autoInject.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/autoInject.js: * when specifying requirements for other tasks.
+bic_etl/general/scripts/node_modules/async/autoInject.js:                throw new Error("autoInject task functions require explicit parameters.");
+bic_etl/general/scripts/node_modules/async/cargo.js:var _queue = require('./internal/queue');
+bic_etl/general/scripts/node_modules/async/cargoQueue.js:var _queue = require('./internal/queue');
+bic_etl/general/scripts/node_modules/async/compose.js:var _seq = require('./seq');
+bic_etl/general/scripts/node_modules/async/concat.js:var _concatLimit = require('./concatLimit');
+bic_etl/general/scripts/node_modules/async/concat.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/concatLimit.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/concatLimit.js:var _mapLimit = require('./mapLimit');
+bic_etl/general/scripts/node_modules/async/concatLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/concatSeries.js:var _concatLimit = require('./concatLimit');
+bic_etl/general/scripts/node_modules/async/concatSeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/detect.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/detect.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/detect.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/detectLimit.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/detectLimit.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/detectLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/detectSeries.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/detectSeries.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/detectSeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/dir.js:var _consoleFunc = require('./internal/consoleFunc');
+bic_etl/general/scripts/node_modules/async/doDuring.js:var _onlyOnce = require('./internal/onlyOnce');
+bic_etl/general/scripts/node_modules/async/doDuring.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/doDuring.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/doUntil.js:var _doWhilst = require('./doWhilst');
+bic_etl/general/scripts/node_modules/async/doUntil.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/doWhilst.js:var _onlyOnce = require('./internal/onlyOnce');
+bic_etl/general/scripts/node_modules/async/doWhilst.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/doWhilst.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/during.js:var _onlyOnce = require('./internal/onlyOnce');
+bic_etl/general/scripts/node_modules/async/during.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/during.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/each.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/each.js:var _withoutIndex = require('./internal/withoutIndex');
+bic_etl/general/scripts/node_modules/async/each.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/each.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/eachLimit.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/eachLimit.js:var _withoutIndex = require('./internal/withoutIndex');
+bic_etl/general/scripts/node_modules/async/eachLimit.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/eachLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/eachOf.js:var _isArrayLike = require('./internal/isArrayLike');
+bic_etl/general/scripts/node_modules/async/eachOf.js:var _breakLoop = require('./internal/breakLoop');
+bic_etl/general/scripts/node_modules/async/eachOf.js:var _eachOfLimit = require('./eachOfLimit');
+bic_etl/general/scripts/node_modules/async/eachOf.js:var _once = require('./internal/once');
+bic_etl/general/scripts/node_modules/async/eachOf.js:var _onlyOnce = require('./internal/onlyOnce');
+bic_etl/general/scripts/node_modules/async/eachOf.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/eachOf.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/eachOfLimit.js:var _eachOfLimit2 = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/eachOfLimit.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/eachOfLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/eachOfSeries.js:var _eachOfLimit = require('./eachOfLimit');
+bic_etl/general/scripts/node_modules/async/eachOfSeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/eachSeries.js:var _eachLimit = require('./eachLimit');
+bic_etl/general/scripts/node_modules/async/eachSeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/ensureAsync.js:var _setImmediate = require('./internal/setImmediate');
+bic_etl/general/scripts/node_modules/async/ensureAsync.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/every.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/every.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/every.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/everyLimit.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/everyLimit.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/everyLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/everySeries.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/everySeries.js:var _eachOfSeries = require('./eachOfSeries');
+bic_etl/general/scripts/node_modules/async/everySeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/filter.js:var _filter2 = require('./internal/filter');
+bic_etl/general/scripts/node_modules/async/filter.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/filter.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/filterLimit.js:var _filter2 = require('./internal/filter');
+bic_etl/general/scripts/node_modules/async/filterLimit.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/filterLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/filterSeries.js:var _filter2 = require('./internal/filter');
+bic_etl/general/scripts/node_modules/async/filterSeries.js:var _eachOfSeries = require('./eachOfSeries');
+bic_etl/general/scripts/node_modules/async/filterSeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/find.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/find.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/find.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/findLimit.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/findLimit.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/findLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/findSeries.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/findSeries.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/findSeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/flatMap.js:var _concatLimit = require('./concatLimit');
+bic_etl/general/scripts/node_modules/async/flatMap.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/flatMapLimit.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/flatMapLimit.js:var _mapLimit = require('./mapLimit');
+bic_etl/general/scripts/node_modules/async/flatMapLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/flatMapSeries.js:var _concatLimit = require('./concatLimit');
+bic_etl/general/scripts/node_modules/async/flatMapSeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/foldl.js:var _eachOfSeries = require('./eachOfSeries');
+bic_etl/general/scripts/node_modules/async/foldl.js:var _once = require('./internal/once');
+bic_etl/general/scripts/node_modules/async/foldl.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/foldl.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/foldr.js:var _reduce = require('./reduce');
+bic_etl/general/scripts/node_modules/async/forEach.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/forEach.js:var _withoutIndex = require('./internal/withoutIndex');
+bic_etl/general/scripts/node_modules/async/forEach.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/forEach.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/forEachLimit.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/forEachLimit.js:var _withoutIndex = require('./internal/withoutIndex');
+bic_etl/general/scripts/node_modules/async/forEachLimit.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/forEachLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/forEachOf.js:var _isArrayLike = require('./internal/isArrayLike');
+bic_etl/general/scripts/node_modules/async/forEachOf.js:var _breakLoop = require('./internal/breakLoop');
+bic_etl/general/scripts/node_modules/async/forEachOf.js:var _eachOfLimit = require('./eachOfLimit');
+bic_etl/general/scripts/node_modules/async/forEachOf.js:var _once = require('./internal/once');
+bic_etl/general/scripts/node_modules/async/forEachOf.js:var _onlyOnce = require('./internal/onlyOnce');
+bic_etl/general/scripts/node_modules/async/forEachOf.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/forEachOf.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/forEachOfLimit.js:var _eachOfLimit2 = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/forEachOfLimit.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/forEachOfLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/forEachOfSeries.js:var _eachOfLimit = require('./eachOfLimit');
+bic_etl/general/scripts/node_modules/async/forEachOfSeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/forEachSeries.js:var _eachLimit = require('./eachLimit');
+bic_etl/general/scripts/node_modules/async/forEachSeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/forever.js:var _onlyOnce = require('./internal/onlyOnce');
+bic_etl/general/scripts/node_modules/async/forever.js:var _ensureAsync = require('./ensureAsync');
+bic_etl/general/scripts/node_modules/async/forever.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/forever.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/groupBy.js:var _groupByLimit = require('./groupByLimit');
+bic_etl/general/scripts/node_modules/async/groupByLimit.js:var _mapLimit = require('./mapLimit');
+bic_etl/general/scripts/node_modules/async/groupByLimit.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/groupByLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/groupBySeries.js:var _groupByLimit = require('./groupByLimit');
+bic_etl/general/scripts/node_modules/async/index.js:var _apply = require('./apply');
+bic_etl/general/scripts/node_modules/async/index.js:var _applyEach = require('./applyEach');
+bic_etl/general/scripts/node_modules/async/index.js:var _applyEachSeries = require('./applyEachSeries');
+bic_etl/general/scripts/node_modules/async/index.js:var _asyncify = require('./asyncify');
+bic_etl/general/scripts/node_modules/async/index.js:var _auto = require('./auto');
+bic_etl/general/scripts/node_modules/async/index.js:var _autoInject = require('./autoInject');
+bic_etl/general/scripts/node_modules/async/index.js:var _cargo = require('./cargo');
+bic_etl/general/scripts/node_modules/async/index.js:var _cargoQueue = require('./cargoQueue');
+bic_etl/general/scripts/node_modules/async/index.js:var _compose = require('./compose');
+bic_etl/general/scripts/node_modules/async/index.js:var _concat = require('./concat');
+bic_etl/general/scripts/node_modules/async/index.js:var _concatLimit = require('./concatLimit');
+bic_etl/general/scripts/node_modules/async/index.js:var _concatSeries = require('./concatSeries');
+bic_etl/general/scripts/node_modules/async/index.js:var _constant = require('./constant');
+bic_etl/general/scripts/node_modules/async/index.js:var _detect = require('./detect');
+bic_etl/general/scripts/node_modules/async/index.js:var _detectLimit = require('./detectLimit');
+bic_etl/general/scripts/node_modules/async/index.js:var _detectSeries = require('./detectSeries');
+bic_etl/general/scripts/node_modules/async/index.js:var _dir = require('./dir');
+bic_etl/general/scripts/node_modules/async/index.js:var _doUntil = require('./doUntil');
+bic_etl/general/scripts/node_modules/async/index.js:var _doWhilst = require('./doWhilst');
+bic_etl/general/scripts/node_modules/async/index.js:var _each = require('./each');
+bic_etl/general/scripts/node_modules/async/index.js:var _eachLimit = require('./eachLimit');
+bic_etl/general/scripts/node_modules/async/index.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/index.js:var _eachOfLimit = require('./eachOfLimit');
+bic_etl/general/scripts/node_modules/async/index.js:var _eachOfSeries = require('./eachOfSeries');
+bic_etl/general/scripts/node_modules/async/index.js:var _eachSeries = require('./eachSeries');
+bic_etl/general/scripts/node_modules/async/index.js:var _ensureAsync = require('./ensureAsync');
+bic_etl/general/scripts/node_modules/async/index.js:var _every = require('./every');
+bic_etl/general/scripts/node_modules/async/index.js:var _everyLimit = require('./everyLimit');
+bic_etl/general/scripts/node_modules/async/index.js:var _everySeries = require('./everySeries');
+bic_etl/general/scripts/node_modules/async/index.js:var _filter = require('./filter');
+bic_etl/general/scripts/node_modules/async/index.js:var _filterLimit = require('./filterLimit');
+bic_etl/general/scripts/node_modules/async/index.js:var _filterSeries = require('./filterSeries');
+bic_etl/general/scripts/node_modules/async/index.js:var _forever = require('./forever');
+bic_etl/general/scripts/node_modules/async/index.js:var _groupBy = require('./groupBy');
+bic_etl/general/scripts/node_modules/async/index.js:var _groupByLimit = require('./groupByLimit');
+bic_etl/general/scripts/node_modules/async/index.js:var _groupBySeries = require('./groupBySeries');
+bic_etl/general/scripts/node_modules/async/index.js:var _log = require('./log');
+bic_etl/general/scripts/node_modules/async/index.js:var _map = require('./map');
+bic_etl/general/scripts/node_modules/async/index.js:var _mapLimit = require('./mapLimit');
+bic_etl/general/scripts/node_modules/async/index.js:var _mapSeries = require('./mapSeries');
+bic_etl/general/scripts/node_modules/async/index.js:var _mapValues = require('./mapValues');
+bic_etl/general/scripts/node_modules/async/index.js:var _mapValuesLimit = require('./mapValuesLimit');
+bic_etl/general/scripts/node_modules/async/index.js:var _mapValuesSeries = require('./mapValuesSeries');
+bic_etl/general/scripts/node_modules/async/index.js:var _memoize = require('./memoize');
+bic_etl/general/scripts/node_modules/async/index.js:var _nextTick = require('./nextTick');
+bic_etl/general/scripts/node_modules/async/index.js:var _parallel = require('./parallel');
+bic_etl/general/scripts/node_modules/async/index.js:var _parallelLimit = require('./parallelLimit');
+bic_etl/general/scripts/node_modules/async/index.js:var _priorityQueue = require('./priorityQueue');
+bic_etl/general/scripts/node_modules/async/index.js:var _queue = require('./queue');
+bic_etl/general/scripts/node_modules/async/index.js:var _race = require('./race');
+bic_etl/general/scripts/node_modules/async/index.js:var _reduce = require('./reduce');
+bic_etl/general/scripts/node_modules/async/index.js:var _reduceRight = require('./reduceRight');
+bic_etl/general/scripts/node_modules/async/index.js:var _reflect = require('./reflect');
+bic_etl/general/scripts/node_modules/async/index.js:var _reflectAll = require('./reflectAll');
+bic_etl/general/scripts/node_modules/async/index.js:var _reject = require('./reject');
+bic_etl/general/scripts/node_modules/async/index.js:var _rejectLimit = require('./rejectLimit');
+bic_etl/general/scripts/node_modules/async/index.js:var _rejectSeries = require('./rejectSeries');
+bic_etl/general/scripts/node_modules/async/index.js:var _retry = require('./retry');
+bic_etl/general/scripts/node_modules/async/index.js:var _retryable = require('./retryable');
+bic_etl/general/scripts/node_modules/async/index.js:var _seq = require('./seq');
+bic_etl/general/scripts/node_modules/async/index.js:var _series = require('./series');
+bic_etl/general/scripts/node_modules/async/index.js:var _setImmediate = require('./setImmediate');
+bic_etl/general/scripts/node_modules/async/index.js:var _some = require('./some');
+bic_etl/general/scripts/node_modules/async/index.js:var _someLimit = require('./someLimit');
+bic_etl/general/scripts/node_modules/async/index.js:var _someSeries = require('./someSeries');
+bic_etl/general/scripts/node_modules/async/index.js:var _sortBy = require('./sortBy');
+bic_etl/general/scripts/node_modules/async/index.js:var _timeout = require('./timeout');
+bic_etl/general/scripts/node_modules/async/index.js:var _times = require('./times');
+bic_etl/general/scripts/node_modules/async/index.js:var _timesLimit = require('./timesLimit');
+bic_etl/general/scripts/node_modules/async/index.js:var _timesSeries = require('./timesSeries');
+bic_etl/general/scripts/node_modules/async/index.js:var _transform = require('./transform');
+bic_etl/general/scripts/node_modules/async/index.js:var _tryEach = require('./tryEach');
+bic_etl/general/scripts/node_modules/async/index.js:var _unmemoize = require('./unmemoize');
+bic_etl/general/scripts/node_modules/async/index.js:var _until = require('./until');
+bic_etl/general/scripts/node_modules/async/index.js:var _waterfall = require('./waterfall');
+bic_etl/general/scripts/node_modules/async/index.js:var _whilst = require('./whilst');
+bic_etl/general/scripts/node_modules/async/inject.js:var _eachOfSeries = require('./eachOfSeries');
+bic_etl/general/scripts/node_modules/async/inject.js:var _once = require('./internal/once');
+bic_etl/general/scripts/node_modules/async/inject.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/inject.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/log.js:var _consoleFunc = require('./internal/consoleFunc');
+bic_etl/general/scripts/node_modules/async/map.js:var _map2 = require('./internal/map');
+bic_etl/general/scripts/node_modules/async/map.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/map.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/mapLimit.js:var _map2 = require('./internal/map');
+bic_etl/general/scripts/node_modules/async/mapLimit.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/mapLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/mapSeries.js:var _map2 = require('./internal/map');
+bic_etl/general/scripts/node_modules/async/mapSeries.js:var _eachOfSeries = require('./eachOfSeries');
+bic_etl/general/scripts/node_modules/async/mapSeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/mapValues.js:var _mapValuesLimit = require('./mapValuesLimit');
+bic_etl/general/scripts/node_modules/async/mapValuesLimit.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/mapValuesLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/mapValuesLimit.js:var _once = require('./internal/once');
+bic_etl/general/scripts/node_modules/async/mapValuesLimit.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/mapValuesSeries.js:var _mapValuesLimit = require('./mapValuesLimit');
+bic_etl/general/scripts/node_modules/async/memoize.js:var _setImmediate = require('./internal/setImmediate');
+bic_etl/general/scripts/node_modules/async/memoize.js:var _initialParams = require('./internal/initialParams');
+bic_etl/general/scripts/node_modules/async/memoize.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/nextTick.js:var _setImmediate = require('./internal/setImmediate');
+bic_etl/general/scripts/node_modules/async/parallel.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/parallel.js:var _parallel2 = require('./internal/parallel');
+bic_etl/general/scripts/node_modules/async/parallelLimit.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/parallelLimit.js:var _parallel = require('./internal/parallel');
+bic_etl/general/scripts/node_modules/async/priorityQueue.js:var _setImmediate = require('./setImmediate');
+bic_etl/general/scripts/node_modules/async/priorityQueue.js:var _queue = require('./queue');
+bic_etl/general/scripts/node_modules/async/priorityQueue.js:var _Heap = require('./internal/Heap');
+bic_etl/general/scripts/node_modules/async/queue.js:var _queue = require('./internal/queue');
+bic_etl/general/scripts/node_modules/async/queue.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/race.js:var _once = require('./internal/once');
+bic_etl/general/scripts/node_modules/async/race.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/race.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/reduce.js:var _eachOfSeries = require('./eachOfSeries');
+bic_etl/general/scripts/node_modules/async/reduce.js:var _once = require('./internal/once');
+bic_etl/general/scripts/node_modules/async/reduce.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/reduce.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/reduceRight.js:var _reduce = require('./reduce');
+bic_etl/general/scripts/node_modules/async/reflect.js:var _initialParams = require('./internal/initialParams');
+bic_etl/general/scripts/node_modules/async/reflect.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/reflectAll.js:var _reflect = require('./reflect');
+bic_etl/general/scripts/node_modules/async/reject.js:var _reject2 = require('./internal/reject');
+bic_etl/general/scripts/node_modules/async/reject.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/reject.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/rejectLimit.js:var _reject2 = require('./internal/reject');
+bic_etl/general/scripts/node_modules/async/rejectLimit.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/rejectLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/rejectSeries.js:var _reject2 = require('./internal/reject');
+bic_etl/general/scripts/node_modules/async/rejectSeries.js:var _eachOfSeries = require('./eachOfSeries');
+bic_etl/general/scripts/node_modules/async/rejectSeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/retry.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/retry.js:var _promiseCallback = require('./internal/promiseCallback');
+bic_etl/general/scripts/node_modules/async/retryable.js:var _retry = require('./retry');
+bic_etl/general/scripts/node_modules/async/retryable.js:var _initialParams = require('./internal/initialParams');
+bic_etl/general/scripts/node_modules/async/retryable.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/retryable.js:var _promiseCallback = require('./internal/promiseCallback');
+bic_etl/general/scripts/node_modules/async/select.js:var _filter2 = require('./internal/filter');
+bic_etl/general/scripts/node_modules/async/select.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/select.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/selectLimit.js:var _filter2 = require('./internal/filter');
+bic_etl/general/scripts/node_modules/async/selectLimit.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/selectLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/selectSeries.js:var _filter2 = require('./internal/filter');
+bic_etl/general/scripts/node_modules/async/selectSeries.js:var _eachOfSeries = require('./eachOfSeries');
+bic_etl/general/scripts/node_modules/async/selectSeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/seq.js:var _reduce = require('./reduce');
+bic_etl/general/scripts/node_modules/async/seq.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/seq.js:var _promiseCallback = require('./internal/promiseCallback');
+bic_etl/general/scripts/node_modules/async/series.js:var _parallel2 = require('./internal/parallel');
+bic_etl/general/scripts/node_modules/async/series.js:var _eachOfSeries = require('./eachOfSeries');
+bic_etl/general/scripts/node_modules/async/setImmediate.js:var _setImmediate = require('./internal/setImmediate');
+bic_etl/general/scripts/node_modules/async/some.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/some.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/some.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/someLimit.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/someLimit.js:var _eachOfLimit = require('./internal/eachOfLimit');
+bic_etl/general/scripts/node_modules/async/someLimit.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/someSeries.js:var _createTester = require('./internal/createTester');
+bic_etl/general/scripts/node_modules/async/someSeries.js:var _eachOfSeries = require('./eachOfSeries');
+bic_etl/general/scripts/node_modules/async/someSeries.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/sortBy.js:var _map = require('./map');
+bic_etl/general/scripts/node_modules/async/sortBy.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/sortBy.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/timeout.js:var _initialParams = require('./internal/initialParams');
+bic_etl/general/scripts/node_modules/async/timeout.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/times.js:var _timesLimit = require('./timesLimit');
+bic_etl/general/scripts/node_modules/async/timesLimit.js:var _mapLimit = require('./mapLimit');
+bic_etl/general/scripts/node_modules/async/timesLimit.js:var _range = require('./internal/range');
+bic_etl/general/scripts/node_modules/async/timesLimit.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/timesSeries.js:var _timesLimit = require('./timesLimit');
+bic_etl/general/scripts/node_modules/async/transform.js:var _eachOf = require('./eachOf');
+bic_etl/general/scripts/node_modules/async/transform.js:var _once = require('./internal/once');
+bic_etl/general/scripts/node_modules/async/transform.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/transform.js:var _promiseCallback = require('./internal/promiseCallback');
+bic_etl/general/scripts/node_modules/async/tryEach.js:var _eachSeries = require('./eachSeries');
+bic_etl/general/scripts/node_modules/async/tryEach.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/tryEach.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/until.js:var _whilst = require('./whilst');
+bic_etl/general/scripts/node_modules/async/until.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/waterfall.js:var _once = require('./internal/once');
+bic_etl/general/scripts/node_modules/async/waterfall.js:var _onlyOnce = require('./internal/onlyOnce');
+bic_etl/general/scripts/node_modules/async/waterfall.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/waterfall.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/whilst.js:var _onlyOnce = require('./internal/onlyOnce');
+bic_etl/general/scripts/node_modules/async/whilst.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/async/whilst.js:var _awaitify = require('./internal/awaitify');
+bic_etl/general/scripts/node_modules/async/wrapSync.js:var _initialParams = require('./internal/initialParams');
+bic_etl/general/scripts/node_modules/async/wrapSync.js:var _setImmediate = require('./internal/setImmediate');
+bic_etl/general/scripts/node_modules/async/wrapSync.js:var _wrapAsync = require('./internal/wrapAsync');
+bic_etl/general/scripts/node_modules/asynckit/bench.js:var asynckit = require('./')
+bic_etl/general/scripts/node_modules/asynckit/bench.js:  , async    = require('async')
+bic_etl/general/scripts/node_modules/asynckit/bench.js:  , assert   = require('assert')
+bic_etl/general/scripts/node_modules/asynckit/bench.js:var Benchmark = require('benchmark');
+bic_etl/general/scripts/node_modules/asynckit/index.js:  parallel      : require('./parallel.js'),
+bic_etl/general/scripts/node_modules/asynckit/index.js:  serial        : require('./serial.js'),
+bic_etl/general/scripts/node_modules/asynckit/index.js:  serialOrdered : require('./serialOrdered.js')
+bic_etl/general/scripts/node_modules/asynckit/parallel.js:var iterate    = require('./lib/iterate.js')
+bic_etl/general/scripts/node_modules/asynckit/parallel.js:  , initState  = require('./lib/state.js')
+bic_etl/general/scripts/node_modules/asynckit/parallel.js:  , terminator = require('./lib/terminator.js')
+bic_etl/general/scripts/node_modules/asynckit/serial.js:var serialOrdered = require('./serialOrdered.js');
+bic_etl/general/scripts/node_modules/asynckit/serialOrdered.js:var iterate    = require('./lib/iterate.js')
+bic_etl/general/scripts/node_modules/asynckit/serialOrdered.js:  , initState  = require('./lib/state.js')
+bic_etl/general/scripts/node_modules/asynckit/serialOrdered.js:  , terminator = require('./lib/terminator.js')
+bic_etl/general/scripts/node_modules/asynckit/stream.js:var inherits              = require('util').inherits
+bic_etl/general/scripts/node_modules/asynckit/stream.js:  , Readable              = require('stream').Readable
+bic_etl/general/scripts/node_modules/asynckit/stream.js:  , ReadableAsyncKit      = require('./lib/readable_asynckit.js')
+bic_etl/general/scripts/node_modules/asynckit/stream.js:  , ReadableParallel      = require('./lib/readable_parallel.js')
+bic_etl/general/scripts/node_modules/asynckit/stream.js:  , ReadableSerial        = require('./lib/readable_serial.js')
+bic_etl/general/scripts/node_modules/asynckit/stream.js:  , ReadableSerialOrdered = require('./lib/readable_serial_ordered.js')
+bic_etl/general/scripts/node_modules/aws-sign2/index.js: * Unless required by applicable law or agreed to in writing, software
+bic_etl/general/scripts/node_modules/aws-sign2/index.js:var crypto = require('crypto')
+bic_etl/general/scripts/node_modules/aws-sign2/index.js:  , parse = require('url').parse
+bic_etl/general/scripts/node_modules/aws4/aws4.js:    url = require('url'),
+bic_etl/general/scripts/node_modules/aws4/aws4.js:    querystring = require('querystring'),
+bic_etl/general/scripts/node_modules/aws4/aws4.js:    crypto = require('crypto'),
+bic_etl/general/scripts/node_modules/aws4/aws4.js:    lru = require('./lru'),
+bic_etl/general/scripts/node_modules/bcrypt-pbkdf/index.js:var crypto_hash_sha512 = require('tweetnacl').lowlevel.crypto_hash;
+bic_etl/general/scripts/node_modules/brace-expansion/index.js:var concatMap = require('concat-map');
+bic_etl/general/scripts/node_modules/brace-expansion/index.js:var balanced = require('balanced-match');
+bic_etl/general/scripts/node_modules/caseless/test.js:var tape = require('tape')
+bic_etl/general/scripts/node_modules/caseless/test.js:  , caseless = require('./')
+bic_etl/general/scripts/node_modules/chalk/index.js:const escapeStringRegexp = require('escape-string-regexp');
+bic_etl/general/scripts/node_modules/chalk/index.js:const ansiStyles = require('ansi-styles');
+bic_etl/general/scripts/node_modules/chalk/index.js:const stdoutColor = require('supports-color').stdout;
+bic_etl/general/scripts/node_modules/chalk/index.js:const template = require('./templates.js');
+bic_etl/general/scripts/node_modules/color-convert/conversions.js:var cssKeywords = require('color-name');
+bic_etl/general/scripts/node_modules/color-convert/index.js:var conversions = require('./conversions');
+bic_etl/general/scripts/node_modules/color-convert/index.js:var route = require('./route');
+bic_etl/general/scripts/node_modules/color-convert/route.js:var conversions = require('./conversions');
+bic_etl/general/scripts/node_modules/color-name/test.js:var names = require('./');
+bic_etl/general/scripts/node_modules/color-name/test.js:var assert = require('assert');
+bic_etl/general/scripts/node_modules/commander/index.js:var EventEmitter = require('events').EventEmitter;
+bic_etl/general/scripts/node_modules/commander/index.js:var spawn = require('child_process').spawn;
+bic_etl/general/scripts/node_modules/commander/index.js:var path = require('path');
+bic_etl/general/scripts/node_modules/commander/index.js:var fs = require('fs');
+bic_etl/general/scripts/node_modules/commander/index.js:require('util').inherits(Command, EventEmitter);
+bic_etl/general/scripts/node_modules/commander/index.js:  this.required = flags.indexOf('<') >= 0;
+bic_etl/general/scripts/node_modules/commander/index.js: * For example `["[type]"]` becomes `[{ required: false, name: 'type' }]`.
+bic_etl/general/scripts/node_modules/commander/index.js:      required: false,
+bic_etl/general/scripts/node_modules/commander/index.js:        argDetails.required = true;
+bic_etl/general/scripts/node_modules/commander/index.js:      if (arg.required && args[i] == null) {
+bic_etl/general/scripts/node_modules/commander/index.js: *     // required argument
+bic_etl/general/scripts/node_modules/commander/index.js:  // preassign default value only for --no-*, [optional], or <required>
+bic_etl/general/scripts/node_modules/commander/index.js:  if (!option.bool || option.optional || option.required) {
+bic_etl/general/scripts/node_modules/commander/index.js:    } else if (lastOpt && lastOpt.required) {
+bic_etl/general/scripts/node_modules/commander/index.js:        this._args.filter(function(a) { return a.required; }).length === 0) {
+bic_etl/general/scripts/node_modules/commander/index.js:      // requires arg
+bic_etl/general/scripts/node_modules/commander/index.js:      if (option.required) {
+bic_etl/general/scripts/node_modules/commander/index.js:  console.error("error: missing required argument `%s'", name);
+bic_etl/general/scripts/node_modules/commander/index.js: * Variadic argument with `name` is not the last argument as required.
+bic_etl/general/scripts/node_modules/commander/index.js:  return arg.required
+bic_etl/general/scripts/node_modules/concat-stream/index.js:var Writable = require('readable-stream').Writable
+bic_etl/general/scripts/node_modules/concat-stream/index.js:var inherits = require('inherits')
+bic_etl/general/scripts/node_modules/concat-stream/index.js:var bufferFrom = require('buffer-from')
+bic_etl/general/scripts/node_modules/concat-stream/index.js:  var U8 = require('typedarray').Uint8Array
+bic_etl/general/scripts/node_modules/core-util-is/test.js:var assert = require('tap');
+bic_etl/general/scripts/node_modules/core-util-is/test.js:var t = require('./lib/util');
+bic_etl/general/scripts/node_modules/deepmerge/index.js:var defaultIsMergeableObject = require('is-mergeable-object')
+bic_etl/general/scripts/node_modules/dotenv/config.js:  require('./lib/main').config(
+bic_etl/general/scripts/node_modules/dotenv/config.js:      require('./lib/env-options'),
+bic_etl/general/scripts/node_modules/dotenv/config.js:      require('./lib/cli-options')(process.argv)
+bic_etl/general/scripts/node_modules/dtrace-provider/dtrace-provider.js:        var binding = require('./src/build/' + builds[i] + '/DTraceProviderBindings');
+bic_etl/general/scripts/node_modules/dtrace-provider/suppress-error.js: * for the platform to lack the requirements to run node-gyp though (such as
+bic_etl/general/scripts/node_modules/dtrace-provider/suppress-error.js: * node-gyp's requirements or set up a "node" symbolic link.
+bic_etl/general/scripts/node_modules/ecc-jsbn/index.js:var crypto = require("crypto");
+bic_etl/general/scripts/node_modules/ecc-jsbn/index.js:var BigInteger = require("jsbn").BigInteger;
+bic_etl/general/scripts/node_modules/ecc-jsbn/index.js:var ECPointFp = require("./lib/ec.js").ECPointFp;
+bic_etl/general/scripts/node_modules/ecc-jsbn/index.js:var Buffer = require("safer-buffer").Buffer;
+bic_etl/general/scripts/node_modules/ecc-jsbn/index.js:exports.ECCurves = require("./lib/sec.js");
+bic_etl/general/scripts/node_modules/ecc-jsbn/test.js:var ecc = require("./index.js");
+bic_etl/general/scripts/node_modules/find/index.js:var fs = require('fs');
+bic_etl/general/scripts/node_modules/find/index.js:var path = require('path');
+bic_etl/general/scripts/node_modules/find/index.js:var Chain = require('traverse-chain');
+bic_etl/general/scripts/node_modules/forever-agent/index.js:var util = require('util')
+bic_etl/general/scripts/node_modules/forever-agent/index.js:  , Agent = require('http').Agent
+bic_etl/general/scripts/node_modules/forever-agent/index.js:  , net = require('net')
+bic_etl/general/scripts/node_modules/forever-agent/index.js:  , tls = require('tls')
+bic_etl/general/scripts/node_modules/forever-agent/index.js:  , AgentSSL = require('https').Agent
+bic_etl/general/scripts/node_modules/glob/common.js:var path = require("path")
+bic_etl/general/scripts/node_modules/glob/common.js:var minimatch = require("minimatch")
+bic_etl/general/scripts/node_modules/glob/common.js:var isAbsolute = require("path-is-absolute")
+bic_etl/general/scripts/node_modules/glob/common.js:      throw new Error("base matching requires globstar")
+bic_etl/general/scripts/node_modules/glob/glob.js:var fs = require('fs')
+bic_etl/general/scripts/node_modules/glob/glob.js:var minimatch = require('minimatch')
+bic_etl/general/scripts/node_modules/glob/glob.js:var inherits = require('inherits')
+bic_etl/general/scripts/node_modules/glob/glob.js:var EE = require('events').EventEmitter
+bic_etl/general/scripts/node_modules/glob/glob.js:var path = require('path')
+bic_etl/general/scripts/node_modules/glob/glob.js:var assert = require('assert')
+bic_etl/general/scripts/node_modules/glob/glob.js:var isAbsolute = require('path-is-absolute')
+bic_etl/general/scripts/node_modules/glob/glob.js:var globSync = require('./sync.js')
+bic_etl/general/scripts/node_modules/glob/glob.js:var common = require('./common.js')
+bic_etl/general/scripts/node_modules/glob/glob.js:var inflight = require('inflight')
+bic_etl/general/scripts/node_modules/glob/glob.js:var util = require('util')
+bic_etl/general/scripts/node_modules/glob/glob.js:var once = require('once')
+bic_etl/general/scripts/node_modules/glob/sync.js:var fs = require('fs')
+bic_etl/general/scripts/node_modules/glob/sync.js:var minimatch = require('minimatch')
+bic_etl/general/scripts/node_modules/glob/sync.js:var Glob = require('./glob.js').Glob
+bic_etl/general/scripts/node_modules/glob/sync.js:var util = require('util')
+bic_etl/general/scripts/node_modules/glob/sync.js:var path = require('path')
+bic_etl/general/scripts/node_modules/glob/sync.js:var assert = require('assert')
+bic_etl/general/scripts/node_modules/glob/sync.js:var isAbsolute = require('path-is-absolute')
+bic_etl/general/scripts/node_modules/glob/sync.js:var common = require('./common.js')
+bic_etl/general/scripts/node_modules/inflight/inflight.js:var wrappy = require('wrappy')
+bic_etl/general/scripts/node_modules/inflight/inflight.js:var once = require('once')
+bic_etl/general/scripts/node_modules/inherits/inherits.js:  var util = require('util');
+bic_etl/general/scripts/node_modules/inherits/inherits.js:  module.exports = require('./inherits_browser.js');
+bic_etl/general/scripts/node_modules/is-typedarray/test.js:var test = require('tape')
+bic_etl/general/scripts/node_modules/is-typedarray/test.js:var ista = require('./')
+bic_etl/general/scripts/node_modules/isstream/isstream.js:var stream = require('stream')
+bic_etl/general/scripts/node_modules/isstream/test.js:var tape             = require('tape')
+bic_etl/general/scripts/node_modules/isstream/test.js:  , EE               = require('events').EventEmitter
+bic_etl/general/scripts/node_modules/isstream/test.js:  , util             = require('util')
+bic_etl/general/scripts/node_modules/isstream/test.js:  , isStream         = require('./')
+bic_etl/general/scripts/node_modules/isstream/test.js:  , isReadable       = require('./').isReadable
+bic_etl/general/scripts/node_modules/isstream/test.js:  , isWritable       = require('./').isWritable
+bic_etl/general/scripts/node_modules/isstream/test.js:  , isDuplex         = require('./').isDuplex
+bic_etl/general/scripts/node_modules/isstream/test.js:  , CoreStreams      = require('stream')
+bic_etl/general/scripts/node_modules/isstream/test.js:  , ReadableStream10 = require('./readable-stream-1.0/')
+bic_etl/general/scripts/node_modules/isstream/test.js:  , ReadableStream11 = require('./readable-stream-1.1/')
+bic_etl/general/scripts/node_modules/jsbn/example.js:var BigInteger = require('./');
+bic_etl/general/scripts/node_modules/jsbn/index.js:    // Extended JavaScript BN functions, required for RSA private ops.
+bic_etl/general/scripts/node_modules/jsbn/index.js:	// Random number generator - requires a PRNG backend, e.g. prng4.js
+bic_etl/general/scripts/node_modules/json-schema-traverse/index.js:  required: true,
+bic_etl/general/scripts/node_modules/mime-db/index.js:module.exports = require('./db.json')
+bic_etl/general/scripts/node_modules/mime-types/index.js:var db = require('mime-db')
+bic_etl/general/scripts/node_modules/mime-types/index.js:var extname = require('path').extname
+bic_etl/general/scripts/node_modules/minimatch/minimatch.js:  path = require('path')
+bic_etl/general/scripts/node_modules/minimatch/minimatch.js:var expand = require('brace-expansion')
+bic_etl/general/scripts/node_modules/minimatch/minimatch.js:    throw new TypeError('glob pattern string required')
+bic_etl/general/scripts/node_modules/minimatch/minimatch.js:    throw new TypeError('glob pattern string required')
+bic_etl/general/scripts/node_modules/mkdirp/index.js:var path = require('path');
+bic_etl/general/scripts/node_modules/mkdirp/index.js:var fs = require('fs');
+bic_etl/general/scripts/node_modules/moment/ender.js:$.ender({ moment: require('moment') })
+bic_etl/general/scripts/node_modules/moment/moment.js:                aliasedRequire = require;
+bic_etl/general/scripts/node_modules/moment/moment.js:                // mark as not found to avoid repeating expensive file require call causing high CPU
+bic_etl/general/scripts/node_modules/mv/index.js:var fs = require('fs');
+bic_etl/general/scripts/node_modules/mv/index.js:var ncp = require('ncp').ncp;
+bic_etl/general/scripts/node_modules/mv/index.js:var path = require('path');
+bic_etl/general/scripts/node_modules/mv/index.js:var rimraf = require('rimraf');
+bic_etl/general/scripts/node_modules/mv/index.js:var mkdirp = require('mkdirp');
+bic_etl/general/scripts/node_modules/n-lines/app.js:let nLines = require('./index.js')
+bic_etl/general/scripts/node_modules/n-lines/bootstrap.js:const cheerio = require('cheerio');
+bic_etl/general/scripts/node_modules/n-lines/bootstrap.js:let request = require('request');
+bic_etl/general/scripts/node_modules/n-lines/bootstrap.js:var wordnet = require('wordnet');
+bic_etl/general/scripts/node_modules/n-lines/bootstrap.js:var wd = require("word-definition");
+bic_etl/general/scripts/node_modules/n-lines/test.js:const nLines = require('./index.js')
+bic_etl/general/scripts/node_modules/n-lines/test.js:const assert = require('assert');
+bic_etl/general/scripts/node_modules/n-lines/test.js:const chai = require('chai')
+bic_etl/general/scripts/node_modules/n-lines/test.js:const should = require('chai').should();
+bic_etl/general/scripts/node_modules/n-lines/test.js:const coMocha = require('co-mocha')
+bic_etl/general/scripts/node_modules/n-lines/test.js:const mocha = require('mocha')
+bic_etl/general/scripts/node_modules/n-readlines/example.js:const lineByLine = require('./readlines.js');
+bic_etl/general/scripts/node_modules/n-readlines/readlines.js:const fs = require('fs');
+bic_etl/general/scripts/node_modules/nan/include_dirs.js:console.log(require('path').relative('.', __dirname));
+bic_etl/general/scripts/node_modules/nanoid/format.js: * const format = require('nanoid/format')
+bic_etl/general/scripts/node_modules/nanoid/generate.js:var random = require('./random')
+bic_etl/general/scripts/node_modules/nanoid/generate.js:var format = require('./format')
+bic_etl/general/scripts/node_modules/nanoid/generate.js: * const generate = require('nanoid/generate')
+bic_etl/general/scripts/node_modules/nanoid/index.js:var random = require('./random')
+bic_etl/general/scripts/node_modules/nanoid/index.js:var url = require('./url')
+bic_etl/general/scripts/node_modules/nanoid/index.js: * const nanoid = require('nanoid')
+bic_etl/general/scripts/node_modules/nanoid/random.js:var crypto = require('crypto')
+bic_etl/general/scripts/node_modules/nanoid/url.js: * const url = require('nanoid/url')
+bic_etl/general/scripts/node_modules/oauth-sign/index.js:var crypto = require('crypto')
+bic_etl/general/scripts/node_modules/once/once.js:var wrappy = require('wrappy')
+bic_etl/general/scripts/node_modules/p-map/index.js:		throw new TypeError('Mapper function is required');
+bic_etl/general/scripts/node_modules/pako/index.js:var assign    = require('./lib/utils/common').assign;
+bic_etl/general/scripts/node_modules/pako/index.js:var deflate   = require('./lib/deflate');
+bic_etl/general/scripts/node_modules/pako/index.js:var inflate   = require('./lib/inflate');
+bic_etl/general/scripts/node_modules/pako/index.js:var constants = require('./lib/zlib/constants');
+bic_etl/general/scripts/node_modules/path/path.js:var util = require('util');
+bic_etl/general/scripts/node_modules/process/test.js:var assert = require('assert');
+bic_etl/general/scripts/node_modules/process/test.js:var ourProcess = require('./browser');
+bic_etl/general/scripts/node_modules/process/test.js:  var vm = require('vm');
+bic_etl/general/scripts/node_modules/process/test.js:  var fs = require('fs');
+bic_etl/general/scripts/node_modules/psl/index.js:var Punycode = require('punycode');
+bic_etl/general/scripts/node_modules/psl/index.js:internals.rules = require('./data/rules.json').map(function (rule) {
+bic_etl/general/scripts/node_modules/readable-stream/readable-browser.js:exports = module.exports = require('./lib/_stream_readable.js');
+bic_etl/general/scripts/node_modules/readable-stream/readable-browser.js:exports.Writable = require('./lib/_stream_writable.js');
+bic_etl/general/scripts/node_modules/readable-stream/readable-browser.js:exports.Duplex = require('./lib/_stream_duplex.js');
+bic_etl/general/scripts/node_modules/readable-stream/readable-browser.js:exports.Transform = require('./lib/_stream_transform.js');
+bic_etl/general/scripts/node_modules/readable-stream/readable-browser.js:exports.PassThrough = require('./lib/_stream_passthrough.js');
+bic_etl/general/scripts/node_modules/readable-stream/readable-browser.js:exports.finished = require('./lib/internal/streams/end-of-stream.js');
+bic_etl/general/scripts/node_modules/readable-stream/readable-browser.js:exports.pipeline = require('./lib/internal/streams/pipeline.js');
+bic_etl/general/scripts/node_modules/readable-stream/readable.js:var Stream = require('stream');
+bic_etl/general/scripts/node_modules/readable-stream/readable.js:  exports = module.exports = require('./lib/_stream_readable.js');
+bic_etl/general/scripts/node_modules/readable-stream/readable.js:  exports.Writable = require('./lib/_stream_writable.js');
+bic_etl/general/scripts/node_modules/readable-stream/readable.js:  exports.Duplex = require('./lib/_stream_duplex.js');
+bic_etl/general/scripts/node_modules/readable-stream/readable.js:  exports.Transform = require('./lib/_stream_transform.js');
+bic_etl/general/scripts/node_modules/readable-stream/readable.js:  exports.PassThrough = require('./lib/_stream_passthrough.js');
+bic_etl/general/scripts/node_modules/readable-stream/readable.js:  exports.finished = require('./lib/internal/streams/end-of-stream.js');
+bic_etl/general/scripts/node_modules/readable-stream/readable.js:  exports.pipeline = require('./lib/internal/streams/pipeline.js');
+bic_etl/general/scripts/node_modules/request/index.js://    Unless required by applicable law or agreed to in writing, software
+bic_etl/general/scripts/node_modules/request/index.js:var extend = require('extend')
+bic_etl/general/scripts/node_modules/request/index.js:var cookies = require('./lib/cookies')
+bic_etl/general/scripts/node_modules/request/index.js:var helpers = require('./lib/helpers')
+bic_etl/general/scripts/node_modules/request/index.js:request.Request = require('./request')
+bic_etl/general/scripts/node_modules/request/request.js:var http = require('http')
+bic_etl/general/scripts/node_modules/request/request.js:var https = require('https')
+bic_etl/general/scripts/node_modules/request/request.js:var url = require('url')
+bic_etl/general/scripts/node_modules/request/request.js:var util = require('util')
+bic_etl/general/scripts/node_modules/request/request.js:var stream = require('stream')
+bic_etl/general/scripts/node_modules/request/request.js:var zlib = require('zlib')
+bic_etl/general/scripts/node_modules/request/request.js:var aws2 = require('aws-sign2')
+bic_etl/general/scripts/node_modules/request/request.js:var aws4 = require('aws4')
+bic_etl/general/scripts/node_modules/request/request.js:var httpSignature = require('http-signature')
+bic_etl/general/scripts/node_modules/request/request.js:var mime = require('mime-types')
+bic_etl/general/scripts/node_modules/request/request.js:var caseless = require('caseless')
+bic_etl/general/scripts/node_modules/request/request.js:var ForeverAgent = require('forever-agent')
+bic_etl/general/scripts/node_modules/request/request.js:var FormData = require('form-data')
+bic_etl/general/scripts/node_modules/request/request.js:var extend = require('extend')
+bic_etl/general/scripts/node_modules/request/request.js:var isstream = require('isstream')
+bic_etl/general/scripts/node_modules/request/request.js:var isTypedArray = require('is-typedarray').strict
+bic_etl/general/scripts/node_modules/request/request.js:var helpers = require('./lib/helpers')
+bic_etl/general/scripts/node_modules/request/request.js:var cookies = require('./lib/cookies')
+bic_etl/general/scripts/node_modules/request/request.js:var getProxyFromURI = require('./lib/getProxyFromURI')
+bic_etl/general/scripts/node_modules/request/request.js:var Querystring = require('./lib/querystring').Querystring
+bic_etl/general/scripts/node_modules/request/request.js:var Har = require('./lib/har').Har
+bic_etl/general/scripts/node_modules/request/request.js:var Auth = require('./lib/auth').Auth
+bic_etl/general/scripts/node_modules/request/request.js:var OAuth = require('./lib/oauth').OAuth
+bic_etl/general/scripts/node_modules/request/request.js:var hawk = require('./lib/hawk')
+bic_etl/general/scripts/node_modules/request/request.js:var Multipart = require('./lib/multipart').Multipart
+bic_etl/general/scripts/node_modules/request/request.js:var Redirect = require('./lib/redirect').Redirect
+bic_etl/general/scripts/node_modules/request/request.js:var Tunnel = require('./lib/tunnel').Tunnel
+bic_etl/general/scripts/node_modules/request/request.js:var now = require('performance-now')
+bic_etl/general/scripts/node_modules/request/request.js:var Buffer = require('safe-buffer').Buffer
+bic_etl/general/scripts/node_modules/request/request.js:    return self.emit('error', new Error('options.uri is a required argument'))
+bic_etl/general/scripts/node_modules/retry/index.js:module.exports = require('./lib/retry');
+bic_etl/general/scripts/node_modules/rimraf/bin.js:var rimraf = require('./')
+bic_etl/general/scripts/node_modules/rimraf/rimraf.js:var assert = require("assert")
+bic_etl/general/scripts/node_modules/rimraf/rimraf.js:var path = require("path")
+bic_etl/general/scripts/node_modules/rimraf/rimraf.js:var fs = require("fs")
+bic_etl/general/scripts/node_modules/rimraf/rimraf.js:var glob = require("glob")
+bic_etl/general/scripts/node_modules/rimraf/rimraf.js:  assert.equal(typeof cb, 'function', 'rimraf: callback function required')
+bic_etl/general/scripts/node_modules/safe-buffer/index.js:var buffer = require('buffer')
+bic_etl/general/scripts/node_modules/safe-buffer/index.js:  // Copy properties from require('buffer')
+bic_etl/general/scripts/node_modules/safer-buffer/dangerous.js:var buffer = require('buffer')
+bic_etl/general/scripts/node_modules/safer-buffer/dangerous.js:var safer = require('./safer.js')
+bic_etl/general/scripts/node_modules/safer-buffer/safer.js:var buffer = require('buffer')
+bic_etl/general/scripts/node_modules/safer-buffer/tests.js:var test = require('tape')
+bic_etl/general/scripts/node_modules/safer-buffer/tests.js:var buffer = require('buffer')
+bic_etl/general/scripts/node_modules/safer-buffer/tests.js:var index = require('./')
+bic_etl/general/scripts/node_modules/safer-buffer/tests.js:var safer = require('./safer')
+bic_etl/general/scripts/node_modules/safer-buffer/tests.js:var dangerous = require('./dangerous')
+bic_etl/general/scripts/node_modules/shortid/index.js:module.exports = require('./lib/index');
+bic_etl/general/scripts/node_modules/ssh2-streams/index.js:  SFTPStream: require('./lib/sftp'),
+bic_etl/general/scripts/node_modules/ssh2-streams/index.js:  SSH2Stream: require('./lib/ssh'),
+bic_etl/general/scripts/node_modules/ssh2-streams/index.js:  utils: require('./lib/utils'),
+bic_etl/general/scripts/node_modules/ssh2-streams/index.js:  constants: require('./lib/constants')
+bic_etl/general/scripts/node_modules/supports-color/index.js:const os = require('os');
+bic_etl/general/scripts/node_modules/supports-color/index.js:const hasFlag = require('has-flag');
+bic_etl/general/scripts/node_modules/tunnel-agent/index.js:var net = require('net')
+bic_etl/general/scripts/node_modules/tunnel-agent/index.js:  , tls = require('tls')
+bic_etl/general/scripts/node_modules/tunnel-agent/index.js:  , http = require('http')
+bic_etl/general/scripts/node_modules/tunnel-agent/index.js:  , https = require('https')
+bic_etl/general/scripts/node_modules/tunnel-agent/index.js:  , events = require('events')
+bic_etl/general/scripts/node_modules/tunnel-agent/index.js:  , assert = require('assert')
+bic_etl/general/scripts/node_modules/tunnel-agent/index.js:  , util = require('util')
+bic_etl/general/scripts/node_modules/tunnel-agent/index.js:  , Buffer = require('safe-buffer').Buffer
+bic_etl/general/scripts/node_modules/tweetnacl/nacl-fast.js:  } else if (typeof require !== 'undefined') {
+bic_etl/general/scripts/node_modules/tweetnacl/nacl-fast.js:    crypto = require('crypto');
+bic_etl/general/scripts/node_modules/tweetnacl/nacl-fast.min.js:0!==r.length&&0!==t.length&&(r.length===t.length&&0===n(r,0,t,0,r.length))},r.setPRNG=function(r){rr=r},function(){var t="undefined"!=typeof self?self.crypto||self.msCrypto:null;if(t&&t.getRandomValues){var n=65536;r.setPRNG(function(r,e){var o,i=new Uint8Array(e);for(o=0;o<e;o+=n)t.getRandomValues(i.subarray(o,o+Math.min(e-o,n)));for(o=0;o<e;o++)r[o]=i[o];W(i)})}else"undefined"!=typeof require&&(t=require("crypto"),t&&t.randomBytes&&r.setPRNG(function(r,n){var e,o=t.randomBytes(n);for(e=0;e<n;e++)r[e]=o[e];W(o)}))}()}("undefined"!=typeof module&&module.exports?module.exports:self.nacl=self.nacl||{});
+bic_etl/general/scripts/node_modules/tweetnacl/nacl.js:  } else if (typeof require !== 'undefined') {
+bic_etl/general/scripts/node_modules/tweetnacl/nacl.js:    crypto = require('crypto');
+
+bic_etl/general/scripts/node_modules/typedarray/index.js:    // Each TypedArray type requires a distinct constructor instance with
+bic_etl/general/scripts/node_modules/util-deprecate/node.js:module.exports = require('util').deprecate;
+bic_etl/general/scripts/node_modules/util/util.js:exports.isBuffer = require('./support/isBuffer');
+bic_etl/general/scripts/node_modules/util/util.js:exports.inherits = require('inherits');
+bic_etl/general/scripts/node_modules/uuid/index.js:var v1 = require('./v1');
+bic_etl/general/scripts/node_modules/uuid/index.js:var v4 = require('./v4');
+bic_etl/general/scripts/node_modules/uuid/v1.js:var rng = require('./lib/rng');
+bic_etl/general/scripts/node_modules/uuid/v1.js:var bytesToUuid = require('./lib/bytesToUuid');
+bic_etl/general/scripts/node_modules/uuid/v3.js:var v35 = require('./lib/v35.js');
+bic_etl/general/scripts/node_modules/uuid/v3.js:var md5 = require('./lib/md5');
+bic_etl/general/scripts/node_modules/uuid/v4.js:var rng = require('./lib/rng');
+bic_etl/general/scripts/node_modules/uuid/v4.js:var bytesToUuid = require('./lib/bytesToUuid');
+bic_etl/general/scripts/node_modules/uuid/v5.js:var v35 = require('./lib/v35.js');
+bic_etl/general/scripts/node_modules/uuid/v5.js:var sha1 = require('./lib/sha1');
+bic_etl/tchd/scripts/node_modules/brace-expansion/index.js:var concatMap = require('concat-map');
+bic_etl/tchd/scripts/node_modules/brace-expansion/index.js:var balanced = require('balanced-match');
+bic_etl/tchd/scripts/node_modules/cfb/cfb.js:/*global module, require:false, process:false, Buffer:false, Uint8Array:false, Uint16Array:false */
+bic_etl/tchd/scripts/node_modules/cfb/cfb.js:function get_fs() { return fs || (fs = require('fs')); }
+bic_etl/tchd/scripts/node_modules/cfb/cfb.js:if(typeof require !== 'undefined' && typeof module !== 'undefined' && typeof DO_NOT_EXPORT_CFB === 'undefined') { module.exports = CFB; }
+bic_etl/tchd/scripts/node_modules/cfb/xlscfb.flow.js:/*global module, require:false, process:false, Buffer:false, Uint8Array:false, Uint16Array:false */
+bic_etl/tchd/scripts/node_modules/cfb/xlscfb.flow.js:var fs/*:: = require('fs'); */;
+bic_etl/tchd/scripts/node_modules/cfb/xlscfb.flow.js:function get_fs() { return fs || (fs = require('fs')); }
+bic_etl/tchd/scripts/node_modules/cfb/xlscfb.flow.js:if(typeof require !== 'undefined' && typeof module !== 'undefined' && typeof DO_NOT_EXPORT_CFB === 'undefined') { module.exports = CFB; }
+bic_etl/tchd/scripts/node_modules/codepage/cputils.js:    if(typeof require !== "undefined"){
+bic_etl/tchd/scripts/node_modules/codepage/cputils.js:      var cpt = require('./cptable');
+bic_etl/tchd/scripts/node_modules/commander/index.js:var EventEmitter = require('events').EventEmitter;
+bic_etl/tchd/scripts/node_modules/commander/index.js:var spawn = require('child_process').spawn;
+bic_etl/tchd/scripts/node_modules/commander/index.js:var path = require('path');
+bic_etl/tchd/scripts/node_modules/commander/index.js:var fs = require('fs');
+bic_etl/tchd/scripts/node_modules/commander/index.js:require('util').inherits(Command, EventEmitter);
+bic_etl/tchd/scripts/node_modules/commander/index.js:  this.required = flags.indexOf('<') >= 0;
+bic_etl/tchd/scripts/node_modules/commander/index.js: * For example `["[type]"]` becomes `[{ required: false, name: 'type' }]`.
+bic_etl/tchd/scripts/node_modules/commander/index.js:      required: false,
+bic_etl/tchd/scripts/node_modules/commander/index.js:        argDetails.required = true;
+bic_etl/tchd/scripts/node_modules/commander/index.js:      if (arg.required && args[i] == null) {
+bic_etl/tchd/scripts/node_modules/commander/index.js: *     // required argument
+bic_etl/tchd/scripts/node_modules/commander/index.js:  // preassign default value only for --no-*, [optional], or <required>
+bic_etl/tchd/scripts/node_modules/commander/index.js:  if (!option.bool || option.optional || option.required) {
+bic_etl/tchd/scripts/node_modules/commander/index.js:    } else if (lastOpt && lastOpt.required) {
+bic_etl/tchd/scripts/node_modules/commander/index.js:        this._args.filter(function(a) { return a.required; }).length === 0) {
+bic_etl/tchd/scripts/node_modules/commander/index.js:      // requires arg
+bic_etl/tchd/scripts/node_modules/commander/index.js:      if (option.required) {
+bic_etl/tchd/scripts/node_modules/commander/index.js:  console.error("error: missing required argument `%s'", name);
+bic_etl/tchd/scripts/node_modules/commander/index.js: * Variadic argument with `name` is not the last argument as required.
+bic_etl/tchd/scripts/node_modules/commander/index.js:  return arg.required
+bic_etl/tchd/scripts/node_modules/dotenv/config.js:  require('./lib/main').config(
+bic_etl/tchd/scripts/node_modules/dotenv/config.js:      require('./lib/env-options'),
+bic_etl/tchd/scripts/node_modules/dotenv/config.js:      require('./lib/cli-options')(process.argv)
+bic_etl/tchd/scripts/node_modules/dtrace-provider/dtrace-provider.js:        var binding = require('./src/build/' + builds[i] + '/DTraceProviderBindings');
+bic_etl/tchd/scripts/node_modules/dtrace-provider/suppress-error.js: * for the platform to lack the requirements to run node-gyp though (such as
+bic_etl/tchd/scripts/node_modules/dtrace-provider/suppress-error.js: * node-gyp's requirements or set up a "node" symbolic link.
+bic_etl/tchd/scripts/node_modules/foreachasync/test.js:  var forEachAsync = require('./forEachAsync').forEachAsync
+bic_etl/tchd/scripts/node_modules/glob/common.js:var path = require("path")
+bic_etl/tchd/scripts/node_modules/glob/common.js:var minimatch = require("minimatch")
+bic_etl/tchd/scripts/node_modules/glob/common.js:var isAbsolute = require("path-is-absolute")
+bic_etl/tchd/scripts/node_modules/glob/common.js:      throw new Error("base matching requires globstar")
+bic_etl/tchd/scripts/node_modules/glob/glob.js:var fs = require('fs')
+bic_etl/tchd/scripts/node_modules/glob/glob.js:var minimatch = require('minimatch')
+bic_etl/tchd/scripts/node_modules/glob/glob.js:var inherits = require('inherits')
+bic_etl/tchd/scripts/node_modules/glob/glob.js:var EE = require('events').EventEmitter
+bic_etl/tchd/scripts/node_modules/glob/glob.js:var path = require('path')
+bic_etl/tchd/scripts/node_modules/glob/glob.js:var assert = require('assert')
+bic_etl/tchd/scripts/node_modules/glob/glob.js:var isAbsolute = require('path-is-absolute')
+bic_etl/tchd/scripts/node_modules/glob/glob.js:var globSync = require('./sync.js')
+bic_etl/tchd/scripts/node_modules/glob/glob.js:var common = require('./common.js')
+bic_etl/tchd/scripts/node_modules/glob/glob.js:var inflight = require('inflight')
+bic_etl/tchd/scripts/node_modules/glob/glob.js:var util = require('util')
+bic_etl/tchd/scripts/node_modules/glob/glob.js:var once = require('once')
+bic_etl/tchd/scripts/node_modules/glob/sync.js:var fs = require('fs')
+bic_etl/tchd/scripts/node_modules/glob/sync.js:var minimatch = require('minimatch')
+bic_etl/tchd/scripts/node_modules/glob/sync.js:var Glob = require('./glob.js').Glob
+bic_etl/tchd/scripts/node_modules/glob/sync.js:var util = require('util')
+bic_etl/tchd/scripts/node_modules/glob/sync.js:var path = require('path')
+bic_etl/tchd/scripts/node_modules/glob/sync.js:var assert = require('assert')
+bic_etl/tchd/scripts/node_modules/glob/sync.js:var isAbsolute = require('path-is-absolute')
+bic_etl/tchd/scripts/node_modules/glob/sync.js:var common = require('./common.js')
+bic_etl/tchd/scripts/node_modules/inflight/inflight.js:var wrappy = require('wrappy')
+bic_etl/tchd/scripts/node_modules/inflight/inflight.js:var once = require('once')
+bic_etl/tchd/scripts/node_modules/inherits/inherits.js:  var util = require('util');
+bic_etl/tchd/scripts/node_modules/inherits/inherits.js:  module.exports = require('./inherits_browser.js');
+bic_etl/tchd/scripts/node_modules/minimatch/minimatch.js:  path = require('path')
+bic_etl/tchd/scripts/node_modules/minimatch/minimatch.js:var expand = require('brace-expansion')
+bic_etl/tchd/scripts/node_modules/minimatch/minimatch.js:    throw new TypeError('glob pattern string required')
+bic_etl/tchd/scripts/node_modules/minimatch/minimatch.js:    throw new TypeError('glob pattern string required')
+bic_etl/tchd/scripts/node_modules/mkdirp/index.js:var path = require('path');
+bic_etl/tchd/scripts/node_modules/mkdirp/index.js:var fs = require('fs');
+bic_etl/tchd/scripts/node_modules/moment/ender.js:$.ender({ moment: require('moment') })
+bic_etl/tchd/scripts/node_modules/moment/moment.js:                var aliasedRequire = require;
+bic_etl/tchd/scripts/node_modules/mv/index.js:var fs = require('fs');
+bic_etl/tchd/scripts/node_modules/mv/index.js:var ncp = require('ncp').ncp;
+bic_etl/tchd/scripts/node_modules/mv/index.js:var path = require('path');
+bic_etl/tchd/scripts/node_modules/mv/index.js:var rimraf = require('rimraf');
+bic_etl/tchd/scripts/node_modules/mv/index.js:var mkdirp = require('mkdirp');
+bic_etl/tchd/scripts/node_modules/nan/include_dirs.js:console.log(require('path').relative('.', __dirname));
+bic_etl/tchd/scripts/node_modules/once/once.js:var wrappy = require('wrappy')
+bic_etl/tchd/scripts/node_modules/path/path.js:var util = require('util');
+bic_etl/tchd/scripts/node_modules/printj/printj.js:/*global process:true, util:true, require:true */
+bic_etl/tchd/scripts/node_modules/printj/printj.js:if(typeof process !== 'undefined' && !!process.versions && !!process.versions.node) util=require("util");
+bic_etl/tchd/scripts/node_modules/process/test.js:var assert = require('assert');
+bic_etl/tchd/scripts/node_modules/process/test.js:var ourProcess = require('./browser');
+bic_etl/tchd/scripts/node_modules/process/test.js:  var vm = require('vm');
+bic_etl/tchd/scripts/node_modules/process/test.js:  var fs = require('fs');
+bic_etl/tchd/scripts/node_modules/rimraf/bin.js:var rimraf = require('./')
+bic_etl/tchd/scripts/node_modules/rimraf/rimraf.js:var assert = require("assert")
+bic_etl/tchd/scripts/node_modules/rimraf/rimraf.js:var path = require("path")
+bic_etl/tchd/scripts/node_modules/rimraf/rimraf.js:var fs = require("fs")
+bic_etl/tchd/scripts/node_modules/rimraf/rimraf.js:var glob = require("glob")
+bic_etl/tchd/scripts/node_modules/rimraf/rimraf.js:  assert.equal(typeof cb, 'function', 'rimraf: callback function required')
+bic_etl/tchd/scripts/node_modules/util/util.js:exports.isBuffer = require('./support/isBuffer');
+bic_etl/tchd/scripts/node_modules/util/util.js:exports.inherits = require('inherits');
+bic_etl/tchd/scripts/node_modules/xlsx/jszip.js:}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+bic_etl/tchd/scripts/node_modules/xlsx/jszip.js:                record is too small to hold required data, the field
+bic_etl/tchd/scripts/node_modules/xlsx/jszip.js: * var pako = require('pako')
+bic_etl/tchd/scripts/node_modules/xlsx/jszip.js: * var pako = require('pako')
+bic_etl/tchd/scripts/node_modules/xlsx/jszip.js: * var pako = require('pako')
+bic_etl/tchd/scripts/node_modules/xlsx/jszip.js: * var pako = require('pako')
+bic_etl/tchd/scripts/node_modules/xlsx/jszip.js: *    performed for at least two bytes (required for the zip translate_eol
+bic_etl/tchd/scripts/node_modules/xlsx/jszip.js:      requires strm.avail_out >= 258 for each loop to avoid checking for
+bic_etl/tchd/scripts/node_modules/xlsx/jszip.js:  
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:if(typeof module !== "undefined" && typeof require !== 'undefined') {
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:		if(typeof global !== 'undefined') global.cptable = require('./dist/cpexcel.js');
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:		else if(typeof window !== 'undefined') window.cptable = require('./dist/cpexcel.js');
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:/*global module, require:false, process:false, Buffer:false, Uint8Array:false, Uint16Array:false */
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:function get_fs() { return fs || (fs = require('fs')); }
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:if(typeof require !== 'undefined' && typeof module !== 'undefined' && typeof DO_NOT_EXPORT_CFB === 'undefined') { module.exports = CFB; }
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:if(typeof require !== 'undefined') try { _fs = require('fs'); } catch(e) {}
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:		if(typeof jszip === 'undefined') jszip = require('./jszip.js');
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:	else if(typeof require !== 'undefined') {
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:		try { crypto = require('crypto'); }
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:				/* ** not required . */
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:				/* ** not required . */
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:				/* ** not required . */
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:			/* 18.2.16 oleSize CT_OleSize ? (ref required) */
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:	/* required if hidden tab appears before visible tab */
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:			/* strictly speaking, the leading = is required but some writers omit */
+
+bic_etl/tchd/scripts/node_modules/xlsx/xlsx.js:	var Readable = require('stream').Readable;

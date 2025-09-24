@@ -1,0 +1,576 @@
+st3=>start: start cronGUI
+io5=>inputoutput: input: 
+op8=>operation: global ds, text2, a, string, numWindows, color1, color2, file, transform, dataStore, statsStore
+op10=>operation: global windowsStore, xrefsBy4x4, groupMenu, windowsReset
+op12=>operation: global transformProgram, dnotpLines, rowToWrite
+op14=>operation: global extractColumns, transformColumns, cimColumns
+op16=>operation: global transformSijColumns, loadSijColumns, xrefsO2T, xrefsT2O
+op18=>operation: global dfExtract, dfTransform, dfCim, missed, fields
+op20=>operation: global stats1Extract, stats1Transform, stats1Cim
+op22=>operation: global vals, cols, wid, dfoutput, mfShort, dataSetsEtl, cim4x4
+op24=>operation: global dfExtract, dfTransform, directory, values, targDir
+op26=>operation: global sourceDefFile, nfieldsadded, nfieldsAddedS
+op28=>operation: global createSourceFieldDefsTip, getSourceDefsTip, dataSetsEtl
+op30=>operation: dataStore = {}
+op32=>operation: statsStore = {}
+op34=>operation: windowsStore = {}
+op36=>operation: windowsReset = {}
+sub38=>subroutine: print('Going to INIT')
+op40=>operation: datasets = init()
+op42=>operation: cimColumns = []
+op44=>operation: transformColumns = []
+op46=>operation: extractColumns = []
+op48=>operation: transformSijColumns = []
+op50=>operation: loadSijColumns = []
+op52=>operation: nfieldsAddedS = 0
+sub54=>subroutine: toolTips()
+sub56=>subroutine: print('Getting xrrefs')
+op58=>operation: (xrefsBy4x4, xrefsByTitle, fields) = getXrefs()
+sub60=>subroutine: print('GOT MER SOME XRFS')
+op62=>operation: mf = pd.read_excel('BICDataInventoryandMetadata.xlsx', skiprows=0, sheet_name='Inventory_Active', engine='openpyxl')
+op64=>operation: mf['CIM Link'] = mf.apply(map4x4, axis=1)
+op66=>operation: mf = mf.loc[(~ mf['Standardized Title for Dataset'].isna())]
+op68=>operation: mfShort = mf[['Standardized Title for Dataset', 'Data Link', 'CIM Data Type', 'GoCodePublishYear', 'Standardized Short Description', 'CIM Link']]
+op70=>operation: mfShort['Standardized Title for Dataset'] = mfShort['Standardized Title for Dataset'].astype(str).str.strip()
+op72=>operation: header_list = list(mfShort.columns)
+op74=>operation: sourceFieldButtons = [[sg.Button('Get NEW Src Defs/Flds', font='Courier 15 bold ', visible=True, tooltip=getSourceDefsTip), sg.Button('Get Source Defs', font='Courier 15 bold ', visible=True, tooltip=getSourceDefsTip), sg.Button('Show/Edit Source-Field Defs', font='Courier 15 bold '), sg.Button(f'''Create Source-Field
+Defs from Scratch''', key='Create Source Field Defs from Scratch', font='Courier 12 bold '), sg.Button('Create Source Field Defs', font='Courier 15 bold ', visible=False, tooltip=createSourceFieldDefsTip), sg.Button('Analyze Source Defs', font='Courier 15 bold')]]
+op76=>operation: layout = [[sg.Text('BIC Cron DataSets')], [sg.Combo(datasets, enable_events=True, key='-DATASET-', font='Courier 15 bold ')], [sg.ButtonMenu('Groups', menu_def=groupMenu, key='Group Menu', font='Courier 15 bold')], [sg.Text('4x4', font='Courier 15 bold '), sg.Input('', size=[8, 1], key='-4x4-', font='Courier 10 bold '), sg.Button('4x4')], [sg.Button('Close', font='Courier 15 bold '), sg.Button('ReSet', font='Courier 15 bold '), sg.Button('STDOUT', font='Courier 15 bold')], [sg.Button('Get Error Logs', font='Courier 15 bold '), sg.Button('Show Recent Errors', font='Courier 15 bold ', visible=False), sg.Button('Update Logs', font='Courier 15 bold ', visible=False), sg.Button('View Log Summary', font='Courier 15 bold ')], [sg.FilesBrowse(button_text='Local File', initial_folder='/home/joe/bic_etl', font='CENTAUR 15', file_types=[('CSV Files', '*.csv'), ('TSV Files', '*.tsv'), ('Excel Files', '*.xlsx')], enable_events=True, key='-FILE1-')], [sg.Button('Column Analysis', font='Courier 15 bold '), sg.Button('Inv Fields', font='Courier 15 bold ')], [sg.Button('Extract', font='Courier 15 bold ', key='-EXTRACT-', visible=True), sg.Button('Analyze-Extr', font='Courier 15 bold ', key='-EXTRACTANAL-', visible=False), sg.Text('', visible=False, font='Courier 15 bold ', key='-EXTRACTINFO-')], [sg.Button('Transform', visible=True, font='Courier 15 bold ', key='-TRANSFORM-'), sg.Button('Ananlyze-Trans', font='Courier 15 bold ', key='-TRANSFORMANAL-', visible=False), sg.Button('View-Transform', font='Courier 15 bold ', key='-TRANSFORMVIEW-', visible=False), sg.Text('', visible=False, font='Courier 15 bold ', key='-TRANSFORMINFO-')], [sg.Button('CIM API', font='Courier 15 bold ', key='-CIMAPI-', visible=True), sg.Text('', visible=False, font='Courier 15 bold ', key='-CIMINFO-')], [sg.Frame('Source Field Definitions', sourceFieldButtons, font='Courier 15 bold ')], [sg.Button('Create Field Xrefs', font='Courier 15 bold '), sg.Button('Show Field Xrefs', font='Courier 15 bold'), sg.Button('Src-Trns XREFS Scratch', font='Courier 15 bold ')], [sg.Multiline(default_text='Dataset Summary', enable_events=True, font='Courier 15 bold ', background_color='lightblue', key='-OUTPUT-', size=[70, 10]), sg.Multiline(default_text='ETL Summary', key='-ETL-', size=[70, 20], font='Courier 15 bold ')]]
+sub78=>subroutine: print('Step 1')
+sub80=>subroutine: sg.theme('Dark Green 5')
+op82=>operation: window2 = sg.Window('ETL', layout, finalize=True, resizable=True)
+op84=>operation: try:
+    while True:
+        (wid, event, values) = sg.read_all_windows()
+        print('\n\n-----------------------------------\n')
+        print('event: ', event)
+        print('VALS ', values)
+        print(wid.Title)
+        print(wid)
+        if ('-FILEDEF-' in values):
+            defFile = values['-FILEDEF-']
+            print('Definition File', defFile)
+        if (('dfExtract' in globals()) and ('defFile' in locals())):
+            window2['Create Source Field Defs'].update(visible=True)
+            print('We GOOF')
+        if ((event == sg.WIN_CLOSED) or (event == 'Close')):
+            window2.close()
+            break
+        elif (event == event == 'Quit'):
+            wid.close()
+        elif ((event == '-DATASET-') or (event == '4x4') or (event == 'Group Menu')):
+            window2['-EXTRACTANAL-'].update(visible=True)
+            window2['-TRANSFORMANAL-'].update(visible=True)
+            window2['-EXTRACTINFO-'].update('')
+            window2['-TRANSFORMINFO-'].update('')
+            window2['-OUTPUT-'].update('')
+            window2['-ETL-'].update('')
+            window2['-TRANSFORMVIEW-'].update(visible=False)
+            if (event == '-DATASET-'):
+                ds = list(values.items())
+                ds = ds[0][1]
+            elif (event == '4x4'):
+                ds = xrefsBy4x4[values['-4x4-']]
+            elif (event == 'Group Menu'):
+                ds = values['Group Menu']
+            dstitle = ds
+            if (ds in mapTitles):
+                ds = mapTitles[ds]
+            ds = ds.strip()
+            print('Daetaset ', ds)
+            datasetTitle = ds
+            try:
+                mmf = mfShort.loc[(mfShort['Standardized Title for Dataset'].str.strip() == ds.strip())]
+                print('MMF ', mmf.shape[0])
+                cim4x4 = mmf['Data Link'].values.tolist()[0]
+                cimApi = f'https://data.colorado.gov/api/views/{cim4x4}/rows.csv?accessType=DOWNLOAD'
+                if (mmf.shape[0] > 0):
+                    text = f'''Title             : {mmf['Standardized Title for Dataset'].values.tolist()[0]}
+Socrata        : {mmf['Data Link'].values.tolist()[0]}
+Data Type    : {mmf['CIM Data Type'].values.tolist()[0]}
+Publish Year: {mmf['GoCodePublishYear'].values.tolist()[0]}
+CIM Link : {mmf['CIM Link'].values.tolist()[0]}
+Source Defs : {dataSetsEtl[datasetTitle]['info']['sourceFieldDict']}
+Description  : {mmf['Standardized Short Description'].values.tolist()[0]}'''
+                else:
+                    text = 'None'
+                if (ds.strip() in dataSetsEtl):
+                    (text2, extract, transform, trfile, directory, datasetCharId) = getETL(ds.strip())
+                    print('HIT HIT HIT ', text2, extract)
+                    print('DATASETCHARID 2', datasetCharId)
+                else:
+                    text2 = ''
+                    extract = ''
+                if (len(extract) > 10):
+                    window2['-EXTRACT-'].update(visible=True)
+                if (len(transform) > 10):
+                    window2['-TRANSFORM-'].update(visible=True)
+                if (len(cimApi) > 10):
+                    text2 += f'''
+
+CIM API
+{cimApi}'''
+                    window2['-CIMAPI-'].update(visible=True)
+                if (len(transform) > 4):
+                    spl = transform.split()
+                    a = spl[1]
+                    trfile = a
+                print('TRFILE ', trfile)
+                if (len(trfile) > 4):
+                    window2['-TRANSFORMVIEW-'].update(visible=True)
+                window2['-OUTPUT-'].update(text)
+                window2['-ETL-'].update(text2)
+                link = mmf['CIM Link'].values.tolist()[0]
+                string = '\n\nCLI Update\n'
+                string += f'node /home/joe/bic_etl/general/scripts/bic_etl.js'
+                string += f'''
+-t '{ds}'
+'''
+                string += '-p ?'
+                window2['-ETL-'].update(string, append=True)
+            except Exception as err:
+                print(f'Dataset Not Found: {ds}')
+                exceptionLog(err, inspect.currentframe().f_code.co_name)
+        elif (event == '-LINK-'):
+            if (len(link) > 10):
+                webbrowser.open(link)
+        elif (event == 'ReSet'):
+            for (wid, val) in windowsReset.items():
+                print('RES ', type(wid), type(val), wid)
+        elif (event == 'Src-Trns XREFS Scratch'):
+            createSrcTransFieldXrefScratch(cim4x4)
+        elif (event == 'Analyze Source Defs'):
+            targDir = os.path.join(bicHome, directory, definitionDir)
+            defFile = os.path.join(targDir, f'{cim4x4}_src_fld_defs.json')
+            analyzeFieldDefs(defFile)
+        elif (event == 'Write Source Defs'):
+            print('DATASETCHARID ', datasetCharId)
+            targDir = os.path.join(bicHome, directory, definitionDir)
+            createDir(targDir)
+            sourceDefFile = writeSoureFieldList(cim4x4, values, targDir, datasetCharId)
+        elif (event == 'Get Source Defs'):
+            getDefinitionFile()
+        elif (event == 'Create Source Field Defs'):
+            sourceDefs2Fields(defFile, dfExtract.columns)
+        elif (event == 'Show/Edit Source-Field Defs'):
+            fin = open(f'/home/joe/bic_etl/cdos/business/nonprofit/defs/{cim4x4}_src_fld_defs.json', 'r')
+            tmp = json.load(fin)
+            sourceDefs2FieldsEdit(cim4x4, datasetTitle, tmp)
+        elif (event == 'Create Source Field Defs from Scratch'):
+            sourceDefs2FieldsEdit(cim4x4, datasetTitle, {})
+        elif (event == 'Create Field Xrefs'):
+            targDir = os.path.join(bicHome, directory, definitionDir)
+            if (len(sourceDefFile) < 4):
+                sourceDefFile = os.path.join(targDir, f'{cim4x4}_src_fld_defs.json')
+            print('SDF ', sourceDefFile)
+            transTmp = createSrcTransFieldXref(cim4x4, dfExtract.columns, dfTransform.columns, sourceDefFile, targDir)
+        elif (event == 'Show Field Xrefs'):
+            targDir = os.path.join(bicHome, directory, definitionDir)
+            file = os.path.join(targDir, f'{cim4x4}_src_trns_xrefs.json')
+            showSrc2TransXrefs(file)
+        elif (event == 'Add XREF Field SCR'):
+            nfieldsAddedS += 1
+            wid[f'FRAME:CUST:{(nfieldsAddedS + 10)}'].update(visible=True)
+        elif (event == 'Add XREF Field'):
+            nfieldsAdded += 1
+            if (nfieldsAdded == 1):
+                wid[f'secondFrame'].update(visible=True)
+                wid[f'someFrame'].update(visible=True)
+            wid[f'FRAME:CUST:{nfieldsAdded}'].update(visible=True)
+        elif (event == 'Write XREF File'):
+            try:
+                targDir = os.path.join(bicHome, directory, definitionDir)
+                createDir(targDir)
+                writeFieldFileN2(cim4x4, datasetTitle, values, targDir, datasetCharId)
+            except Exception as err:
+                print('ERROR ', err)
+        elif ((event.find('LISTBOX') > (- 1)) and (values[event] == 'NONE')):
+            newname = sg.popup_get_text('Input Transform Field Name in Camel-Case', font='Courier 25 bold')
+            while (newname and ((newname.find(' ') > (- 1)) or newname[0].isupper())):
+                if (newname.find(' ') > (- 1)):
+                    sg.popup('No Spaces Allowed', font='Courier 25 bold')
+                elif newname[0].isupper():
+                    sg.popup('Please us Camel-Case (i.e. First letter NOT Capitalized)', font='Courier 25 bold')
+                newname = sg.popup_get_text('Input Field Name in Camel Case', font='Courier 25 bold')
+            if newname:
+                transTmp.append(newname)
+                transTmp = reorderList(newname, sorted(transTmp))
+                a = transTmp.copy()
+                a.append('NONE')
+                wid[event].update(values=a, set_to_index=0)
+                wid.refresh()
+        elif ((event == 'Output Text Table') or (event == 'Output CSV File')):
+            dfO = wid.metadata[1]
+            vals = wid.metadata[3]
+            cols = wid.metadata[4]
+            ff = wid.metadata[5]
+            df = pd.DataFrame(vals, columns=cols)
+            dfoutput = df.copy()
+            ofile = sg.popup_get_text('Output File?', font='Courier 15 bold')
+            if (event == 'Output Text Table'):
+                fout = open(f'OUTPUT/{ofile.strip()}', 'w+')
+                fout.write(f'''
+Dataset: {dstitle}''')
+                fout.write(f'''
+File: {ff}
+
+''')
+                fout.write(f'''Shape: {dfO.shape}
+
+''')
+                string = tabulate(df, headers='keys', tablefmt='fancy_outline')
+                fout.writelines(string)
+                fout.close()
+                sg.popup(f'Text Table written to {ofile}')
+            else:
+                c1 = []
+                c2 = []
+                c3 = []
+                c1.append(f'Dataset: {dstitle}')
+                c2.append(f'File: {ff}')
+                c3.append(f'Shape: {df.shape}')
+                for nn in range(1, len(dfoutput.columns)):
+                    c1.append('')
+                    c2.append('')
+                    c3.append('')
+                columns = pd.MultiIndex.from_arrays([c1, c2, c3, dfoutput.columns])
+                df.columns = columns
+                df.to_csv(ofile.strip(), index=False)
+        elif (event == 'Output Columns'):
+            df = wid.metadata[1]
+            ctitle = wid.metadata[2]
+            columns = sorted(list(df.columns))
+            fout = open(f'/tmp/columns.txt', 'a+')
+            fout.write(f'''
+{datetime.today()} -> {cim4x4} -> {ctitle} - {datasetTitle}
+''')
+            for col in columns:
+                fout.write((col + '\n'))
+            fout.close()
+            print(f'{len(columns)} columns written to /tmp/columns.txt')
+        elif (event == 'STDOUT'):
+            layouto = [[sg.Button('Quit')], [sg.Multiline(s=(90, 30), font='Courier 15 bold ', background_color='#F7DC6F', text_color='black', key='-STDOUT-')]]
+            wind = sg.Window('STDOUT STDERR', layouto, finalize=True, resizable=True)
+        elif (event == 'View Log Summary'):
+            (vals, cols) = getLogSummary()
+            showLogSummary(vals, cols)
+        elif (event == '-FILE1-'):
+            file = values['-FILE1-']
+            (dfLocal, stats1Local) = getFile('Local', file, window2)
+            LocalColumns = list(dfLocal.columns)
+            color1 = colorPairs[numWindows][0]
+            color2 = colorPairs[numWindows][1]
+            numWindows += 1
+            if (numWindows > len(colorPairs)):
+                numWindows = 0
+            (WindowC, tabl1, valsFile1, rowFile1Colors) = compareWindow(wid, stats1Local, dfLocal, file, 'Local File Analysis', 'DarkPurple')
+            dataStore[tabl1] = valsFile1
+            windowsOpen['main'].append(WindowC)
+        elif (event == 'Get Error Logs'):
+            (errorsByDate, errorsByName) = getRecentErrorsNew()
+            window2['Show Recent Errors'].update(visible=True)
+            window2['Update Logs'].update(visible=True)
+        elif (event == 'Show Recent Errors'):
+            w = showRecentLogs(errorsByDate)
+        elif (event == 'Include Completed'):
+            errorStatus = getErrorStatus()
+            (values, rowColrs) = orderErrors(errorsByDate, errorStatus, 1)
+            wid['-DAILY-'].update(values=values, row_colors=rowColrs)
+        elif (event == 'Update Logs'):
+            (nfiles, files) = updateLogs(1)
+            print(f'Downloaded {nfiles} for THIS month')
+            (nfiles, files) = updateLogs(2)
+            print(f'Downloaded {nfiles} for Last month')
+            (errorsByDate, errorsByName) = getRecentErrorsNew()
+            string = f'''{nfiles} Downloaded
+'''
+        elif (event == '-DAILY-Click'):
+            xx = wid.metadata
+            table = wid['-DAILY-']
+            e = table.user_bind_event
+            region = table.Widget.identify('region', e.x, e.y)
+            if (region == 'heading'):
+                row = 0
+            elif (region == 'cell'):
+                row = int(table.Widget.identify_row(e.y))
+            elif (region == 'separator'):
+                continue
+            else:
+                continue
+            string = f'''Date: {xx[(row - 1)][0]}
+
+Dataset: {xx[(row - 1)][1]}
+
+Message: {xx[(row - 1)][3]}
+'''
+            showError(xx[(row - 1)])
+        elif (event == 'Show Missing Fields'):
+            (window2, tableex, tabletr, tableci) = showMissingColumns()
+        elif (event == 'Write Log'):
+            row = wid.metadata
+            rowToWrite = [row[0], 'Joe Comeaux', row[1], row[2], values['-ERRORTITLE-'], row[4], values['-ERRORNOTES-'], values['-ERRORJIRA-'], row[(- 1)]]
+            count = 0
+            for val in rowToWrite:
+                count += 1
+            ret = toGoogleSheet(rowToWrite)
+            sg.Popup(f'''Result of {event}
+{ret}''', font='Courier 10 bold ')
+        elif ((event == 'Mark Done') or (event == 'Mark Skip')):
+            row = wid.metadata
+            status = 'Fixed'
+            if (event == 'Mark Skip'):
+                status = 'Skipped'
+            toMark = [row[(- 1)], row[1], row[3], row[2], status]
+            ret = markDone(toMark)
+            sg.Popup(f'''Result of {event}
+{ret}''', font='Courier 10 bold ')
+        elif (event == 'Full Data Column Map'):
+            (cols, vals, missed) = fullDataColumnMap(cim4x4)
+            showFullDataColMap(cols, vals)
+        elif (event == 'Get SIJ Cols'):
+            getSijColumns('')
+        elif (event == '-DNOTP-'):
+            col = values['-DNOTP-'][0]
+            if (col in dnotpLines):
+                string = ''
+                string = '\n'.join(dnotpLines[col])
+            else:
+                string = 'NOTHING FOUND'
+            sg.Popup(string)
+        elif (event == 'Column Analysis'):
+            if (transform[0:4] == 'node'):
+                trfile = transform[5:]
+            (xrefsO2T, xrefsT2O) = tranfColXref(trfile)
+            color1 = colorPairs[numWindows][0]
+            color2 = colorPairs[numWindows][1]
+            numWindows += 1
+            if (numWindows > len(colorPairs)):
+                numWindows = 0
+            showColAnal(xrefsO2T, xrefsT2O, color1, color2)
+        elif (event == 'Inv Fields'):
+            showInvFields(cim4x4)
+        elif (event == 'Compare 2 Data'):
+            ww = windowsStore['extract']
+            wdf = ww.metadata[1]
+            compare2Data(wdf, xrefsO2T)
+        elif (event == '-CIMAPI-'):
+            (dfCim, stats1Cim) = getFile('Fetch', cimApi, window2)
+            cimColumns = list(dfCim.columns)
+            color1 = generateColor('B', gmin=25, gmax=50, bmin=150, bmax=250, rmin=0, rmax=0)
+            color2 = generateColor('R', rmin=150, rmax=255, gmin=25, gmax=75, bmin=0, bmax=0)
+            numWindows += 1
+            if (numWindows > len(colorPairs)):
+                numWindows = 0
+            (WindowC, tabl1, valsFile1, rowFile1Colors) = compareWindow(wid, stats1Cim, dfCim, cimApi, 'CMI Analysis', 'DarkRed')
+            dataStore[tabl1] = valsFile1
+            windowsOpen['main'].append(WindowC)
+        elif (event == '-TRANSFORM-'):
+            print('TRANSFORM ')
+            print('tr ', transform)
+            a = subprocess.run(transform, shell=True, capture_output=True, text=True)
+            string = '\n\n-------------------------------------\n'
+            string += 'TRANSFORM Output\n'
+            tfile = ''
+            if (len(a.stderr) > 0):
+                string += f'''Error:
+ {a.stderr}'''
+            elif ((len(a.stdout) > 0) or (len(trfile) > 0)):
+                if (len(a.stdout) > 0):
+                    for msg in a.stdout.split('debug msg:'):
+                        if (msg.find('final file is at:') > (- 1)):
+                            tmp = msg.split(' ')
+                            tfile = tmp[(- 3)]
+                        elif ('Output File' in msg):
+                            il = msg.index('Output File')
+                            tmp = msg[(il + 13):]
+                            tfile = tmp
+                        tfile = tfile.strip()
+                elif (len(trfile) > 0):
+                    tfile = trfile
+                if os.path.isfile(tfile):
+                    window2['-TRANSFORMANAL-'].update(visible=True)
+                    fileStats = os.stat(tfile)
+                    dt = datetime.fromtimestamp(fileStats.st_ctime)
+                    string = f'{fileStats.st_size:,} bytes Created: {dt}  file: {tfile}'
+                    window2['-TRANSFORMINFO-'].update(string, visible=True)
+                string += f'STDOUT: {a.stdout}'
+                window2['-ETL-'].update(string, append=True)
+        elif (event == '-TRANSFORMANAL-'):
+            try:
+                print('Tr Analyze : ', tfile)
+                (dfTransform, stats1Transform) = getFile('Local', tfile, window2)
+                transformColumns = list(dfTransform.columns)
+                color1 = generateColor('G', gmin=150, gmax=250, bmin=25, bmax=75, rmin=0, rmax=0)
+                color2 = generateColor('B', bmin=150, bmax=250, gmin=75, gmax=125, rmin=0, rmax=0)
+                print('Transform Blue', color2)
+                numWindows += 1
+                if (numWindows > len(colorPairs)):
+                    numWindows = 0
+                print('TFILE ', tfile)
+                (WindowC, tabl1, valsFile1, rowFile1Colors) = compareWindow(wid, stats1Transform, dfTransform, tfile, 'Transform Analysis', 'DarkPurple')
+                dataStore[tabl1] = valsFile1
+                windowsOpen['main'].append(WindowC)
+            except Exception as err:
+                exceptionLog(err, inspect.currentframe().f_code.co_name)
+        elif (event == '-TRANSFORMVIEW-'):
+            showFile(trfile)
+        elif (event == 'Field Xrefs'):
+            fieldXrefs = createFieldFile(w4x4, list(dfExtract.columns), list(dfTransform.columns))
+        elif (event == 'Write Fields'):
+            writeFieldFile(w4x4, values, fieldXrefs, f'{bicHome}{directory}')
+        elif (event == '-EXTRACT-'):
+            print('EXTACT: ', extract)
+            a = subprocess.run(extract, shell=True, capture_output=True, text=True)
+            print('RETURN ', a)
+            string = '\n\n-------------------------------------\n'
+            string += 'Extract Output\n'
+            if (len(a.stderr) > 0):
+                string += 'fError:\n {a.stderr}'
+            string += f'STDOUT: {a.stdout}'
+            print('STRING 0', string)
+            window2['-ETL-'].update(string, append=True)
+            sx = string.find('successfully download to')
+            sxo = string[(sx + 25):].find('!')
+            file = f'/home/joe/bic_etl{string[(sx + 25):((sx + 25) + sxo)]}'
+            if (sx == (- 1)):
+                sx = string.find('File successfully saved at')
+                sxo = string[(sx + 28):].find(' ')
+                file = f'{string[(sx + 27):((sx + 28) + sxo)]}'
+            print('STRING ', string)
+            print('SX ', sx)
+            print(f'Extracted File in :{file}:')
+            if os.path.isfile(file):
+                window2['-EXTRACTANAL-'].update(visible=True)
+                fileStats = os.stat(file)
+                dt = datetime.fromtimestamp(fileStats.st_ctime)
+                string = f'{fileStats.st_size:,} bytes Created: {dt}  file: {file}'
+                window2['-EXTRACTINFO-'].update(string, visible=True)
+        elif (event == '-EXTRACTANAL-'):
+            file = stringArgs(extract)
+            for file in dataSetsEtl[ds]['extract']['localFiles']:
+                file = f'{bicHome}{file}'
+                print('EFILE ', file)
+                (dfExtract, stats1Extract) = getFile('Local', file, window2)
+                extractColumns = list(dfExtract.columns)
+                color1 = generateColor('G', gmin=150, gmax=250, rmin=25, rmax=75, bmin=0, bmax=0)
+                color2 = generateColor('R', rmin=150, rmax=250, gmin=25, gmax=50, bmin=0, bmax=0)
+                numWindows += 1
+                if (numWindows > len(colorPairs)):
+                    numWindows = 0
+                (WindowC, tabl1, valsFile1, rowFile1Colors) = compareWindow(wid, stats1Extract, dfExtract, file, 'Extract Analysis', 'DarkBlue16')
+                dataStore[tabl1] = valsFile1
+                windowsOpen['main'].append(WindowC)
+                windowsStore['extract'] = WindowC
+                window2['Analyze Source Defs'].update(visible=True)
+        elif (event == '-TABLEFILE-Click'):
+            try:
+                tabl1 = wid['-TABLEFILE-']
+                dat = wid.metadata[3]
+                (row, col) = getRowClicked(tabl1, dat)
+                if (row == 0):
+                    tabl1 = wid['-TABLEFILE-']
+                    header = headerStore[tabl1]
+                    stats1 = statsStore[tabl1]
+                    (valsFile1, columnSortStateTable1) = sortTable(row, stats1, tabl1, event, header)
+                    rowFile1Colors = setRowColors(valsFile1, color1, color2, 'pink', header)
+                    wid['-TABLEFILE-'].update(values=valsFile1, row_colors=rowFile1Colors)
+                    wid['-TABLEFILE-'].metadata = columnSortStateTable1
+                else:
+                    df1 = wid.metadata[1]
+                    unq = df1[col].value_counts()
+                    colorTheme = wid.metadata[0]
+                    (w, t, values, uHead) = showDFUN(col, unq, wid, color1, color2, colorTheme)
+                    headerStore[t] = uHead
+                    windowsOpen['main'].append(w)
+            except Exception as err:
+                exceptionLog(err, inspect.currentframe().f_code.co_name)
+        elif (event == '-TABLE-Click'):
+            try:
+                table = wid['-TABLE-']
+                (row, val) = getRowClickedUN(table)
+                if (row == 0):
+                    sortUniqe(table, wid, dataStore, headerStore)
+                else:
+                    widP = wid.metadata[0]
+                    col = wid.metadata[1]
+                    df = widP.metadata[1]
+                    tmp = df.loc[(df[col] == val)]
+                    showDfRecs(tmp, col, val, widP, title='DF Unique Record Values')
+            except Exception as err:
+                exceptionLog(err, inspect.currentframe().f_code.co_name)
+        elif (event in ['-TABLEMISSEXTR-Click', '-TABLEMISSTRANS-Click', '-TABLEMISSCIM-Click']):
+            if (event == '-TABLEMISSEXTR-Click'):
+                tabl1 = wid['-TABLEMISSEXTR-']
+                title = 'EXTRACT'
+                df = dfExtract
+            elif (event == '-TABLEMISSTRANS-Click'):
+                tabl1 = wid['-TABLEMISSTRANS-']
+                df = dfTransform
+                title = 'TRANSFORM'
+            elif (event == '-TABLEMISSCIM-Click'):
+                tabl1 = wid['-TABLEMISSCIM-']
+                df = dfCim
+                title = 'CIM'
+            vals = dataStore[tabl1]
+            (row, col) = getRowClicked(tabl1, vals)
+            unq = df[col].value_counts()
+            colorTheme = wid.metadata[0]
+            (w, t, values, uHead) = showDFUN(col, unq, wid, color1, color2, colorTheme, title)
+            headerStore[t] = uHead
+            windowsOpen['main'].append(w)
+except Exception as err:
+    exceptionLog(err, inspect.currentframe().f_code.co_name)
+cond87=>condition: for wid in windowsOpen['main']
+cond105=>condition: if wid
+sub109=>subroutine: wid.close()
+op111=>operation: wid = None
+e118=>end: end cronGUI
+
+st3->io5
+io5->op8
+op8->op10
+op10->op12
+op12->op14
+op14->op16
+op16->op18
+op18->op20
+op20->op22
+op22->op24
+op24->op26
+op26->op28
+op28->op30
+op30->op32
+op32->op34
+op34->op36
+op36->sub38
+sub38->op40
+op40->op42
+op42->op44
+op44->op46
+op46->op48
+op48->op50
+op50->op52
+op52->sub54
+sub54->sub56
+sub56->op58
+op58->sub60
+sub60->op62
+op62->op64
+op64->op66
+op66->op68
+op68->op70
+op70->op72
+op72->op74
+op74->op76
+op76->sub78
+sub78->sub80
+sub80->op82
+op82->op84
+op84->cond87
+cond87(yes)->cond105
+cond105(yes)->sub109
+sub109->op111
+op111->cond87
+cond105(no)->cond87
+cond87(no)->e118
+

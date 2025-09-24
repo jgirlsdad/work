@@ -1,0 +1,15 @@
+# syntax=docker/dockerfile:1.0.0-experimental
+
+FROM nikolaik/python-nodejs:python3.12-nodejs20-bullseye
+
+# install git 
+#RUN yum install -y git
+
+RUN eval `ssh-agent -s` && ssh-add /ssh/id_rsa
+
+
+RUN mkdir -m 700 /root/.ssh; \
+  touch -m 600 /root/.ssh/known_hosts; \
+  ssh-keyscan github.com > /root/.ssh/known_hosts
+
+RUN --mount=type=ssh,id=github git clone git@github.com:GoCodeColorado/bic_etl.git

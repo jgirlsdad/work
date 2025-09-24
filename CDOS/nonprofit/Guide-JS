@@ -1,0 +1,35 @@
+//  This goes at the top of the main program
+const custom_log = require(path.join(process.env.bic_etl_home, 'general/scripts/custom_log_jlc.js'));
+
+
+const jlclib = require(path.join(process.env.bic_etl_home, 'general/scripts/jlclib.js'));
+
+let dict_file = path.resolve(process.env.bic_etl_home, 'cdos/business/nonprofit', 'defs', 'icqv-mi3c_char_orgs_ext_src_trns_xrefs.json')
+
+//  added to the programs options setup
+.option('-w, --w4x4 <n>','icqv-mi3c')
+//  These can go anywhere in the main program, but before transformation is called
+global.nrecs=0;
+global.header_process= {};
+
+program.w4x4 = (program.w4x4) ? program.w4x4 : '3qtu-edua';
+
+//  This will replace the current custom log setup, so that 5the 4x4 can now be passed in
+custom_log.setup(program.title,program.w4x4, function(custom_logger) {
+    log = custom_logger;
+    initiate();
+    })
+
+//  This goes in the init function, b/c that is where the file_path is set... can be called after the init function if yuou need to
+jlclib.check_source_fields(log,program.title,file_path,dict_file)
+
+//  This goes in the transformation function
+nrecs=nrecs+1
+    if (nrecs == 1){
+       global.header_process = Object.keys(tRow)
+    }
+
+// Added to the output.stream.on()   call
+
+jlclib.check_transformed_fields(log,program.title,outfile,dict_file,header_process,header_columns);
+

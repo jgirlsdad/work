@@ -1,0 +1,14 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<https://example.org/dataset/my-multilingual-dataset> a dcat:Dataset ;
+    dct:description "A sample dataset with multiple language versions"@en ;
+    dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+    dct:title "My Multilingual Dataset"@en ;
+    dcat:distribution <https://example.org/dataset/my-multilingual-dataset/distribution/en> .
+
+<https://example.org/dataset/my-multilingual-dataset/distribution/en> a dcat:Distribution ;
+    dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+    dct:title "English Version"@en ;
+    dcat:mediaType "text/csv" .
+
