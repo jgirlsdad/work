@@ -154,11 +154,15 @@ def main():
  #   load = "best_run4.keras"
     load = None
    # feats.to_csv("feats.csv")
-    print(feats)
-    with open("feats.csv", "w", newline="", encoding="utf-8") as f:
-         writer = csv.writer(f)
-         writer.writerows(feats)
-    df.to_csv("target.csv")
+   
+    # with open("feats.csv", "w", newline="", encoding="utf-8") as f:
+    #      writer = csv.writer(f)
+    #      writer.writerows(feats)
+    tmpdf = df.loc[df["Point"] == 500]
+    tmpdf.reset_index(drop=True, inplace=True)
+    featdDf = pd.DataFrame(feats,columns=["F1","F2","F3","F4","F5","F6"])
+    tmpdf = tmpdf.join(featdDf)
+    tmpdf.to_csv("full_data.csv",index=False)
     # 2) Windows
     TIMESTEPS, HZ = 24, 8
     X, y = build_windows(feats, target, timesteps=TIMESTEPS, forecast_horizon=HZ)
