@@ -16,6 +16,7 @@ warnings.filterwarnings("ignore")
 import statsmodels.api as sm
 
 def read_wx_data(db_path):
+    print("DB ZPATH:", db_path)
     conn = sqlite3.connect(db_path)
     df = pd.read_sql("select * from MEANS_TTdRHVPD", conn)
     conn.close()
@@ -123,6 +124,26 @@ def forecast_mae(model_res, y_va: pd.DataFrame, X_va: pd.DataFrame):
     mae = float(np.mean(np.abs(y_va.squeeze() - yhat)))
     return mae, yhat
 
+def forecast_for_row(row, model, X_features):
+    """
+    Selects the regime by row['month'], gets the corresponding model,
+    builds a 1xF input from the row's feature values, and returns a scalar forecast.
+    Returns NaN if no model is available for the chosen regime.
+    """
+    # Choose regime by month; default to 'baseline' if not found
+    regime = REGIME_BY_MONTH.get(int(row["month"]), "baseline")
+    model = models.get(regime)
+    if model is None:
+        return np.nan
+
+    # Build 1xF feature vector for this row (must align with training features)
+    x_vec = X_features.loc[row.name].values.astype(np.float32)
+    x_input = np.expand_dims(x_vec, axis=0)  # shape (1, F)
+
+    # Predict and squeeze to scalar
+    pred = model.predict(x_input, verbose=0)
+    return float(np.squeeze(pred))
+
 def main():
     p = argparse.ArgumentParser(description="SARIMA/SARIMAX comparison for multiple horizons.")
     p.add_argument("--climate_dir", type=str, default="data/Climate-Indices")
@@ -192,6 +213,36 @@ def main():
     else:
         if args.lstm_csv:
             print(f"LSTM CSV '{args.lstm_csv}' not found; skipping comparison.")
+# Split into train/test (e.g., last 20% test)
+    split_idx = int(len(df) * 0.8)
+    train_df = df.iloc[:split_idx].copy()
+    test_df  = df.iloc[split_idx:].copy()
+
+    # Forecast only for test set
+    test_df["Forecast"] = test_df.apply(lambda r: forecast_for_row(r, models, df[feature_cols]), axis=1)
+    test_df["Error"] = test_df[target_col] - test_df["Forecast"]
+    test_df["AbsError"] = test_df["Error"].abs()
+
+    # Output year-month table
+   # --- Added: test-period forecast outputs ---
+    # --- Added: test-period forecast outputs ---
+    split_idx = int(len(df) * 0.8)
+    test_df = df.iloc[split_idx:].copy()
+
+    # Save detailed forecast table for the test period
+    test_df_out = test_df[["Yrmo", target_col, "Forecast", "month"]].rename(
+        columns={target_col: "Observed"}
+    )
+    test_df_out.to_csv("forecast_results_sarima_test.csv", index=False)
+
+    # Compute monthly MAE from existing errors
+    mae_test = test_df.groupby("month")["AbsError"].mean().reset_index()
+    mae_test.columns = ["month", "Mean_MAE"]
+    mae_test.to_csv("monthly_mae_sarima_test.csv", index=False)
+
+    print("\n💾 Saved forecast_results_sarima_test.csv and monthly_mae_sarima_test.csv")
+
+
 
 if __name__ == "__main__":
     main()

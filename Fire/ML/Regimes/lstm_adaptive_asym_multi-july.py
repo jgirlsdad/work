@@ -110,6 +110,7 @@ def run_training():
     results["month"] = pd.to_datetime(results["date"]).dt.month
     monthly_mae = results.groupby(["month","horizon"])["mae"].mean().reset_index()
     monthly_mae.to_csv("monthly_mae_adaptive.csv", index=False)
+
     print("\nSaved forecast_results_adaptive_multi.csv and monthly_mae_adaptive.csv")
 
 if __name__ == "__main__":

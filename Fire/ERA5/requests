@@ -1,0 +1,154 @@
+2977	 T	Start	2025-04-06		1994	1997	['total_precipitation']
+2977	T	FAIL	2025-04-06		1994	1997	['total_precipitation']
+2977	 T	Start	2025-04-06		1994	1997	['total_precipitation']
+2977	T	FAIL	2025-04-06		1994	1997	['total_precipitation']
+3369	['total_precipitation']	Start	2025-04-06		1994	1997	['total_precipitation']
+3369	total_precipitation	Start	2025-04-06		1994	1997	['total_precipitation']
+3369
+total_precipitation	Complete	2025-04-06	0:00:00	1994	1997	['total_precipitation']
+5035	['total_precipitation']	Start	2025-04-06		1994	1997	['total_precipitation']
+5046	['total_precipitation']	Start	2025-04-06		1994	1997	['total_precipitation']
+5046	total_precipitation	Start	2025-04-06		1994	1997	['total_precipitation']
+5046
+total_precipitation	Complete	2025-04-06	0:00:00	1994	1997	['total_precipitation']
+5046
+['total_precipitation']	Complete	2025-04-06	0:00:00	1994	1997	['total_precipitation']
+8887	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Start	2025-04-06		1994	1997	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8887	10m_u_component_of_wind	Start	2025-04-06		1994	1997	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8887
+10m_u_component_of_wind	Complete	2025-04-06	0:00:00	1994	1997	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8887	10m_v_component_of_wind	Start	2025-04-06		1994	1997	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8887
+10m_v_component_of_wind	Complete	2025-04-06	0:00:00	1994	1997	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8887	total_precipitation	Start	2025-04-06		1994	1997	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8887
+total_precipitation	Complete	2025-04-06	0:00:00	1994	1997	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8887
+['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Complete	2025-04-06	0:00:00	1994	1997	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+9694	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Start	2025-04-07		1994	1997	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+9694	10m_u_component_of_wind	Start	2025-04-07		1994	1997	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+9694
+10m_u_component_of_wind	Complete	2025-04-07	0:00:00	1994	1997	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+9694	10m_v_component_of_wind	Start	2025-04-07		1994	1997	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+10697	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Start	2025-04-07		1998	2001	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+10760	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Start	2025-04-07		1998	2001	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+10760	10m_u_component_of_wind	Start	2025-04-07		1998	2001	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+10760
+10m_u_component_of_wind	Complete	2025-04-07	0:00:00	1998	2001	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+10760	10m_v_component_of_wind	Start	2025-04-07		1998	2001	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+10760
+10m_v_component_of_wind	Complete	2025-04-07	0:00:00	1998	2001	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+10760	total_precipitation	Start	2025-04-07		1998	2001	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+10760	total_precipitation	FAIL	2025-04-07		1998	2001	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+446	['total_precipitation']	Start	2025-04-07		1998	2001	['total_precipitation']
+446	total_precipitation	Start	2025-04-07		1998	2001	['total_precipitation']
+671	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Start	2025-04-07		2002	2005	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+671	2m_temperature	Start	2025-04-07		2002	2005	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+446
+total_precipitation	Complete	2025-04-07	0:00:00	1998	2001	['total_precipitation']
+446
+['total_precipitation']	Complete	2025-04-07	0:00:00	1998	2001	['total_precipitation']
+671
+2m_temperature	Complete	2025-04-07	0:00:00	2002	2005	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+671	2m_dewpoint_temperature	Start	2025-04-07		2002	2005	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+671
+2m_dewpoint_temperature	Complete	2025-04-07	0:00:00	2002	2005	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+671	10m_u_component_of_wind	Start	2025-04-07		2002	2005	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+671
+10m_u_component_of_wind	Complete	2025-04-07	0:00:00	2002	2005	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+671	10m_v_component_of_wind	Start	2025-04-07		2002	2005	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+671
+10m_v_component_of_wind	Complete	2025-04-07	0:00:00	2002	2005	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+671	total_precipitation	Start	2025-04-07		2002	2005	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+671
+total_precipitation	Complete	2025-04-07	0:00:00	2002	2005	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+671
+['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Complete	2025-04-07	0:00:00	2002	2005	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+7879	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Start	2025-04-08		2006	2009	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+7879	2m_temperature	Start	2025-04-08		2006	2009	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8122	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Start	2025-04-08		2010	2013	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8122	2m_temperature	Start	2025-04-08		2010	2013	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+7879
+2m_temperature	Complete	2025-04-08	0:00:00	2006	2009	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+7879	2m_dewpoint_temperature	Start	2025-04-08		2006	2009	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8122
+2m_temperature	Complete	2025-04-08	0:00:00	2010	2013	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8122	2m_dewpoint_temperature	Start	2025-04-08		2010	2013	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+7879
+2m_dewpoint_temperature	Complete	2025-04-08	0:00:00	2006	2009	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+7879	10m_u_component_of_wind	Start	2025-04-08		2006	2009	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8122
+2m_dewpoint_temperature	Complete	2025-04-08	0:00:00	2010	2013	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8122	10m_u_component_of_wind	Start	2025-04-08		2010	2013	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+7879
+10m_u_component_of_wind	Complete	2025-04-08	0:00:00	2006	2009	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+7879	10m_v_component_of_wind	Start	2025-04-08		2006	2009	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8122
+10m_u_component_of_wind	Complete	2025-04-08	0:00:00	2010	2013	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8122	10m_v_component_of_wind	Start	2025-04-08		2010	2013	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+7879
+10m_v_component_of_wind	Complete	2025-04-08	0:00:00	2006	2009	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+7879	total_precipitation	Start	2025-04-08		2006	2009	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8122
+10m_v_component_of_wind	Complete	2025-04-08	0:00:00	2010	2013	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8122	total_precipitation	Start	2025-04-08		2010	2013	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+7879
+total_precipitation	Complete	2025-04-08	0:00:00	2006	2009	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+7879
+['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Complete	2025-04-08	0:00:00	2006	2009	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8122
+total_precipitation	Complete	2025-04-08	0:00:00	2010	2013	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+8122
+['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Complete	2025-04-08	0:00:00	2010	2013	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1937	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Start	2025-04-09		2014	2017	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1937	2m_temperature	Start	2025-04-09		2014	2017	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1950	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Start	2025-04-09		2018	2021	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1950	2m_temperature	Start	2025-04-09		2018	2021	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1960	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Start	2025-04-09		2022	2025	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1960	2m_temperature	Start	2025-04-09		2022	2025	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1937
+2m_temperature	Complete	2025-04-09	0:00:00	2014	2017	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1937	2m_dewpoint_temperature	Start	2025-04-09		2014	2017	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1950
+2m_temperature	Complete	2025-04-09	0:00:00	2018	2021	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1950	2m_dewpoint_temperature	Start	2025-04-09		2018	2021	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1960
+2m_temperature	Complete	2025-04-09	0:00:00	2022	2025	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1960	2m_dewpoint_temperature	Start	2025-04-09		2022	2025	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1950
+2m_dewpoint_temperature	Complete	2025-04-09	0:00:00	2018	2021	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1950	10m_u_component_of_wind	Start	2025-04-09		2018	2021	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1937
+2m_dewpoint_temperature	Complete	2025-04-09	0:00:00	2014	2017	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1937	10m_u_component_of_wind	Start	2025-04-09		2014	2017	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1960
+2m_dewpoint_temperature	Complete	2025-04-09	0:00:00	2022	2025	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1960	10m_u_component_of_wind	Start	2025-04-09		2022	2025	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1950
+10m_u_component_of_wind	Complete	2025-04-09	0:00:00	2018	2021	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1950	10m_v_component_of_wind	Start	2025-04-09		2018	2021	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1960
+10m_u_component_of_wind	Complete	2025-04-09	0:00:00	2022	2025	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1960	10m_v_component_of_wind	Start	2025-04-09		2022	2025	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1937
+10m_u_component_of_wind	Complete	2025-04-09	0:00:00	2014	2017	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1937	10m_v_component_of_wind	Start	2025-04-09		2014	2017	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1950
+10m_v_component_of_wind	Complete	2025-04-09	0:00:00	2018	2021	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1950	total_precipitation	Start	2025-04-09		2018	2021	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1960
+10m_v_component_of_wind	Complete	2025-04-09	0:00:00	2022	2025	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1960	total_precipitation	Start	2025-04-09		2022	2025	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1937
+10m_v_component_of_wind	Complete	2025-04-09	0:00:00	2014	2017	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1937	total_precipitation	Start	2025-04-09		2014	2017	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1950
+total_precipitation	Complete	2025-04-09	0:00:00	2018	2021	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+1950
+['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Complete	2025-04-09	0:00:00	2018	2021	['2m_temperature', '2m_dewpoint_temperature', '10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+68582	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Start	2025-10-15		1986	1989	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+68582	10m_u_component_of_wind	Start	2025-10-15		1986	1989	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+68582	10m_u_component_of_wind	FAIL	2025-10-15		1986	1989	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+117809	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']	Start	2025-10-15		1986	1989	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+117809	10m_u_component_of_wind	Start	2025-10-15		1986	1989	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']
+117809	10m_u_component_of_wind	FAIL	2025-10-15		1986	1989	['10m_u_component_of_wind', '10m_v_component_of_wind', 'total_precipitation']

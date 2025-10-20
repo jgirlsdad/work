@@ -1,0 +1,109 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.colorado.gov/catalog> a dcat:Catalog ;
+    dct:description "The official open data catalog for the State of Colorado." ;
+    dct:issued "2024-07-01"^^xsd:date ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:modified "2025-10-17"^^xsd:date ;
+    dct:publisher <https://data.colorado.gov/organization/colorado-information-marketplace> ;
+    dct:title "Colorado Information Marketplace Catalog" ;
+    dcat:dataset <https://data.colorado.gov/d/4ykn-tg5h>,
+        <https://data.colorado.gov/d/fjyf-bdat>,
+        <https://data.colorado.gov/d/knbf-ggf2>,
+        <https://data.colorado.gov/d/rifs-n6ib>,
+        <https://data.colorado.gov/d/wumm-7awb> .
+
+<https://data.colorado.gov/d/4ykn-tg5h> a dcat:Dataset ;
+    dct:accrualPeriodicity <http://purl.org/cld/freq/daily> ;
+    dct:description """Recent modifications in the data transformation process may result in data changes.  Additional details about the changes can be found here:</span> https://data.colorado.gov/stories/s/pbek-aaa3
+
+Colorado Business Entities (corporations, LLCs, etc.) registered with the Colorado Department of State (CDOS) since 1864.""" ;
+    dct:identifier "4ykn-tg5h" ;
+    dct:issued "2014-03-19"^^xsd:date ;
+    dct:modified "2025-10-17"^^xsd:date ;
+    dct:publisher <https://data.colorado.gov/organization/colorado-information-marketplace> ;
+    dct:title "Business Entities in Colorado" ;
+    dcat:distribution <https://data.colorado.gov/resource/4ykn-tg5h.csv> ;
+    dcat:temporalResolution "P1D"^^xsd:duration .
+
+<https://data.colorado.gov/d/fjyf-bdat> a dcat:Dataset ;
+    dct:accrualPeriodicity <http://purl.org/cld/freq/daily> ;
+    dct:description "Revenue and Expenditures for Colorado State Governmental departments provided by the Department of Personnel & Administration and the Office of the State Controller. Documentation can be found in the long description of the dataset." ;
+    dct:identifier "fjyf-bdat" ;
+    dct:issued "2022-10-27"^^xsd:date ;
+    dct:modified "2025-07-18"^^xsd:date ;
+    dct:publisher <https://data.colorado.gov/organization/colorado-information-marketplace> ;
+    dct:title "Transparency Online Project (TOPS) - State Government Revenue and Expenditures in Colorado" ;
+    dcat:distribution <https://data.colorado.gov/resource/fjyf-bdat.csv> ;
+    dcat:temporalResolution "P1D"^^xsd:duration .
+
+<https://data.colorado.gov/d/knbf-ggf2> a dcat:Dataset ;
+    dct:accrualPeriodicity <http://purl.org/cld/freq/daily> ;
+    dct:description "Aggregated from thousands of local jurisdictions by the Colorado Department of Local Affairs Demography office. Many of the district boundaries were created from scanned drawings or digitized PDFs, and therefore no guarantee of accuracy can be made for the data." ;
+    dct:identifier "knbf-ggf2" ;
+    dct:issued "2024-08-27"^^xsd:date ;
+    dct:modified "2025-10-17"^^xsd:date ;
+    dct:publisher <https://data.colorado.gov/organization/colorado-information-marketplace> ;
+    dct:title "Map of Metro Districts in Colorado" ;
+    dcat:distribution <https://data.colorado.gov/resource/knbf-ggf2.csv> ;
+    dcat:temporalResolution "P1D"^^xsd:duration .
+
+<https://data.colorado.gov/d/rifs-n6ib> a dcat:Dataset ;
+    dct:accrualPeriodicity <http://purl.org/cld/freq/daily> ;
+    dct:description "Revenue and Expenditures for Colorado State Governmental departments provided by the Department of Personnel & Administration and the Office of the State Controller. Documentation can be found in the long description of the dataset." ;
+    dct:identifier "rifs-n6ib" ;
+    dct:issued "2022-11-18"^^xsd:date ;
+    dct:modified "2025-07-18"^^xsd:date ;
+    dct:publisher <https://data.colorado.gov/organization/colorado-information-marketplace> ;
+    dct:title "Transparency Online Project (TOPS) - State Government Revenue and Expenditures in Colorado" ;
+    dcat:distribution <https://data.colorado.gov/resource/rifs-n6ib.csv> ;
+    dcat:temporalResolution "P1D"^^xsd:duration .
+
+<https://data.colorado.gov/d/wumm-7awb> a dcat:Dataset ;
+    dct:accrualPeriodicity <http://purl.org/cld/freq/daily> ;
+    dct:description "All well applications and permits issued." ;
+    dct:identifier "wumm-7awb" ;
+    dct:issued "2013-11-15"^^xsd:date ;
+    dct:modified "2025-07-18"^^xsd:date ;
+    dct:publisher <https://data.colorado.gov/organization/colorado-information-marketplace> ;
+    dct:title "DWR Well Application Permit" ;
+    dcat:distribution <https://data.colorado.gov/resource/wumm-7awb.csv> ;
+    dcat:temporalResolution "P1D"^^xsd:duration .
+
+<https://data.colorado.gov/resource/4ykn-tg5h.csv> a dcat:Distribution ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:title "CSV Download" ;
+    dcat:downloadURL <https://data.colorado.gov/resource/4ykn-tg5h.csv> ;
+    dcat:mediaType "text/csv" .
+
+<https://data.colorado.gov/resource/fjyf-bdat.csv> a dcat:Distribution ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:title "CSV Download" ;
+    dcat:downloadURL <https://data.colorado.gov/resource/fjyf-bdat.csv> ;
+    dcat:mediaType "text/csv" .
+
+<https://data.colorado.gov/resource/knbf-ggf2.csv> a dcat:Distribution ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:title "CSV Download" ;
+    dcat:downloadURL <https://data.colorado.gov/resource/knbf-ggf2.csv> ;
+    dcat:mediaType "text/csv" .
+
+<https://data.colorado.gov/resource/rifs-n6ib.csv> a dcat:Distribution ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:title "CSV Download" ;
+    dcat:downloadURL <https://data.colorado.gov/resource/rifs-n6ib.csv> ;
+    dcat:mediaType "text/csv" .
+
+<https://data.colorado.gov/resource/wumm-7awb.csv> a dcat:Distribution ;
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:title "CSV Download" ;
+    dcat:downloadURL <https://data.colorado.gov/resource/wumm-7awb.csv> ;
+    dcat:mediaType "text/csv" .
+
+<https://data.colorado.gov/organization/colorado-information-marketplace> a foaf:Organization ;
+    foaf:homepage <https://data.colorado.gov> ;
+    foaf:name "Colorado Information Marketplace" .
+
