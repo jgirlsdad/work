@@ -884,12 +884,20 @@ def generateMonthlyReport(allAuto):
 
             tmp=dfAssets.loc[(dfAssets["name"] == title) & (dfAssets["uid"].str.len() == 9),['uid', 'name', 'owner','creation_date','audience','publication_stage', 'last_data_updated_date']]
             tmp2 = grCronGroup.loc[grCronGroup["Title"] == title]
-
+            if tmp2.shape[0] > 1:
+                print("MULTI CRON FOUND ",tmp2.head())
             if tmp2.shape[0] > 0:
-                tmp["Group"]=tmp2["Group"].values
-                tmp["Cron"]=tmp2["Cron"].values
-                grp = tmp2["Group"].values.tolist()[0]
-
+                try:
+                    tmp["Group"]=tmp2["Group"].values
+                    tmp["Cron"]=tmp2["Cron"].values
+                    grp = tmp2["Group"].values.tolist()[0]
+                except Exception as err:
+                    print("Error assigning cron for ",title  )
+                    print("Error assigning cron info ",err)
+                    print("TTT ",tmp2.head())
+                    print("TTT2 ",tmp2['Group'].values)
+                    print("TTT3 ",tmp.head())
+                    grp=""
             else:
                 tmp["Group"]=""
                 tmp["Cron"]=""

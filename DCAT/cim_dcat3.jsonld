@@ -1,85 +1,5 @@
 [
   {
-    "@id": "https://data.colorado.gov/d/knbf-ggf2",
-    "@type": [
-      "http://www.w3.org/ns/dcat#Dataset"
-    ],
-    "http://purl.org/dc/terms/accrualPeriodicity": [
-      {
-        "@id": "http://purl.org/cld/freq/daily"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@value": "Aggregated from thousands of local jurisdictions by the Colorado Department of Local Affairs Demography office. Many of the district boundaries were created from scanned drawings or digitized PDFs, and therefore no guarantee of accuracy can be made for the data."
-      }
-    ],
-    "http://purl.org/dc/terms/identifier": [
-      {
-        "@value": "knbf-ggf2"
-      }
-    ],
-    "http://purl.org/dc/terms/issued": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2024-08-27"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-10-17"
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@id": "https://data.colorado.gov/organization/colorado-information-marketplace"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@value": "Map of Metro Districts in Colorado"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#distribution": [
-      {
-        "@id": "https://data.colorado.gov/resource/knbf-ggf2.csv"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#temporalResolution": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#duration",
-        "@value": "P1D"
-      }
-    ]
-  },
-  {
-    "@id": "https://data.colorado.gov/resource/rifs-n6ib.csv",
-    "@type": [
-      "http://www.w3.org/ns/dcat#Distribution"
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@value": "CSV Download"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#downloadURL": [
-      {
-        "@id": "https://data.colorado.gov/resource/rifs-n6ib.csv"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#mediaType": [
-      {
-        "@value": "text/csv"
-      }
-    ]
-  },
-  {
     "@id": "https://data.colorado.gov/d/4ykn-tg5h",
     "@type": [
       "http://www.w3.org/ns/dcat#Dataset"
@@ -108,7 +28,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-10-17"
+        "@value": "2025-11-06"
       }
     ],
     "http://purl.org/dc/terms/publisher": [
@@ -124,237 +44,6 @@
     "http://www.w3.org/ns/dcat#distribution": [
       {
         "@id": "https://data.colorado.gov/resource/4ykn-tg5h.csv"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#temporalResolution": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#duration",
-        "@value": "P1D"
-      }
-    ]
-  },
-  {
-    "@id": "https://data.colorado.gov/resource/wumm-7awb.csv",
-    "@type": [
-      "http://www.w3.org/ns/dcat#Distribution"
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@value": "CSV Download"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#downloadURL": [
-      {
-        "@id": "https://data.colorado.gov/resource/wumm-7awb.csv"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#mediaType": [
-      {
-        "@value": "text/csv"
-      }
-    ]
-  },
-  {
-    "@id": "https://data.colorado.gov/catalog",
-    "@type": [
-      "http://www.w3.org/ns/dcat#Catalog"
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@value": "The official open data catalog for the State of Colorado."
-      }
-    ],
-    "http://purl.org/dc/terms/issued": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2024-07-01"
-      }
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-10-17"
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@id": "https://data.colorado.gov/organization/colorado-information-marketplace"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@value": "Colorado Information Marketplace Catalog"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#dataset": [
-      {
-        "@id": "https://data.colorado.gov/d/fjyf-bdat"
-      },
-      {
-        "@id": "https://data.colorado.gov/d/rifs-n6ib"
-      },
-      {
-        "@id": "https://data.colorado.gov/d/4ykn-tg5h"
-      },
-      {
-        "@id": "https://data.colorado.gov/d/wumm-7awb"
-      },
-      {
-        "@id": "https://data.colorado.gov/d/knbf-ggf2"
-      }
-    ]
-  },
-  {
-    "@id": "https://data.colorado.gov/organization/colorado-information-marketplace",
-    "@type": [
-      "http://xmlns.com/foaf/0.1/Organization"
-    ],
-    "http://xmlns.com/foaf/0.1/homepage": [
-      {
-        "@id": "https://data.colorado.gov"
-      }
-    ],
-    "http://xmlns.com/foaf/0.1/name": [
-      {
-        "@value": "Colorado Information Marketplace"
-      }
-    ]
-  },
-  {
-    "@id": "https://data.colorado.gov/resource/fjyf-bdat.csv",
-    "@type": [
-      "http://www.w3.org/ns/dcat#Distribution"
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@value": "CSV Download"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#downloadURL": [
-      {
-        "@id": "https://data.colorado.gov/resource/fjyf-bdat.csv"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#mediaType": [
-      {
-        "@value": "text/csv"
-      }
-    ]
-  },
-  {
-    "@id": "https://data.colorado.gov/d/rifs-n6ib",
-    "@type": [
-      "http://www.w3.org/ns/dcat#Dataset"
-    ],
-    "http://purl.org/dc/terms/accrualPeriodicity": [
-      {
-        "@id": "http://purl.org/cld/freq/daily"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@value": "Revenue and Expenditures for Colorado State Governmental departments provided by the Department of Personnel & Administration and the Office of the State Controller. Documentation can be found in the long description of the dataset."
-      }
-    ],
-    "http://purl.org/dc/terms/identifier": [
-      {
-        "@value": "rifs-n6ib"
-      }
-    ],
-    "http://purl.org/dc/terms/issued": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-11-18"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-07-18"
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@id": "https://data.colorado.gov/organization/colorado-information-marketplace"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@value": "Transparency Online Project (TOPS) - State Government Revenue and Expenditures in Colorado"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#distribution": [
-      {
-        "@id": "https://data.colorado.gov/resource/rifs-n6ib.csv"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#temporalResolution": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#duration",
-        "@value": "P1D"
-      }
-    ]
-  },
-  {
-    "@id": "https://data.colorado.gov/d/wumm-7awb",
-    "@type": [
-      "http://www.w3.org/ns/dcat#Dataset"
-    ],
-    "http://purl.org/dc/terms/accrualPeriodicity": [
-      {
-        "@id": "http://purl.org/cld/freq/daily"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@value": "All well applications and permits issued."
-      }
-    ],
-    "http://purl.org/dc/terms/identifier": [
-      {
-        "@value": "wumm-7awb"
-      }
-    ],
-    "http://purl.org/dc/terms/issued": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2013-11-15"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-07-18"
-      }
-    ],
-    "http://purl.org/dc/terms/publisher": [
-      {
-        "@id": "https://data.colorado.gov/organization/colorado-information-marketplace"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@value": "DWR Well Application Permit"
-      }
-    ],
-    "http://www.w3.org/ns/dcat#distribution": [
-      {
-        "@id": "https://data.colorado.gov/resource/wumm-7awb.csv"
       }
     ],
     "http://www.w3.org/ns/dcat#temporalResolution": [
@@ -419,6 +108,86 @@
     ]
   },
   {
+    "@id": "https://data.colorado.gov/d/rifs-n6ib",
+    "@type": [
+      "http://www.w3.org/ns/dcat#Dataset"
+    ],
+    "http://purl.org/dc/terms/accrualPeriodicity": [
+      {
+        "@id": "http://purl.org/cld/freq/daily"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@value": "Revenue and Expenditures for Colorado State Governmental departments provided by the Department of Personnel & Administration and the Office of the State Controller. Documentation can be found in the long description of the dataset."
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "rifs-n6ib"
+      }
+    ],
+    "http://purl.org/dc/terms/issued": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-11-18"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-07-18"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@id": "https://data.colorado.gov/organization/colorado-information-marketplace"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "Transparency Online Project (TOPS) - State Government Revenue and Expenditures in Colorado"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#distribution": [
+      {
+        "@id": "https://data.colorado.gov/resource/rifs-n6ib.csv"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#temporalResolution": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#duration",
+        "@value": "P1D"
+      }
+    ]
+  },
+  {
+    "@id": "https://data.colorado.gov/resource/wumm-7awb.csv",
+    "@type": [
+      "http://www.w3.org/ns/dcat#Distribution"
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "CSV Download"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#downloadURL": [
+      {
+        "@id": "https://data.colorado.gov/resource/wumm-7awb.csv"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#mediaType": [
+      {
+        "@value": "text/csv"
+      }
+    ]
+  },
+  {
     "@id": "https://data.colorado.gov/resource/4ykn-tg5h.csv",
     "@type": [
       "http://www.w3.org/ns/dcat#Distribution"
@@ -445,6 +214,130 @@
     ]
   },
   {
+    "@id": "https://data.colorado.gov/d/knbf-ggf2",
+    "@type": [
+      "http://www.w3.org/ns/dcat#Dataset"
+    ],
+    "http://purl.org/dc/terms/accrualPeriodicity": [
+      {
+        "@id": "http://purl.org/cld/freq/daily"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@value": "Aggregated from thousands of local jurisdictions by the Colorado Department of Local Affairs Demography office. Many of the district boundaries were created from scanned drawings or digitized PDFs, and therefore no guarantee of accuracy can be made for the data."
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "knbf-ggf2"
+      }
+    ],
+    "http://purl.org/dc/terms/issued": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2024-08-27"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-11-06"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@id": "https://data.colorado.gov/organization/colorado-information-marketplace"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "Map of Metro Districts in Colorado"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#distribution": [
+      {
+        "@id": "https://data.colorado.gov/resource/knbf-ggf2.csv"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#temporalResolution": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#duration",
+        "@value": "P1D"
+      }
+    ]
+  },
+  {
+    "@id": "https://data.colorado.gov/d/wumm-7awb",
+    "@type": [
+      "http://www.w3.org/ns/dcat#Dataset"
+    ],
+    "http://purl.org/dc/terms/accrualPeriodicity": [
+      {
+        "@id": "http://purl.org/cld/freq/daily"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@value": "All well applications and permits issued."
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "wumm-7awb"
+      }
+    ],
+    "http://purl.org/dc/terms/issued": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2013-11-15"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-07-18"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@id": "https://data.colorado.gov/organization/colorado-information-marketplace"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "DWR Well Application Permit"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#distribution": [
+      {
+        "@id": "https://data.colorado.gov/resource/wumm-7awb.csv"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#temporalResolution": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#duration",
+        "@value": "P1D"
+      }
+    ]
+  },
+  {
+    "@id": "https://data.colorado.gov/organization/colorado-information-marketplace",
+    "@type": [
+      "http://xmlns.com/foaf/0.1/Organization"
+    ],
+    "http://xmlns.com/foaf/0.1/homepage": [
+      {
+        "@id": "https://data.colorado.gov"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "Colorado Information Marketplace"
+      }
+    ]
+  },
+  {
     "@id": "https://data.colorado.gov/resource/knbf-ggf2.csv",
     "@type": [
       "http://www.w3.org/ns/dcat#Distribution"
@@ -462,6 +355,113 @@
     "http://www.w3.org/ns/dcat#downloadURL": [
       {
         "@id": "https://data.colorado.gov/resource/knbf-ggf2.csv"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#mediaType": [
+      {
+        "@value": "text/csv"
+      }
+    ]
+  },
+  {
+    "@id": "https://data.colorado.gov/catalog",
+    "@type": [
+      "http://www.w3.org/ns/dcat#Catalog"
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@value": "The official open data catalog for the State of Colorado."
+      }
+    ],
+    "http://purl.org/dc/terms/issued": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2024-07-01"
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-11-06"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@id": "https://data.colorado.gov/organization/colorado-information-marketplace"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "Colorado Information Marketplace Catalog"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#dataset": [
+      {
+        "@id": "https://data.colorado.gov/d/fjyf-bdat"
+      },
+      {
+        "@id": "https://data.colorado.gov/d/rifs-n6ib"
+      },
+      {
+        "@id": "https://data.colorado.gov/d/4ykn-tg5h"
+      },
+      {
+        "@id": "https://data.colorado.gov/d/wumm-7awb"
+      },
+      {
+        "@id": "https://data.colorado.gov/d/knbf-ggf2"
+      }
+    ]
+  },
+  {
+    "@id": "https://data.colorado.gov/resource/rifs-n6ib.csv",
+    "@type": [
+      "http://www.w3.org/ns/dcat#Distribution"
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "CSV Download"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#downloadURL": [
+      {
+        "@id": "https://data.colorado.gov/resource/rifs-n6ib.csv"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#mediaType": [
+      {
+        "@value": "text/csv"
+      }
+    ]
+  },
+  {
+    "@id": "https://data.colorado.gov/resource/fjyf-bdat.csv",
+    "@type": [
+      "http://www.w3.org/ns/dcat#Distribution"
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "CSV Download"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#downloadURL": [
+      {
+        "@id": "https://data.colorado.gov/resource/fjyf-bdat.csv"
       }
     ],
     "http://www.w3.org/ns/dcat#mediaType": [

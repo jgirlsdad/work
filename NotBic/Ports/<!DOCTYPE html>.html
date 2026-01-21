@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wireframe – Heavy-Duty Truck Study</title>
+  <style>
+    /* Basic reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 16px 60px;
+    }
+
+    .wireframe-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #777;
+      margin-bottom: 6px;
+    }
+
+    .block {
+      background: #fff;
+      border: 2px dashed #aaa;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .block h1,
+    .block h2,
+    .block h3 {
+      margin-bottom: 10px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .hero-text {
+      border: 1px solid #ccc;
+      padding: 16px;
+      background: #fafafa;
+    }
+
+    .hero-image {
+      border: 1px solid #ccc;
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .hero-image span {
+      max-width: 80%;
+    }
+
+    .at-a-glance {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      background: #f0f0f0;
+      border-style: solid;
+    }
+
+    .column-box {
+      border: 1px dashed #999;
+      padding: 16px;
+      background: #fff;
+      min-height: 140px;
+    }
+
+    .placeholder-list {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .placeholder-list li {
+      margin-left: 18px;
+      margin-bottom: 4px;
+    }
+
+    .cipsea-callout {
+      background: #f7f7f7;
+      border: 2px solid #777;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links span {
+      border-bottom: 1px dotted #999;
+      padding-bottom: 2px;
+    }
+
+    .button-placeholder {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px dashed #555;
+      font-size: 14px;
+      margin-top: 10px;
+      background: #f5f5f5;
+    }
+
+    @media (max-width: 800px) {
+      .hero,
+      .at-a-glance {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HERO / INTRO SECTION -->
+    <div class="block">
+      <div class="wireframe-label">Hero / Intro</div>
+      <div class="hero">
+        <div class="hero-text">
+          <h1>Heavy-Duty Truck Study: Confidential Interviews for Crash Causal Factors</h1>
+          <p>
+            <!-- Replace this with the actual 2–3 sentence hero intro text -->
+            [Intro paragraph placeholder: brief explanation of the study purpose and that it
+            includes confidential, voluntary interviews with carriers, drivers, and others.]
+          </p>
+        </div>
+        <div class="hero-image">
+          <span>[Optional image placeholder: silhouette of a Class 7–8 truck on a highway]</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AT A GLANCE STRIP -->
+    <div class="block at-a-glance">
+      <div>
+        <div class="wireframe-label">Left column</div>
+        <div class="column-box">
+          <h2>Who we are</h2>
+          <p>[BTS + FMCSA logos placeholder]</p>
+          <ul class="placeholder-list">
+            <li>Part of the Crash Causal Factors Program</li>
+            <li>Focused on improving safety outcomes via data</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="wireframe-label">Right column</div>
+        <div class="column-box">
+          <h2>For carriers and drivers</h2>
+          <ul class="placeholder-list">
+            <li>Voluntary interview</li>
+            <li>30–60 minutes</li>
+            <li>Phone or secure video conference</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCK 1: WHAT IS THIS STUDY ABOUT? -->
+    <section class="block">
+      <div class="wireframe-label">Section / Block 1</div>
+      <h2>What is this study about?</h2>
+      <p>
+        <!-- Replace with Section 1 text -->
+        [Placeholder: 1–2 short paragraphs describing the Heavy-Duty Truck Study as part of
+        BTS's Crash Causal Factors Program, combining crash report data and insights from
+        people involved to identify patterns and improve safety strategies.]
+      </p>
+    </section>
+
+    <!-- BLOCK 2: WHO IS BEING INTERVIEWED? -->
+    <section class="block">
+      <div class="wireframe-label">Section / Block 2</div>
+      <h2>Who is being interviewed?</h2>
+      <ul class="placeholder-list">
+        <li>Motor carriers and carrier representatives</li>
+        <li>Truck drivers</li>
+        <li>Other involved drivers</li>
+        <li>Non-motorists and witnesses (where applicable)</li>
+      </ul>
+      <p style="margin-top: 8px; font-size: 14px; color:#555;">
+        [Short note: Interviews occur after a fatal crash and focus on understanding events
+        and conditions, not assigning blame.]
+      </p>
+    </section>
+
+    <!-- BLOCK 3: WHAT WILL I BE ASKED TO DO? -->
+    <section class="block">
+      <div class="wireframe-label">Section / Block 3</div>
+      <h2>What will I be asked to do?</h2>
+      <p>
+        <!-- Replace with Section 3 intro text -->
+        [Placeholder paragraph describing that invited participants join a 30–60 minute
+        phone or video interview about the crash context.]
+      </p>
+      <ul class="placeholder-list">
+        <li>Trip, roadway, and environmental conditions</li>
+        <li>Work and operating conditions (scheduling, dispatch, coordination)</li>
+        <li>Safety practices, training, and technology use</li>
+        <li>Other factors the participant believes contributed to the crash</li>
+      </ul>
+      <p style="margin-top: 8px; font-size: 14px; color:#555;">
+        Quick facts: 30–60 minutes · Phone or secure video · Participation is voluntary
+      </p>
+    </section>
+
+    <!-- BLOCK 4: CONFIDENTIALITY / CIPSEA -->
+    <section class="block cipsea-callout">
+      <div class="wireframe-label">Section / Block 4</div>
+      <h2>Your confidentiality under CIPSEA</h2>
+      <p style="margin-bottom: 10px;">
+        <!-- Replace with Section 4 intro -->
+        [Placeholder: brief explanation that interviews are conducted under the Confidential
+        Information Protection and Statistical Efficiency Act of 2018 (CIPSEA).]
+      </p>
+      <ul class="placeholder-list">
+        <li>Your responses are used for statistical purposes only.</li>
+        <li>Information is not used for enforcement, regulatory action, or legal proceedings.</li>
+        <li>No identifiable information about individuals or companies is disclosed.</li>
+        <li>Published results include only summary statistics and de-identified examples.</li>
+      </ul>
+    </section>
+
+    <!-- BLOCK 5: WHY YOUR PARTICIPATION MATTERS -->
+    <section class="block">
+      <div class="wireframe-label">Section / Block 5</div>
+      <h2>Why your participation matters</h2>
+      <ul class="placeholder-list">
+        <li>Ensures industry realities inform federal safety decisions.</li>
+        <li>Helps identify systemic challenges not visible in standard crash data.</li>
+        <li>Supports targeted, practical safety improvements for drivers, carriers, and the public.</li>
+      </ul>
+    </section>
+
+    <!-- BLOCK 6: CONTACT INFORMATION -->
+    <section class="block">
+      <div class="wireframe-label">Section / Block 6</div>
+      <h2>Questions or more information</h2>
+      <p>
+        Bureau of Transportation Statistics (BTS)<br />
+        Heavy-Duty Truck Study – Crash Causal Factors Program
+      </p>
+      <p style="margin-top: 8px;">
+        Email: <span>[study email]</span><br />
+        Phone: <span>[study phone]</span>
+      </p>
+      <div class="button-placeholder">
+        [Contact Us button placeholder]
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="block footer">
+      <div class="wireframe-label">Footer</div>
+      <p>[Standard BTS / DOT footer]</p>
+      <div class="footer-links">
+        <span>BTS Home</span>
+        <span>Privacy &amp; Confidentiality</span>
+        <span>Crash Causal Factors Program</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

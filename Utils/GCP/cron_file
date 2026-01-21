@@ -1,0 +1,114 @@
+### Maintenance Tasks
+
+# Git and Library refresh 
+50 2 * * * source $HOME/.bashrc;export bic_etl_home=/usr/local/cim/bic_etl;node $bic_etl_home/general/scripts/pull_and_setup.js 2>> $bic_etl_home/general/logs/cron.log
+
+# Load Preferences for Datasync Load
+58 2 * * * source $HOME/.bashrc;export bic_etl_home=/usr/local/cim/bic_etl;/usr/bin/java -jar $bic_etl_home/general/datasync/DataSync-1.8.2.jar -t LoadPreferences -c $bic_etl_home/general/datasync/config.json 2>> $bic_etl_home/general/logs/cron.log
+
+# Cleanup and Email Summary
+15 10 * * * source $HOME/.bashrc;export bic_etl_home=/usr/local/cim/bic_etl;node $bic_etl_home/general/scripts/cleanup.js 2>> $bic_etl_home/general/logs/cron.log
+
+# CIM-Tracker Update Checker
+0 9 * * * source $HOME/.bashrc;export bic_etl_home=/usr/local/cim/bic_etl;python $bic_etl_home/general/scripts/chkUpdates.py  2>> $bic_etl_home/general/logs/cron.log
+
+# CIM Sanity Check
+0 8 * * * source $HOME/.bashrc;export bic_etl_home=/usr/local/cim/bic_etl;python $bic_etl_home/general/scripts/checkDatasetRowCounts.py  2>> $bic_etl_home/general/logs/cron.log
+
+#Metadata Updater
+0 5 * * * source $HOME/.bashrc;export bic_etl_home=/usr/local/cim/bic_etl;python $bic_etl_home/general/metadata_updater/scripts/metadata_updater.py -a 2>> $bic_etl_home/general/logs/cron.log
+
+###  Dataset ETLs Below
+
+# BEA
+25 5 * * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p bea 2>> $bic_etl_home/general/logs/cron.log
+
+# BLS
+0 4 15 * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p bls 2>> $bic_etl_home/general/logs/cron.log
+
+# Boulder
+10 3 * * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl;node $bic_etl_home/general/scripts/bic_etl.js -p boulder -t "Septic Systems in Boulder County Colorado" 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOR Regulations Liquor
+40 4 6 * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdor/regulations_liquor 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOR Liquor License Compliance Statistics Moveit file Deletion
+##  turned off for now b/c of filewall issues.  This should run at the end of the month
+##  b/c the new file is uploaded the 1st week of the month and we want time to process the file.  
+##  Run this on th 25th with max age (-m) of 15 days, meaning file will not be deleted until it is older than 15 days.
+#45 4 * * 25 source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; python $bic_etl_home/general/scripts/sftp_delete.py -ho sftp.cdor.state.co.us -u moveit -f /moveit/liquor_license_compliance_statistics.csv -m 1 -k $bic_etl_home/general/scripts/ssh_keys/moveit_key 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOR Revenue Marijuana
+20 4 1,8,15,22 * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdor/revenue_marijuana 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOR Retail Reports
+30 4 10 * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdor/retail_reports 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOS Business Business  "Business Entities in Colorado"
+10 5 * * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdos/business/business -t "Business Entities in Colorado" 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOS Business Business  "Business Entities with True Names in Colorado"
+10 5 * * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdos/business/business -t "Business Entities in Colorado with True Names" 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOS Business Business  "Trade Names for Businesses in Colorado"
+0 4 * * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdos/business/business -t "Trade Names for Businesses in Colorado" 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOS Business Business  "Trademarks for Businesses in Colorado"
+0 4 * * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdos/business/business -t "Trademarks for Businesses in Colorado" 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOS Business Business  "Master List in Colorado"
+30 5 4 * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdos/business/business -t "Effective Financing Statements Master List (Farm Products)" 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOS Business Business  "Business Entity Transaction History"
+0 8 * * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdos/business/business -t "Business Entity Transaction History" 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOS Business Health
+0 4 * * 2 source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdos/health 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOS Government  
+30 4 * * 2 source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdos/government 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOS Lobbyist 
+15 6 * * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdos/lobbyist 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOS Business Nonprofit
+5 6 * * 5 source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdos/business/nonprofit 2>> $bic_etl_home/general/logs/cron.log
+5 6 * * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdos/business/nonprofit  -t "Registration of Charities, Paid Solicitors, Professional Fundraising Consultants, and for-profit Public Benefit Corporations in Colorado" 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOS Business UCC
+0 3 * * *  source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdos/business/ucc  2>> $bic_etl_home/general/logs/cron.log
+
+# CDOT  Natural Resources -> Maps
+30 4 4 * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdot/natural_resources 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOT  Tops 
+45 8 * * 2 source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdot/tops 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOT  Transportation Infrastructure -> Maps
+30 4 4 * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdot/transportation_infrastructure 2>> $bic_etl_home/general/logs/cron.log
+
+# CDOT  Transportation Road Attributes -> Maps
+10 4 4 * * source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p cdot/transportation_road_attributes 2>> $bic_etl_home/general/logs/cron.log
+
+# CEO USEIA
+0 5 * * 4  source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p ceo/useia  2>> $bic_etl_home/general/logs/cron.log
+
+# DENVER
+30 5 * * *  source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p denver 2>> $bic_etl_home/general/logs/cron.log
+
+# DOLA Boundaries -> Maps
+0 4 4 * *  source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p dola/boundaries  2>> $bic_etl_home/general/logs/cron.log
+
+# DOLA Demographics
+30 4 1 * *  source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p dola/demographics  2>> $bic_etl_home/general/logs/cron.log
+
+# DOLA Special Districts -> Maps
+0 4 4 * *  source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p dola/special_districts  2>> $bic_etl_home/general/logs/cron.log
+
+# DORA -> off on the old server 
+10 4 * * *  source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p dora/regulations  2>> $bic_etl_home/general/logs/cron.log
+
+
+# FRED
+30 3 7 * *  source $HOME/.bashrc; export bic_etl_home=/usr/local/cim/bic_etl; node $bic_etl_home/general/scripts/bic_etl.js -p fred  2>> $bic_etl_home/general/logs/cron.log
+

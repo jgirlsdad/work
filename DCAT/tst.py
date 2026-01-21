@@ -1,39 +1,73 @@
-import csv
-from rdflib import Graph, Literal, Namespace, URIRef
-from rdflib.namespace import DCAT, DCTERMS, FOAF, RDF, XSD
+import streamlit as st
 
-# Define Namespaces
-EX = Namespace("http://example.org/dataset/")
-DATA_THEME = Namespace("http://publications.europa.eu/resource/authority/data-theme/")
+st.set_page_config(layout="wide")
 
-# Load your CSV
-input_file = "datasets_metadata.csv"
-g = Graph()
-g.bind("dcat", DCAT)
-g.bind("dct", DCTERMS)
-g.bind("foaf", FOAF)
+st.write("## Click Test — Cytoscape → Streamlit")
 
-with open(input_file, newline='', encoding='utf-8') as csvfile:
-    reader = csv.DictReader(csvfile)
-    for row in reader:
-        dataset_uri = EX[row['id']]
-        g.add((dataset_uri, RDF.type, DCAT.Dataset))
-        g.add((dataset_uri, DCTERMS.title, Literal(row['title'])))
-        g.add((dataset_uri, DCTERMS.description, Literal(row['description'])))
-        g.add((dataset_uri, DCTERMS.issued, Literal(row['issued'], datatype=XSD.date)))
-        g.add((dataset_uri, DCTERMS.modified, Literal(row['modified'], datatype=XSD.date)))
-        g.add((dataset_uri, DCTERMS.publisher, Literal(row['publisher'])))
-        g.add((dataset_uri, DCTERMS.license, URIRef(row['license'])))
-        g.add((dataset_uri, DCAT.theme, URIRef(DATA_THEME[row['theme']])))
-        
-        for keyword in row['keywords'].split(','):
-            g.add((dataset_uri, DCAT.keyword, Literal(keyword.strip())))
+html = """
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.21.0/cytoscape.min.js"></script>
+</head>
+<body>
+<div id="cy" style="width:100%; height:400px; background:#111;"></div>
 
-        # Add a distribution
-        dist_uri = URIRef(f"{dataset_uri}/distribution")
-        g.add((dataset_uri, DCAT.distribution, dist_uri))
-        g.add((dist_uri, RDF.type, DCAT.Distribution))
-        g.add((dist_uri, DCAT.downloadURL, URIRef(row['download_url'])))
+<script>
+var cy = cytoscape({
+    container: document.getElementById('cy'),
+    elements: [
+        { data: { id: 'A', label: 'Node A' } },
+        { data: { id: 'B', label: 'Node B' } },
+        { data: { source: 'A', target: 'B' } }
+    ],
+    style: [
+        {
+            selector: 'node',
+            style: {
+                'label': 'data(label)',
+                'background-color': '#66ccff',
+                'color': 'white',
+                'text-valign': 'center',
+                'text-halign': 'center',
+                'width': 60,
+                'height': 60
+            }
+        }
+    ],
+    layout: { name: 'circle' }
+});
 
-# Serialize the graph
-g.serialize("dcat3_output.ttl", format="turtle")
+// SEND MESSAGE TO STREAMLIT
+//cy.on('tap', 'node', function(evt){
+//     const nodeId = evt.target.id();
+//     window.parent.postMessage({type: 'cy_click', node: nodeId}, "*");
+//});
+
+cy.on('tap', 'node', function(evt){
+    const nodeId = evt.target.id();
+    document.getElementById("clicked_node").value = nodeId;
+    document.getElementById("clicked_node_form").submit();
+});
+
+</script>
+<form id="clicked_node_form" method="GET">
+    <input type="text" id="clicked_node" name="clicked_node" hidden>
+</form>
+</body>
+</html>
+"""
+
+clicked = st.text_input("clicked", key="clicked_node")
+
+# If updated → rerun viewer focused on that node
+if clicked and clicked != st.session_state.get("focused", None):
+    st.session_state["focused"] = clicked
+    st.rerun()
+
+# LISTEN FOR MESSAGE
+clicked = st.components.v1.html(html, height=450)
+
+# JS → Python event system
+event = st.experimental_get_query_params().get("cy_click")
+if event:
+    st.write(f"### Node clicked: {event[0]}")

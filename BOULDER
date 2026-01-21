@@ -1,0 +1,124 @@
+{
+  "ihbp-hi2s": {
+    "EngineerName": {
+      "xref": "engineerName",
+      "desc": "Name of the engineer",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "StreetDirection": {
+      "xref": "streetDirection",
+      "desc": "Street direction for the address of the site",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "StreetSuffix": {
+      "xref": "streetSuffix",
+      "desc": "Suffix for the address of the site",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "treatmentDepth": {
+      "xref": "treatmentDepth",
+      "desc": "Depth of treatment for the Soil Treatment Area",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "EngineeringFirm": {
+      "xref": "engineeringFirm",
+      "desc": "Name of the business the engineer is employed by",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "AreaofLot": {
+      "xref": "areaOfLot",
+      "desc": "Size of the lot, in acres, that contains the onsite wastewater treatment system",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "B1_APP_TYPE_ALIAS": {
+      "xref": "b1AppTypeAlias",
+      "desc": "Type of permit",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "AddressNumber": {
+      "xref": "addressNumber",
+      "desc": "Street number for the address of the site",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "LimitingLayer": {
+      "xref": "limitingLayer",
+      "desc": "Indicates whether there is a limiting layer for the Soil Treatment Area",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "InstallingFirm": {
+      "xref": "installingFirm",
+      "desc": "Name of the business the installer is employed by",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "ZipCode": {
+      "xref": "zipCode",
+      "desc": "Zip code for the address for the site",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "B1_APPL_STATUS": {
+      "xref": "b1ApplStatus",
+      "desc": "Status of the permit",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "StreetName": {
+      "xref": "streetName",
+      "desc": "Street name for the address of the site",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "TypeofSystem": {
+      "xref": "typeOfSystem",
+      "desc": "Description indicating the septic system type",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "DwellingType": {
+      "xref": "dwellingType",
+      "desc": "Indicates whether dwelling is residential or commercial",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "InstallerName": {
+      "xref": "installerName",
+      "desc": "Name of the installer",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "Bedrooms": {
+      "xref": "bedrooms",
+      "desc": "Number of bedrooms the OWTS is sized for",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "b1_UNIT_START": {
+      "xref": "b1UnitStart",
+      "desc": "Unit number or apartment number for the address of the site",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "City": {
+      "xref": "city",
+      "desc": "City of the address for the site",
+      "notes": "",
+      "date": "2026-01-06"
+    },
+    "B1_ALT_ID": {
+      "xref": "b1AltId",
+      "desc": "Permit # associated with this onsite wastewater treatment system record",
+      "notes": "",
+      "date": "2026-01-06"
+    }
+  }
+}

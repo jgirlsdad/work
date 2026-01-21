@@ -17,8 +17,8 @@ dataset = "reanalysis-era5-land"
 #variables=["2m_temperature","2m_dewpoint_temperature","10m_u_component_of_wind","10m_v_component_of_wind","total_precipitation"]
 variables=["10m_u_component_of_wind","10m_v_component_of_wind","total_precipitation"]
 
-start_year = 1980
-end_year = 1984  # inclusive
+start_year = 1987
+end_year = 1989 # inclusive
 years = [str(y) for y in range(start_year, end_year + 1)]
 
 months = [f"{m:02d}" for m in range(1, 13)]

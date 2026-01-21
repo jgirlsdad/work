@@ -9,6 +9,11 @@ This module contains functions to interact with the Colorado Information Marketp
   
   ### df = getAssetDataset(bic_etl_home: str)
 
+  ### Needed improts and paths
+  import os.path
+  bic_etl_home = os.getenv('bic_etl_home')
+  sys.path.insert(0, '/home/joe/work/myLibs')
+  from funcs import *
 """
 import json,requests, pandas as pd, os
 from google.oauth2 import service_account

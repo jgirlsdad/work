@@ -7,7 +7,7 @@
     dct:description "The official open data catalog for the State of Colorado." ;
     dct:issued "2024-07-01"^^xsd:date ;
     dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    dct:modified "2025-10-17"^^xsd:date ;
+    dct:modified "2025-11-06"^^xsd:date ;
     dct:publisher <https://data.colorado.gov/organization/colorado-information-marketplace> ;
     dct:title "Colorado Information Marketplace Catalog" ;
     dcat:dataset <https://data.colorado.gov/d/4ykn-tg5h>,
@@ -23,7 +23,7 @@
 Colorado Business Entities (corporations, LLCs, etc.) registered with the Colorado Department of State (CDOS) since 1864.""" ;
     dct:identifier "4ykn-tg5h" ;
     dct:issued "2014-03-19"^^xsd:date ;
-    dct:modified "2025-10-17"^^xsd:date ;
+    dct:modified "2025-11-06"^^xsd:date ;
     dct:publisher <https://data.colorado.gov/organization/colorado-information-marketplace> ;
     dct:title "Business Entities in Colorado" ;
     dcat:distribution <https://data.colorado.gov/resource/4ykn-tg5h.csv> ;
@@ -45,7 +45,7 @@ Colorado Business Entities (corporations, LLCs, etc.) registered with the Colora
     dct:description "Aggregated from thousands of local jurisdictions by the Colorado Department of Local Affairs Demography office. Many of the district boundaries were created from scanned drawings or digitized PDFs, and therefore no guarantee of accuracy can be made for the data." ;
     dct:identifier "knbf-ggf2" ;
     dct:issued "2024-08-27"^^xsd:date ;
-    dct:modified "2025-10-17"^^xsd:date ;
+    dct:modified "2025-11-06"^^xsd:date ;
     dct:publisher <https://data.colorado.gov/organization/colorado-information-marketplace> ;
     dct:title "Map of Metro Districts in Colorado" ;
     dcat:distribution <https://data.colorado.gov/resource/knbf-ggf2.csv> ;

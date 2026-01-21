@@ -1,0 +1,4 @@
+# example cron_file
+30 2 * * * job_daily_0230
+0 9 * * 1 job_weekly_monday_0900
+15 14 10 * * job_monthly_10th_1415

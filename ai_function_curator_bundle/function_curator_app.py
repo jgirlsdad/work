@@ -5,7 +5,7 @@ import inspect, importlib
 import streamlit as st
 from openai import OpenAI
 from datetime import datetime
-
+import pandas as pd
 # --- Local imports ---
 from tool_registry import discover, get_catalog
 from safety import lint_proposed_code, sandbox_test_function
@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+sys.path.insert(0, "/home/joe/work/myLibs")
 # --- Streamlit setup ---
 st.set_page_config(page_title="AI Function Curator", page_icon="🧰", layout="wide")
 st.title("🧰 AI Function Curator — Build & Vet Analytics Functions")
@@ -29,6 +30,170 @@ with st.sidebar:
     model = st.selectbox("Model", ["gpt-4o-mini", "gpt-4.1"], index=0)
     temperature = st.slider("Temperature", 0.0, 1.0, 0.2, 0.05)
     st.caption("Sandbox tests run in a temporary folder; your project files are untouched.")
+
+
+def parse_docstring(doc: str):
+    """
+    Extract summary, inputs (with descriptions), and outputs (with descriptions)
+    from a Google-style docstring.
+    """
+    summary = ""
+    inputs = {}
+    outputs = {}
+
+    lines = [l.rstrip() for l in doc.splitlines()]
+
+    # --- Summary is first non-empty line ---
+    for line in lines:
+        if line.strip():
+            summary = line.strip()
+            break
+
+    # --- Parse Args ---
+    in_args = False
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith("Args:"):
+            in_args = True
+            continue
+
+        if in_args:
+            # Break out when reaching next section
+            if re.match(r"^[A-Z][a-z]+:", stripped):
+                break
+
+            # Match: name (type): description
+            m = re.match(r"(\w+)\s*\(([^)]+)\):\s*(.*)", stripped)
+            if m:
+                name, typ, desc = m.groups()
+                inputs[name] = f"{typ}  # {desc}"
+
+    # --- Parse Returns ---
+    in_returns = False
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith("Returns:"):
+            in_returns = True
+            continue
+
+        if in_returns:
+            # Break out at next section
+            if re.match(r"^[A-Z][a-z]+:", stripped):
+                break
+
+            # Match: type: description
+            m = re.match(r"(\w+)\s*:\s*(.*)", stripped)
+            if m:
+                typ, desc = m.groups()
+                outputs["result"] = f"{typ}  # {desc}"
+
+    if not outputs:
+        outputs["result"] = "Any"
+
+    return summary, inputs, outputs
+
+
+def generate_decorator_for_function(code: str) -> str:
+    """
+    Generates a @tool decorator using:
+    - imports moved above decorator
+    - smart argument extraction
+    - docstring parsing for summary, inputs, outputs
+    """
+    cleaned = code.strip()
+
+    # Extract imports
+    import_lines = []
+    function_body_lines = []
+    for line in cleaned.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("import ") or stripped.startswith("from "):
+            import_lines.append(line)
+        else:
+            function_body_lines.append(line)
+    cleaned_func = "\n".join(function_body_lines).strip()
+
+    # Extract docstring
+    doc_match = re.search(r'"""(.*?)"""', cleaned_func, re.DOTALL)
+    docstring = doc_match.group(1).strip() if doc_match else ""
+
+    summary, parsed_inputs, parsed_outputs = parse_docstring(docstring)
+
+    # Extract function name
+    fn_match = re.search(r"def\s+([a-zA-Z_][a-zA-Z0-9_]*)\s*\(", cleaned_func)
+    if not fn_match:
+        raise ValueError("Could not detect function name.")
+    fn_name = fn_match.group(1)
+
+    # Extract argument names (fallback if docstring missing)
+    sig_match = re.search(r"def\s+" + fn_name + r"\s*\(([^)]*)\)", cleaned_func)
+    args_raw = sig_match.group(1) if sig_match else ""
+    args_list = [
+        a.split(":")[0].strip()
+        for a in args_raw.split(",")
+        if a.strip() and not a.strip().startswith("*")
+    ]
+
+    # Final inputs = docstring inputs OR argument fallback
+    inputs = parsed_inputs if parsed_inputs else {a: "Any" for a in args_list}
+    outputs = parsed_outputs
+
+    # Build decorator text
+    decorator = (
+        "@tool(\n"
+        f'    summary="{summary}",\n'
+        f"    inputs={json.dumps(inputs, indent=4)},\n"
+        f"    outputs={json.dumps(outputs, indent=4)},\n"
+        f'    tags=["auto"]\n'
+        ")\n"
+    )
+
+    # Stitch imports + decorator + function
+    final_code = ""
+    if import_lines:
+        final_code += "\n".join(import_lines) + "\n\n"
+    final_code += decorator + cleaned_func
+
+    return final_code
+
+
+def summarize_local_library(lib_name="mylab"):
+    """
+    Summarize all vetted functions in the local library.
+    Uses tool_registry.discover() and get_catalog() to inspect available tools.
+    """
+    try:
+        failures = discover(lib_name)
+        catalog = get_catalog()
+
+        if not catalog:
+            st.info(f"ℹ️ No registered tools found in '{lib_name}'.")
+            return
+
+        records = []
+        for name, spec in catalog.items():
+            records.append({
+                "Function": name,
+                "Path": spec.get("path", ""),
+                "Summary": spec.get("summary", ""),
+                "Inputs": ", ".join(spec.get("inputs", {}).keys()),
+                "Outputs": ", ".join(spec.get("outputs", {}).keys()),
+                "Tags": ", ".join(spec.get("tags", [])),
+                "Version": spec.get("version", "")
+            })
+
+        df = pd.DataFrame(records)
+        st.success(f"✅ Found {len(df)} functions in `{lib_name}`.")
+        st.dataframe(df, use_container_width=True)
+
+        if failures:
+            st.warning("⚠️ Some modules failed to import:")
+            for m, err in failures:
+                st.code(f"{m}: {err}")
+
+    except Exception as e:
+        st.error(f"❌ Could not summarize '{lib_name}': {e}")
+
 
 
 # -------------------------------
@@ -62,7 +227,7 @@ def chat_complete(system: str, user: str) -> str:
             st.code(str(resp), language="text")
             return ""
 
-        print("Content", content)
+        
         return content
 
     except Exception as e:
@@ -96,20 +261,71 @@ def display_feedback_history(limit: int = 10):
         st.code(data.get("code_excerpt",""), language="python")
         st.divider()
 
+
+import ast
+from importlib import metadata
+
+def check_generated_function_dependencies(code: str):
+    """
+    Scans a generated function for import statements and compares
+    them against the list of packages installed in the current environment.
+
+    Returns:
+        required (set[str]): packages referenced in the function
+        missing  (set[str]): packages not currently installed
+    """
+
+    # --- Extract all imported packages using AST ---
+    try:
+        tree = ast.parse(code)
+    except SyntaxError:
+        return set(), set()
+
+    required = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            for alias in node.names:
+                required.add(alias.name.split('.')[0].lower())
+        elif isinstance(node, ast.ImportFrom):
+            if node.module:
+                required.add(node.module.split('.')[0].lower())
+
+    # --- Get installed packages using importlib.metadata ---
+    installed = {
+        dist.metadata['Name'].lower()
+        for dist in metadata.distributions()
+        if dist.metadata.get('Name')
+    }
+
+    # --- Compare required vs installed ---
+    missing = {pkg for pkg in required if pkg not in installed}
+    print("REQUIRED:", required)
+    print("MISSING:", missing)
+    return required, missing
+
+
 # -------------------------------
 # UI Section 1: Function description
 # -------------------------------
 st.subheader("1) Describe the function you want")
 idea = st.text_area(
-    "Create a function that takes a csv as input and prints out the columns and data types",
-    placeholder="Example: Weighted rolling correlation with handling for NaNs and irregular timestamps.",
+    "Function description",
+    value="Create a function that takes a csv as input and prints out the columns and data types",
+   # placeholder="Example: Weighted rolling correlation with handling for NaNs and irregular timestamps.",
     key="idea_box",
 )
 
 # -------------------------------
-# UI Section 2: Local library discovery
+# UI Section 2a: Summarize Local library
 # -------------------------------
-st.subheader("2) Check local library (mylab)")
+st.subheader("📚 Library Summary")
+if st.button("Show Function Library Summary"):
+    summarize_local_library("funcs")
+
+# -------------------------------
+# UI Section 2b: Local library discovery
+# -------------------------------
+st.subheader("2) Check local library (funcs)")
 local_failures = []
 catalog_json = "{}"
 try:
@@ -279,11 +495,15 @@ Return only the updated Python function.
             st.info("🧠 Sending feedback to GPT for revision...")
             with st.spinner("Revising function with GPT..."):
                 revision = chat_complete(system, user)
+              
 
             # --- Handle GPT output ---
             if revision and revision.strip():
                 cleaned = re.sub(r"^```python|```$", "", revision.strip(), flags=re.MULTILINE).strip()
-                st.session_state["Draft function (editable)"] = cleaned
+                
+                st.session_state["draft_code_area"] = cleaned
+                st.code(cleaned, language="python", line_numbers=True)
+
                 st.success("✅ Revision complete! Test the new version on the right.")
             else:
                 st.warning("⚠️ No revision content returned from GPT.")
@@ -308,6 +528,13 @@ with col_test:
         if not code_text:
             st.warning("⚠️ No code to run.")
         else:
+            stop=False
+            required,missing = check_generated_function_dependencies(code_text)
+            if missing:
+                st.error("⚠️ Some required packages are missing!")
+                st.info(f"Install with:\n\n`pip install {' '.join(missing)}`")
+                stop = True
+
             # --- Parse test arguments ---
             try:
                 kwargs = json.loads(kwargs_text) if kwargs_text.strip() else {}
@@ -333,10 +560,9 @@ with col_test:
             st.warning(f"⚠️ Could not inspect function signature: {e}")
 
         # --- Run in sandbox ---
-        with st.spinner("Running in sandbox..."):
-            result = sandbox_test_function(code_text, fname, kwargs, timeout=25)
-
-
+        if not stop:
+            with st.spinner("Running in sandbox..."):
+                result = sandbox_test_function(code_text, fname, kwargs, timeout=25)
 
 
 
@@ -351,6 +577,30 @@ with col_test:
                 if result.get("stderr"):
                     st.code(result["stderr"])
 
+# -------------------------------
+# Step 7 - Add @tool decorator
+# -------------------------------
+st.subheader("7) Add @tool decorator")
+
+draft_code = st.session_state.get("draft_code_area", "").strip()
+
+if not draft_code:
+    st.info("Generate and test a function before adding a decorator.")
+else:
+    if st.button("Add @tool decorator", key="btn_add_decorator"):
+        try:
+            wrapped = generate_decorator_for_function(draft_code)
+            st.session_state["draft_code_area"] = wrapped
+            st.success("Decorator added. Edit details below if needed.")
+        except Exception as e:
+            st.error(f"Failed to generate decorator: {e}")
+
+    st.text_area(
+        "Final Function (editable)",
+        value=st.session_state.get("draft_code_area", ""),
+        height=350,
+        key="draft_code_area"
+    )
 
 
 st.markdown("---")
