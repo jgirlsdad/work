@@ -849,20 +849,25 @@ def generateMonthlyReport(allAuto):
         del histNew['Quarterly']
  #   print (histNew)
     histPlot={}
+    print(histNew)
     for key,dct in histNew.items():
         histPlot[key]={}
         if 'fail' in dct:
             histPlot[key]['Fail']=dct['fail']
         else:
             histPlot[key]['Fail']=0
-        histPlot[key]['Pass']=dct['pass']
+        if 'pass' in dct:
+            histPlot[key]['Pass']=dct['pass']
+        else:
+            histPlot[key]['Pass']=0
         if "Total" not in histPlot:
             histPlot["Total"]={}
             histPlot["Total"]["Fail"]=0
             histPlot["Total"]["Pass"]=0
         if 'fail' in dct:   
             histPlot["Total"]["Fail"]+=dct["fail"]
-        histPlot["Total"]["Pass"]+=dct["pass"]
+        if 'pass' in dct:  
+           histPlot["Total"]["Pass"]+=dct["pass"]
 
     tdy = datetime.today().date()
 #    print("HIST PLOT ",histPlot)
