@@ -25,8 +25,14 @@ def log(what,variable,time=None):
 
 process_id = os.getpid()
 
-#variables=["2m_temperature","2m_dewpoint_temperature","10m_u_component_of_wind","10m_v_component_of_wind","total_precipitation"]
-variables=["10m_u_component_of_wind","10m_v_component_of_wind","total_precipitation"]
+#variables=["2m_temperature","2m_dewpoint_temperature"]
+#variables=["2m_temperature"]
+#variables=["2m_dewpoint_temperature"]
+##variables=["total_precipitation"]
+#variables=["10m_u_component_of_wind"]
+
+variables=["10m_v_component_of_wind"]
+#ariables=["2m_temperature","2m_dewpoint_temperature","total_precipitation","10m_u_component_of_wind","10m_v_component_of_wind"]
 
 # #variables=["total_precipitation"]
 
@@ -104,7 +110,7 @@ variables=["10m_u_component_of_wind","10m_v_component_of_wind","total_precipitat
 dataset = "reanalysis-era5-land"
 request = {
     "variable": variables,
-    "year": ["1989"],
+    "year": ["2026"],
     "month":  ["01" , "02", "03",
                      "04", "05", "06",
                      "07", "08", "09",
